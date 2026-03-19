@@ -28,7 +28,7 @@ class YoloNode(Node):
 
 
     def image_callback(self, msg):
-        model = YOLO('./yolo/best.pt')
+        model = YOLO('src/yolo/best.pt')
 
         image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
 
@@ -60,8 +60,8 @@ class YoloNode(Node):
         self.publisher.publish(msg)
         # self.get_logger().info('Publishing: "%s"' % msg.data)
 
-        # cv2.imshow("Detection Results", annotated_image)
-        # cv2.waitKey(1)
+        cv2.imshow("Detection Results", annotated_image)
+        cv2.waitKey(1)
 
 
 def main():
@@ -76,3 +76,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+

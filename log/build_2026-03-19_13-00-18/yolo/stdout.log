@@ -1,0 +1,24 @@
+running egg_info
+writing ../../build/yolo/yolo.egg-info/PKG-INFO
+writing dependency_links to ../../build/yolo/yolo.egg-info/dependency_links.txt
+writing entry points to ../../build/yolo/yolo.egg-info/entry_points.txt
+writing requirements to ../../build/yolo/yolo.egg-info/requires.txt
+writing top-level names to ../../build/yolo/yolo.egg-info/top_level.txt
+reading manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+writing manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+running build
+running build_py
+copying yolo/camera_node_sub.py -> /workspace/build/yolo/build/lib/yolo
+copying yolo/__init__.py -> /workspace/build/yolo/build/lib/yolo
+running install
+running install_lib
+byte-compiling /workspace/install/yolo/lib/python3.8/site-packages/yolo/camera_node_sub.py to camera_node_sub.cpython-38.pyc
+running install_data
+copying resource/yolo -> /workspace/install/yolo/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/install/yolo/share/yolo
+running install_egg_info
+removing '/workspace/install/yolo/lib/python3.8/site-packages/yolo-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/yolo/yolo.egg-info to /workspace/install/yolo/lib/python3.8/site-packages/yolo-0.0.0-py3.8.egg-info
+running install_scripts
+Installing yolo_node script to /workspace/install/yolo/lib/yolo
+writing list of installed files to '/workspace/build/yolo/install.log'

@@ -1,0 +1,27 @@
+[11.462s] Invoking command in '/workspace/src/yolo': PYTHONPATH=/workspace/build/yolo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/yolo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yolo build --build-base /workspace/build/yolo/build install --record /workspace/build/yolo/install.log --single-version-externally-managed install_data
+[14.282s] running egg_info
+[14.411s] writing ../../build/yolo/yolo.egg-info/PKG-INFO
+[14.414s] writing dependency_links to ../../build/yolo/yolo.egg-info/dependency_links.txt
+[14.415s] writing entry points to ../../build/yolo/yolo.egg-info/entry_points.txt
+[14.416s] writing requirements to ../../build/yolo/yolo.egg-info/requires.txt
+[14.416s] writing top-level names to ../../build/yolo/yolo.egg-info/top_level.txt
+[14.696s] reading manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+[14.699s] writing manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+[14.700s] running build
+[14.701s] running build_py
+[14.701s] copying yolo/camera_node_sub.py -> /workspace/build/yolo/build/lib/yolo
+[14.702s] copying yolo/__init__.py -> /workspace/build/yolo/build/lib/yolo
+[14.703s] running install
+[14.730s] running install_lib
+[14.870s] copying /workspace/build/yolo/build/lib/yolo/camera_node_sub.py -> /workspace/install/yolo/lib/python3.8/site-packages/yolo
+[14.882s] byte-compiling /workspace/install/yolo/lib/python3.8/site-packages/yolo/camera_node_sub.py to camera_node_sub.cpython-38.pyc
+[14.885s] running install_data
+[14.886s] copying resource/yolo -> /workspace/install/yolo/share/ament_index/resource_index/packages
+[14.886s] copying package.xml -> /workspace/install/yolo/share/yolo
+[14.887s] running install_egg_info
+[15.029s] removing '/workspace/install/yolo/lib/python3.8/site-packages/yolo-0.0.0-py3.8.egg-info' (and everything under it)
+[15.031s] Copying ../../build/yolo/yolo.egg-info to /workspace/install/yolo/lib/python3.8/site-packages/yolo-0.0.0-py3.8.egg-info
+[15.035s] running install_scripts
+[16.103s] Installing yolo_node script to /workspace/install/yolo/lib/yolo
+[16.105s] writing list of installed files to '/workspace/build/yolo/install.log'
+[16.249s] Invoked command in '/workspace/src/yolo' returned '0': PYTHONPATH=/workspace/build/yolo/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/yolo/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/yolo build --build-base /workspace/build/yolo/build install --record /workspace/build/yolo/install.log --single-version-externally-managed install_data
