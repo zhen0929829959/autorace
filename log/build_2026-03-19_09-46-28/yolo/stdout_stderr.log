@@ -1,0 +1,30 @@
+running egg_info
+creating ../../build/yolo/yolo.egg-info
+writing ../../build/yolo/yolo.egg-info/PKG-INFO
+writing dependency_links to ../../build/yolo/yolo.egg-info/dependency_links.txt
+writing requirements to ../../build/yolo/yolo.egg-info/requires.txt
+writing top-level names to ../../build/yolo/yolo.egg-info/top_level.txt
+writing manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+reading manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+writing manifest file '../../build/yolo/yolo.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /workspace/build/yolo/build
+creating /workspace/build/yolo/build/lib
+creating /workspace/build/yolo/build/lib/yolo
+copying yolo/__init__.py -> /workspace/build/yolo/build/lib/yolo
+running install
+running install_lib
+creating /workspace/install/yolo/lib/python3.8/site-packages/yolo
+copying /workspace/build/yolo/build/lib/yolo/__init__.py -> /workspace/install/yolo/lib/python3.8/site-packages/yolo
+byte-compiling /workspace/install/yolo/lib/python3.8/site-packages/yolo/__init__.py to __init__.cpython-38.pyc
+running install_data
+creating /workspace/install/yolo/share/ament_index
+creating /workspace/install/yolo/share/ament_index/resource_index
+creating /workspace/install/yolo/share/ament_index/resource_index/packages
+copying resource/yolo -> /workspace/install/yolo/share/ament_index/resource_index/packages
+copying package.xml -> /workspace/install/yolo/share/yolo
+running install_egg_info
+Copying ../../build/yolo/yolo.egg-info to /workspace/install/yolo/lib/python3.8/site-packages/yolo-0.0.0-py3.8.egg-info
+running install_scripts
+writing list of installed files to '/workspace/build/yolo/install.log'
