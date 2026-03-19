@@ -1,5 +1,7 @@
+/workspace/install/camera/lib/python3.8/site-packages/camera/camera_node_sub.py
 /workspace/install/camera/lib/python3.8/site-packages/camera/camera_node_pub.py
 /workspace/install/camera/lib/python3.8/site-packages/camera/__init__.py
+/workspace/install/camera/lib/python3.8/site-packages/camera/__pycache__/camera_node_sub.cpython-38.pyc
 /workspace/install/camera/lib/python3.8/site-packages/camera/__pycache__/camera_node_pub.cpython-38.pyc
 /workspace/install/camera/lib/python3.8/site-packages/camera/__pycache__/__init__.cpython-38.pyc
 /workspace/install/camera/share/ament_index/resource_index/packages/camera
@@ -12,3 +14,4 @@
 /workspace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info/PKG-INFO
 /workspace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info/entry_points.txt
 /workspace/install/camera/lib/camera/camera_node
+/workspace/install/camera/lib/camera/yolo_node

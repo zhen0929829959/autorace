@@ -1,0 +1,29 @@
+[8.288s] Invoking command in '/workspace/src/camera': PYTHONPATH=/workspace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera build --build-base /workspace/build/camera/build install --record /workspace/build/camera/install.log --single-version-externally-managed install_data
+[11.081s] running egg_info
+[11.207s] writing ../../build/camera/camera.egg-info/PKG-INFO
+[11.208s] writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt
+[11.209s] writing entry points to ../../build/camera/camera.egg-info/entry_points.txt
+[11.210s] writing requirements to ../../build/camera/camera.egg-info/requires.txt
+[11.210s] writing top-level names to ../../build/camera/camera.egg-info/top_level.txt
+[11.466s] reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[11.470s] writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[11.470s] running build
+[11.471s] running build_py
+[11.472s] copying camera/camera_node_sub.py -> /workspace/build/camera/build/lib/camera
+[11.473s] copying camera/camera_node_pub.py -> /workspace/build/camera/build/lib/camera
+[11.474s] copying camera/__init__.py -> /workspace/build/camera/build/lib/camera
+[11.475s] running install
+[11.503s] running install_lib
+[11.633s] copying /workspace/build/camera/build/lib/camera/camera_node_pub.py -> /workspace/install/camera/lib/python3.8/site-packages/camera
+[11.645s] byte-compiling /workspace/install/camera/lib/python3.8/site-packages/camera/camera_node_pub.py to camera_node_pub.cpython-38.pyc
+[11.647s] running install_data
+[11.648s] copying resource/camera -> /workspace/install/camera/share/ament_index/resource_index/packages
+[11.648s] copying package.xml -> /workspace/install/camera/share/camera
+[11.649s] running install_egg_info
+[11.792s] removing '/workspace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info' (and everything under it)
+[11.793s] Copying ../../build/camera/camera.egg-info to /workspace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info
+[11.797s] running install_scripts
+[12.827s] Installing camera_node script to /workspace/install/camera/lib/camera
+[12.827s] Installing yolo_node script to /workspace/install/camera/lib/camera
+[12.829s] writing list of installed files to '/workspace/build/camera/install.log'
+[12.933s] Invoked command in '/workspace/src/camera' returned '0': PYTHONPATH=/workspace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera build --build-base /workspace/build/camera/build install --record /workspace/build/camera/install.log --single-version-externally-managed install_data
