@@ -1,0 +1,101 @@
+[0.000000] (-) TimerEvent: {}
+[0.001689] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.002262] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.002798] (camera) JobStarted: {'identifier': 'camera'}
+[0.042117] (control) JobStarted: {'identifier': 'control'}
+[0.101799] (-) TimerEvent: {}
+[0.203846] (-) TimerEvent: {}
+[0.304791] (-) TimerEvent: {}
+[0.405749] (-) TimerEvent: {}
+[0.507250] (-) TimerEvent: {}
+[0.608166] (-) TimerEvent: {}
+[0.709060] (-) TimerEvent: {}
+[0.810359] (-) TimerEvent: {}
+[0.911203] (-) TimerEvent: {}
+[1.012732] (-) TimerEvent: {}
+[1.114416] (-) TimerEvent: {}
+[1.215248] (-) TimerEvent: {}
+[1.317174] (-) TimerEvent: {}
+[1.418035] (-) TimerEvent: {}
+[1.518896] (-) TimerEvent: {}
+[1.619697] (-) TimerEvent: {}
+[1.720500] (-) TimerEvent: {}
+[1.822282] (-) TimerEvent: {}
+[1.923828] (-) TimerEvent: {}
+[2.024595] (-) TimerEvent: {}
+[2.125316] (-) TimerEvent: {}
+[2.226189] (-) TimerEvent: {}
+[2.327252] (-) TimerEvent: {}
+[2.428076] (-) TimerEvent: {}
+[2.528976] (-) TimerEvent: {}
+[2.629679] (-) TimerEvent: {}
+[2.730556] (-) TimerEvent: {}
+[2.831573] (-) TimerEvent: {}
+[2.932355] (-) TimerEvent: {}
+[3.033136] (-) TimerEvent: {}
+[3.134025] (-) TimerEvent: {}
+[3.140567] (camera) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/camera', 'build', '--build-base', '/workspace/build/camera/build', 'install', '--record', '/workspace/build/camera/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/workspace/src/camera', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'HOSTNAME': 'ubuntu', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda/lib64:', 'HOME': '/home/work', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/install', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'XAUTHORITY': '/home/iclab/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/install/control:/workspace/install/camera:/opt/ros/foxy', 'DEBIAN_FRONTEND': 'noninteractive', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/workspace/build/camera', 'LC_ALL': 'C.UTF-8', 'CUDA_HOME': '/usr/local/cuda', 'PYTHONPATH': '/workspace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/camera/lib/python3.8/site-packages:/workspace/install/control/lib/python3.8/site-packages:/workspace/install/camera/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[3.235877] (control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../../build/control', 'build', '--build-base', '/workspace/build/control/build', 'install', '--record', '/workspace/build/control/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/workspace/src/control', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'HOSTNAME': 'ubuntu', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda/lib64:', 'HOME': '/home/work', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/install', 'ROS_DISTRO': 'foxy', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LANG': 'C.UTF-8', 'XAUTHORITY': '/home/iclab/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'AMENT_PREFIX_PATH': '/workspace/install/control:/workspace/install/camera:/opt/ros/foxy', 'DEBIAN_FRONTEND': 'noninteractive', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'PWD': '/workspace/build/control', 'LC_ALL': 'C.UTF-8', 'CUDA_HOME': '/usr/local/cuda', 'PYTHONPATH': '/workspace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/control/lib/python3.8/site-packages:/workspace/install/control/lib/python3.8/site-packages:/workspace/install/camera/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[3.257078] (-) TimerEvent: {}
+[3.359491] (-) TimerEvent: {}
+[3.461351] (-) TimerEvent: {}
+[3.562089] (-) TimerEvent: {}
+[3.662999] (-) TimerEvent: {}
+[3.763773] (-) TimerEvent: {}
+[3.864548] (-) TimerEvent: {}
+[3.965392] (-) TimerEvent: {}
+[3.966435] (camera) StdoutLine: {'line': b'running egg_info\n'}
+[3.968552] (camera) StdoutLine: {'line': b'writing ../../build/camera/camera.egg-info/PKG-INFO\n'}
+[3.972903] (camera) StdoutLine: {'line': b'writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt\n'}
+[3.974370] (camera) StdoutLine: {'line': b'writing entry points to ../../build/camera/camera.egg-info/entry_points.txt\n'}
+[3.976039] (camera) StdoutLine: {'line': b'writing requirements to ../../build/camera/camera.egg-info/requires.txt\n'}
+[3.977719] (camera) StdoutLine: {'line': b'writing top-level names to ../../build/camera/camera.egg-info/top_level.txt\n'}
+[4.051711] (control) StdoutLine: {'line': b'running egg_info\n'}
+[4.055775] (control) StdoutLine: {'line': b'writing ../../build/control/control.egg-info/PKG-INFO\n'}
+[4.059026] (control) StdoutLine: {'line': b'writing dependency_links to ../../build/control/control.egg-info/dependency_links.txt\n'}
+[4.060664] (control) StdoutLine: {'line': b'writing entry points to ../../build/control/control.egg-info/entry_points.txt\n'}
+[4.062306] (control) StdoutLine: {'line': b'writing requirements to ../../build/control/control.egg-info/requires.txt\n'}
+[4.063815] (control) StdoutLine: {'line': b'writing top-level names to ../../build/control/control.egg-info/top_level.txt\n'}
+[4.065506] (-) TimerEvent: {}
+[4.109598] (camera) StdoutLine: {'line': b"reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[4.112877] (camera) StdoutLine: {'line': b"writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'\n"}
+[4.113728] (camera) StdoutLine: {'line': b'running build\n'}
+[4.114146] (camera) StdoutLine: {'line': b'running build_py\n'}
+[4.115402] (camera) StdoutLine: {'line': b'copying camera/liner_node.py -> /workspace/build/camera/build/lib/camera\n'}
+[4.116148] (camera) StdoutLine: {'line': b'running install\n'}
+[4.119785] (camera) StdoutLine: {'line': b'running install_lib\n'}
+[4.126107] (camera) StdoutLine: {'line': b'copying /workspace/build/camera/build/lib/camera/liner_node.py -> /workspace/install/camera/lib/python3.8/site-packages/camera\n'}
+[4.129147] (camera) StdoutLine: {'line': b'byte-compiling /workspace/install/camera/lib/python3.8/site-packages/camera/liner_node.py to liner_node.cpython-38.pyc\n'}
+[4.141956] (camera) StdoutLine: {'line': b'running install_data\n'}
+[4.142825] (camera) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.149120] (camera) StdoutLine: {'line': b"removing '/workspace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[4.150689] (camera) StdoutLine: {'line': b'Copying ../../build/camera/camera.egg-info to /workspace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info\n'}
+[4.158838] (camera) StdoutLine: {'line': b'running install_scripts\n'}
+[4.165773] (-) TimerEvent: {}
+[4.179695] (control) StdoutLine: {'line': b"reading manifest file '../../build/control/control.egg-info/SOURCES.txt'\n"}
+[4.183347] (control) StdoutLine: {'line': b"writing manifest file '../../build/control/control.egg-info/SOURCES.txt'\n"}
+[4.185201] (control) StdoutLine: {'line': b'running build\n'}
+[4.185807] (control) StdoutLine: {'line': b'running build_py\n'}
+[4.186210] (control) StdoutLine: {'line': b'copying control/motor_node.py -> /workspace/build/control/build/lib/control\n'}
+[4.186943] (control) StdoutLine: {'line': b'running install\n'}
+[4.190656] (control) StdoutLine: {'line': b'running install_lib\n'}
+[4.193904] (control) StdoutLine: {'line': b'copying /workspace/build/control/build/lib/control/motor_node.py -> /workspace/install/control/lib/python3.8/site-packages/control\n'}
+[4.198890] (control) StdoutLine: {'line': b'byte-compiling /workspace/install/control/lib/python3.8/site-packages/control/motor_node.py to motor_node.cpython-38.pyc\n'}
+[4.206056] (control) StdoutLine: {'line': b'running install_data\n'}
+[4.206722] (control) StdoutLine: {'line': b'running install_egg_info\n'}
+[4.213779] (control) StdoutLine: {'line': b"removing '/workspace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info' (and everything under it)\n"}
+[4.214393] (control) StdoutLine: {'line': b'Copying ../../build/control/control.egg-info to /workspace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info\n'}
+[4.218296] (control) StdoutLine: {'line': b'running install_scripts\n'}
+[4.229450] (camera) StdoutLine: {'line': b'Installing camera_node script to /workspace/install/camera/lib/camera\n'}
+[4.230408] (camera) StdoutLine: {'line': b'Installing line_detector_follower_node script to /workspace/install/camera/lib/camera\n'}
+[4.231287] (camera) StdoutLine: {'line': b'Installing yolo_node script to /workspace/install/camera/lib/camera\n'}
+[4.232735] (camera) StdoutLine: {'line': b"writing list of installed files to '/workspace/build/camera/install.log'\n"}
+[4.266737] (-) TimerEvent: {}
+[4.286166] (control) StdoutLine: {'line': b'Installing motor_node script to /workspace/install/control/lib/control\n'}
+[4.288275] (control) StdoutLine: {'line': b"writing list of installed files to '/workspace/build/control/install.log'\n"}
+[4.335263] (camera) CommandEnded: {'returncode': 0}
+[4.369608] (-) TimerEvent: {}
+[4.394936] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[4.400411] (control) CommandEnded: {'returncode': 0}
+[4.427330] (control) JobEnded: {'identifier': 'control', 'rc': 0}
+[4.430394] (-) EventReactorShutdown: {}

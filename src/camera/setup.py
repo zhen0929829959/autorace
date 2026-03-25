@@ -22,6 +22,7 @@ setup(
         'console_scripts': [
         	'camera_node = camera.camera_node_pub:main',
             'yolo_node = camera.camera_node_sub:main',
+            'line_detector_follower_node = camera.liner_node:main',
         ],
     },
 )

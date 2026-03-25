@@ -11,7 +11,12 @@ setup.py
 camera/__init__.py
 camera/camera_node_pub.py
 camera/camera_node_sub.py
+camera/liner_node.py
+camera.egg-info/PKG-INFO
+camera.egg-info/SOURCES.txt
+camera.egg-info/dependency_links.txt
+camera.egg-info/entry_points.txt
+camera.egg-info/requires.txt
+camera.egg-info/top_level.txt
+camera.egg-info/zip-safe
 resource/camera
-test/test_copyright.py
-test/test_flake8.py
-test/test_pep257.py

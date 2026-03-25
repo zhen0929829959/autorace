@@ -13,19 +13,19 @@ class UsbCameraNode(Node):
         super().__init__('camera_node')
 
         # Publisher
-        self.publisher = self.create_publisher(Image, 'image_raw', 10)
+        self.publisher = self.create_publisher(Image, '/camera/image_raw', 10)
         self.bridge = CvBridge()
 
         # Open USB camera
-        self.cap = cv2.VideoCapture("/dev/video0")
-
+        # self.cap = cv2.VideoCapture("/dev/video0")
+        self.cap = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)
         if not self.cap.isOpened():
             self.get_logger().error('Cannot open camera')
             return
 
         # 教學穩定設定
-        #self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        #self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
         # 約 20 FPS
         self.timer = self.create_timer(0.016, self.timer_callback)

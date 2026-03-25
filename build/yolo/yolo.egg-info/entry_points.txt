@@ -1,2 +1,0 @@
-[console_scripts]
-yolo_node = yolo.camera_node_sub:main

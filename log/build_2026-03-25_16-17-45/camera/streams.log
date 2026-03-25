@@ -1,0 +1,22 @@
+[3.418s] Invoking command in '/workspace/build/camera': PYTHONPATH=/workspace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/build/camera/build --no-deps symlink_data --force
+[4.271s] running develop
+[4.718s] running egg_info
+[4.718s] writing camera.egg-info/PKG-INFO
+[4.719s] writing dependency_links to camera.egg-info/dependency_links.txt
+[4.719s] writing entry points to camera.egg-info/entry_points.txt
+[4.720s] writing requirements to camera.egg-info/requires.txt
+[4.720s] writing top-level names to camera.egg-info/top_level.txt
+[4.836s] reading manifest file 'camera.egg-info/SOURCES.txt'
+[4.841s] writing manifest file 'camera.egg-info/SOURCES.txt'
+[4.977s] running build_ext
+[4.978s] Creating /workspace/install/camera/lib/python3.8/site-packages/site.py
+[4.986s] Creating /workspace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)
+[4.990s] Installing camera_node script to /workspace/install/camera/lib/camera
+[4.990s] Installing line_detector_follower_node script to /workspace/install/camera/lib/camera
+[4.993s] Installing yolo_node script to /workspace/install/camera/lib/camera
+[4.994s] 
+[4.996s] Installed /workspace/build/camera
+[4.997s] running symlink_data
+[4.997s] symbolically linking /workspace/build/camera/resource/camera -> /workspace/install/camera/share/ament_index/resource_index/packages
+[4.997s] symbolically linking /workspace/build/camera/package.xml -> /workspace/install/camera/share/camera
+[5.093s] Invoked command in '/workspace/build/camera' returned '0': PYTHONPATH=/workspace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/build/camera/build --no-deps symlink_data --force

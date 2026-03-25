@@ -1,0 +1,21 @@
+[3.044s] Invoking command in '/workspace/src/control': PYTHONPATH=/workspace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /workspace/build/control/build install --record /workspace/build/control/install.log --single-version-externally-managed install_data
+[3.779s] running egg_info
+[3.781s] writing ../../build/control/control.egg-info/PKG-INFO
+[3.783s] writing dependency_links to ../../build/control/control.egg-info/dependency_links.txt
+[3.783s] writing entry points to ../../build/control/control.egg-info/entry_points.txt
+[3.784s] writing requirements to ../../build/control/control.egg-info/requires.txt
+[3.785s] writing top-level names to ../../build/control/control.egg-info/top_level.txt
+[3.902s] reading manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[3.906s] writing manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[3.906s] running build
+[3.907s] running build_py
+[3.907s] running install
+[3.909s] running install_lib
+[3.915s] running install_data
+[3.915s] running install_egg_info
+[3.921s] removing '/workspace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info' (and everything under it)
+[3.923s] Copying ../../build/control/control.egg-info to /workspace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info
+[3.929s] running install_scripts
+[3.988s] Installing motor_node script to /workspace/install/control/lib/control
+[3.990s] writing list of installed files to '/workspace/build/control/install.log'
+[4.116s] Invoked command in '/workspace/src/control' returned '0': PYTHONPATH=/workspace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /workspace/build/control/build install --record /workspace/build/control/install.log --single-version-externally-managed install_data
