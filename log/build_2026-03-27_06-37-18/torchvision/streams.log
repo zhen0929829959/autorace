@@ -1,0 +1,7 @@
+[1.871s] Invoking command in '/workspace/build/torchvision': /usr/bin/cmake /workspace/vision -DCMAKE_INSTALL_PREFIX=/workspace/install/torchvision
+[1.929s] CMake Error at CMakeLists.txt:1 (cmake_minimum_required):
+[1.933s]   CMake 3.18 or higher is required.  You are running version 3.16.3
+[1.933s] 
+[1.934s] 
+[1.934s] -- Configuring incomplete, errors occurred!
+[1.938s] Invoked command in '/workspace/build/torchvision' returned '1': /usr/bin/cmake /workspace/vision -DCMAKE_INSTALL_PREFIX=/workspace/install/torchvision

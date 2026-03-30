@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing camera.egg-info/PKG-INFO
+writing dependency_links to camera.egg-info/dependency_links.txt
+writing entry points to camera.egg-info/entry_points.txt
+writing requirements to camera.egg-info/requires.txt
+writing top-level names to camera.egg-info/top_level.txt
+reading manifest file 'camera.egg-info/SOURCES.txt'
+writing manifest file 'camera.egg-info/SOURCES.txt'
+running build_ext
+Creating /workspace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)
+Installing camera_node script to /workspace/install/camera/lib/camera
+Installing lane_follower_node script to /workspace/install/camera/lib/camera
+Installing yolo_node script to /workspace/install/camera/lib/camera
+
+Installed /workspace/build/camera
+running install_data

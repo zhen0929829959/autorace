@@ -1,0 +1,47 @@
+[4.969s] Invoking command in '/workspace/build/camera': PYTHONPATH=/workspace/build/camera/prefix_override:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /workspace/build/camera/build --no-deps install_data
+[5.564s] /usr/local/lib/python3.8/dist-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[5.568s]   warnings.warn(msg)
+[6.254s] running develop
+[6.255s] /usr/local/lib/python3.8/dist-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[6.255s] !!
+[6.255s] 
+[6.256s]         ********************************************************************************
+[6.256s]         Please avoid running ``setup.py`` and ``easy_install``.
+[6.256s]         Instead, use pypa/build, pypa/installer or other
+[6.257s]         standards-based tools.
+[6.257s] 
+[6.257s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[6.257s]         ********************************************************************************
+[6.258s] 
+[6.258s] !!
+[6.258s]   easy_install.initialize_options(self)
+[6.395s] /usr/local/lib/python3.8/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[6.398s] !!
+[6.399s] 
+[6.400s]         ********************************************************************************
+[6.401s]         Please avoid running ``setup.py`` directly.
+[6.401s]         Instead, use pypa/build, pypa/installer or other
+[6.401s]         standards-based tools.
+[6.402s] 
+[6.402s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[6.402s]         ********************************************************************************
+[6.402s] 
+[6.403s] !!
+[6.403s]   self.initialize_options()
+[7.125s] running egg_info
+[7.189s] writing camera.egg-info/PKG-INFO
+[7.191s] writing dependency_links to camera.egg-info/dependency_links.txt
+[7.192s] writing entry points to camera.egg-info/entry_points.txt
+[7.193s] writing requirements to camera.egg-info/requires.txt
+[7.194s] writing top-level names to camera.egg-info/top_level.txt
+[7.331s] reading manifest file 'camera.egg-info/SOURCES.txt'
+[7.337s] writing manifest file 'camera.egg-info/SOURCES.txt'
+[7.553s] running build_ext
+[7.558s] Creating /workspace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)
+[7.560s] Installing camera_node script to /workspace/install/camera/lib/camera
+[7.561s] Installing line_detector_follower_node script to /workspace/install/camera/lib/camera
+[7.563s] Installing yolo_node script to /workspace/install/camera/lib/camera
+[7.563s] 
+[7.564s] Installed /workspace/build/camera
+[7.564s] running install_data
+[7.943s] Invoked command in '/workspace/build/camera' returned '0': PYTHONPATH=/workspace/build/camera/prefix_override:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /workspace/build/camera/build --no-deps install_data

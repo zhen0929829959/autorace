@@ -142,11 +142,11 @@ class MotorNode(Node):
     def motor_cmd_callback(self, msg: String) -> None:
         left_speed, right_speed = self.parse_motor_cmd(msg.data)
 
-        if left_speed is None or right_speed is None:
-            self.get_logger().warn(f'Invalid /motor_cmd payload: {msg.data}')
-            if self.stop_on_invalid_cmd:
-                self.set_motor_speed(0, 0)
-            return
+        # if left_speed is None or right_speed is None:
+        #     self.get_logger().warn(f'Invalid /motor_cmd payload: {msg.data}')
+        #     if self.stop_on_invalid_cmd:
+        #         self.set_motor_speed(0, 0)
+        #     return
 
         self.set_motor_speed(left_speed, right_speed)
 

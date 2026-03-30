@@ -1,0 +1,17 @@
+[3.491s] Invoking command in '/workspace/build/control': PYTHONPATH=/workspace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/build/control/build --no-deps symlink_data
+[4.438s] running develop
+[4.928s] running egg_info
+[4.929s] writing control.egg-info/PKG-INFO
+[4.931s] writing dependency_links to control.egg-info/dependency_links.txt
+[4.934s] writing entry points to control.egg-info/entry_points.txt
+[4.935s] writing requirements to control.egg-info/requires.txt
+[4.935s] writing top-level names to control.egg-info/top_level.txt
+[5.061s] reading manifest file 'control.egg-info/SOURCES.txt'
+[5.064s] writing manifest file 'control.egg-info/SOURCES.txt'
+[5.207s] running build_ext
+[5.209s] Creating /workspace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)
+[5.211s] Installing motor_node script to /workspace/install/control/lib/control
+[5.211s] 
+[5.212s] Installed /workspace/build/control
+[5.212s] running symlink_data
+[5.382s] Invoked command in '/workspace/build/control' returned '0': PYTHONPATH=/workspace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /workspace/build/control/build --no-deps symlink_data

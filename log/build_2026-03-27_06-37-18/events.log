@@ -1,0 +1,52 @@
+[0.000000] (-) TimerEvent: {}
+[0.001676] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.002300] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.002889] (torchvision) JobQueued: {'identifier': 'torchvision', 'dependencies': OrderedDict()}
+[0.003091] (camera) JobStarted: {'identifier': 'camera'}
+[0.041467] (control) JobStarted: {'identifier': 'control'}
+[0.079775] (torchvision) JobStarted: {'identifier': 'torchvision'}
+[0.099469] (-) TimerEvent: {}
+[0.201200] (-) TimerEvent: {}
+[0.303530] (-) TimerEvent: {}
+[0.408125] (-) TimerEvent: {}
+[0.508923] (-) TimerEvent: {}
+[0.609628] (-) TimerEvent: {}
+[0.710371] (-) TimerEvent: {}
+[0.812171] (-) TimerEvent: {}
+[0.913118] (-) TimerEvent: {}
+[1.015885] (-) TimerEvent: {}
+[1.117497] (-) TimerEvent: {}
+[1.219482] (-) TimerEvent: {}
+[1.320488] (-) TimerEvent: {}
+[1.421322] (-) TimerEvent: {}
+[1.522103] (-) TimerEvent: {}
+[1.622884] (-) TimerEvent: {}
+[1.723656] (-) TimerEvent: {}
+[1.824524] (-) TimerEvent: {}
+[1.928453] (-) TimerEvent: {}
+[1.942419] (torchvision) JobProgress: {'identifier': 'torchvision', 'progress': 'cmake'}
+[1.947586] (torchvision) Command: {'cmd': ['/usr/bin/cmake', '/workspace/vision', '-DCMAKE_INSTALL_PREFIX=/workspace/install/torchvision'], 'cwd': '/workspace/build/torchvision', 'env': OrderedDict([('LESSOPEN', '| /usr/bin/lesspipe %s'), ('BUILD_VERSION', '0.16.2'), ('HOSTNAME', 'ubuntu'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib:/usr/local/cuda/lib64:'), ('HOME', '/home/work'), ('OLDPWD', '/workspace/vision'), ('ROS_PYTHON_VERSION', '3'), ('COLCON_PREFIX_PATH', '/workspace/install'), ('ROS_DISTRO', 'foxy'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('NVIDIA_DRIVER_CAPABILITIES', 'all'), ('TERM', 'xterm'), ('ROS_LOCALHOST_ONLY', '0'), ('QT_X11_NO_MITSHM', '1'), ('PATH', '/opt/ros/foxy/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'), ('DISPLAY', ':1'), ('LANG', 'C.UTF-8'), ('XAUTHORITY', '/home/iclab/.Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('AMENT_PREFIX_PATH', '/workspace/install/control:/workspace/install/camera:/opt/ros/foxy'), ('DEBIAN_FRONTEND', 'noninteractive'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('PWD', '/workspace/build/torchvision'), ('LC_ALL', 'C.UTF-8'), ('CUDA_HOME', '/usr/local/cuda'), ('PYTHONPATH', '/workspace/build/control:/workspace/install/control/lib/python3.8/site-packages:/workspace/build/camera:/workspace/install/camera/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages'), ('NVIDIA_VISIBLE_DEVICES', 'all'), ('COLCON', '1')]), 'shell': False}
+[2.004874] (torchvision) StderrLine: {'line': b'CMake Error at CMakeLists.txt:1 (cmake_minimum_required):\n'}
+[2.012639] (torchvision) StderrLine: {'line': b'  CMake 3.18 or higher is required.  You are running version 3.16.3\n'}
+[2.013204] (torchvision) StderrLine: {'line': b'\n'}
+[2.013511] (torchvision) StderrLine: {'line': b'\n'}
+[2.013810] (torchvision) StdoutLine: {'line': b'-- Configuring incomplete, errors occurred!\n'}
+[2.017210] (torchvision) CommandEnded: {'returncode': 1}
+[2.020786] (torchvision) JobEnded: {'identifier': 'torchvision', 'rc': 1}
+[2.028191] (-) TimerEvent: {}
+[2.129018] (-) TimerEvent: {}
+[2.230168] (-) TimerEvent: {}
+[2.330914] (-) TimerEvent: {}
+[2.431794] (-) TimerEvent: {}
+[2.532880] (-) TimerEvent: {}
+[2.633837] (-) TimerEvent: {}
+[2.734632] (-) TimerEvent: {}
+[2.835324] (-) TimerEvent: {}
+[2.936268] (-) TimerEvent: {}
+[3.036989] (-) TimerEvent: {}
+[3.137774] (-) TimerEvent: {}
+[3.238635] (-) TimerEvent: {}
+[3.324686] (camera) JobEnded: {'identifier': 'camera', 'rc': 'SIGINT'}
+[3.338900] (-) TimerEvent: {}
+[3.345254] (control) JobEnded: {'identifier': 'control', 'rc': 'SIGINT'}
+[3.357567] (-) EventReactorShutdown: {}

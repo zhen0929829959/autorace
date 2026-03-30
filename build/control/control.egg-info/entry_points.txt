@@ -1,3 +1,3 @@
 [console_scripts]
+main_controller_node = control.control_node:main
 motor_node = control.motor_node:main
-

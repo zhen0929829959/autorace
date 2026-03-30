@@ -1,0 +1,46 @@
+[4.635s] Invoking command in '/workspace/build/control': PYTHONPATH=/workspace/build/control/prefix_override:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /workspace/build/control/build --no-deps install_data
+[5.200s] /usr/local/lib/python3.8/dist-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'
+[5.201s]   warnings.warn(msg)
+[5.886s] running develop
+[5.888s] /usr/local/lib/python3.8/dist-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.
+[5.888s] !!
+[5.888s] 
+[5.889s]         ********************************************************************************
+[5.889s]         Please avoid running ``setup.py`` and ``easy_install``.
+[5.889s]         Instead, use pypa/build, pypa/installer or other
+[5.890s]         standards-based tools.
+[5.890s] 
+[5.890s]         See https://github.com/pypa/setuptools/issues/917 for details.
+[5.890s]         ********************************************************************************
+[5.891s] 
+[5.891s] !!
+[5.892s]   easy_install.initialize_options(self)
+[6.020s] /usr/local/lib/python3.8/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[6.020s] !!
+[6.020s] 
+[6.021s]         ********************************************************************************
+[6.021s]         Please avoid running ``setup.py`` directly.
+[6.021s]         Instead, use pypa/build, pypa/installer or other
+[6.022s]         standards-based tools.
+[6.023s] 
+[6.023s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[6.024s]         ********************************************************************************
+[6.024s] 
+[6.024s] !!
+[6.025s]   self.initialize_options()
+[6.718s] running egg_info
+[6.779s] writing control.egg-info/PKG-INFO
+[6.781s] writing dependency_links to control.egg-info/dependency_links.txt
+[6.784s] writing entry points to control.egg-info/entry_points.txt
+[6.785s] writing requirements to control.egg-info/requires.txt
+[6.786s] writing top-level names to control.egg-info/top_level.txt
+[6.914s] reading manifest file 'control.egg-info/SOURCES.txt'
+[6.919s] writing manifest file 'control.egg-info/SOURCES.txt'
+[7.119s] running build_ext
+[7.121s] Creating /workspace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)
+[7.122s] Installing main_controller_node script to /workspace/install/control/lib/control
+[7.123s] Installing motor_node script to /workspace/install/control/lib/control
+[7.125s] 
+[7.127s] Installed /workspace/build/control
+[7.128s] running install_data
+[7.305s] Invoked command in '/workspace/build/control' returned '0': PYTHONPATH=/workspace/build/control/prefix_override:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /workspace/build/control/build --no-deps install_data

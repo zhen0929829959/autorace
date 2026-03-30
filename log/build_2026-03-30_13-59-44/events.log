@@ -1,0 +1,180 @@
+[0.000000] (-) TimerEvent: {}
+[0.002973] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.005700] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.006067] (camera) JobStarted: {'identifier': 'camera'}
+[0.100713] (-) TimerEvent: {}
+[0.203083] (-) TimerEvent: {}
+[0.307189] (-) TimerEvent: {}
+[0.331317] (control) JobStarted: {'identifier': 'control'}
+[0.407703] (-) TimerEvent: {}
+[0.508978] (-) TimerEvent: {}
+[0.610041] (-) TimerEvent: {}
+[0.711850] (-) TimerEvent: {}
+[0.813530] (-) TimerEvent: {}
+[0.914304] (-) TimerEvent: {}
+[1.015122] (-) TimerEvent: {}
+[1.115917] (-) TimerEvent: {}
+[1.216679] (-) TimerEvent: {}
+[1.317486] (-) TimerEvent: {}
+[1.418279] (-) TimerEvent: {}
+[1.520074] (-) TimerEvent: {}
+[1.623687] (-) TimerEvent: {}
+[1.726547] (-) TimerEvent: {}
+[1.828297] (-) TimerEvent: {}
+[1.929212] (-) TimerEvent: {}
+[2.030451] (-) TimerEvent: {}
+[2.131794] (-) TimerEvent: {}
+[2.233400] (-) TimerEvent: {}
+[2.334484] (-) TimerEvent: {}
+[2.436695] (-) TimerEvent: {}
+[2.539202] (-) TimerEvent: {}
+[2.641133] (-) TimerEvent: {}
+[2.743690] (-) TimerEvent: {}
+[2.845738] (-) TimerEvent: {}
+[2.946857] (-) TimerEvent: {}
+[3.048716] (-) TimerEvent: {}
+[3.149511] (-) TimerEvent: {}
+[3.250303] (-) TimerEvent: {}
+[3.351106] (-) TimerEvent: {}
+[3.452007] (-) TimerEvent: {}
+[3.552740] (-) TimerEvent: {}
+[3.653612] (-) TimerEvent: {}
+[3.754387] (-) TimerEvent: {}
+[3.855221] (-) TimerEvent: {}
+[3.955985] (-) TimerEvent: {}
+[4.056885] (-) TimerEvent: {}
+[4.157711] (-) TimerEvent: {}
+[4.258476] (-) TimerEvent: {}
+[4.359195] (-) TimerEvent: {}
+[4.459975] (-) TimerEvent: {}
+[4.560706] (-) TimerEvent: {}
+[4.661662] (-) TimerEvent: {}
+[4.762487] (-) TimerEvent: {}
+[4.822872] (camera) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/workspace/build/camera/build', '--no-deps', 'install_data'], 'cwd': '/workspace/build/camera', 'env': {'OPENBLAS_CORETYPE': 'ARMV8', 'PYTHONIOENCODING': 'utf-8', 'HOSTNAME': 'ubuntu', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/iron/install/opt/rviz_ogre_vendor/lib:/opt/ros/iron/install/lib:/usr/local/cuda/lib64:', 'HOME': '/root', 'PYTHONUNBUFFERED': '1', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/install:/opt/ros/iron/install', 'ROS_DISTRO': 'iron', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/opt/ros/iron/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/iron/install/lib/pkgconfig', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TORCH_INSTALL': 'https://developer.download.nvidia.com/compute/redist/jp/v511/pytorch/torch-2.0.0+nv23.05-cp38-cp38-linux_aarch64.whl', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/iron/install/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LD_PRELOAD': '/usr/lib/aarch64-linux-gnu/libgomp.so.1', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XAUTHORITY': '/root/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_ROOT': '/opt/ros/iron', 'AMENT_PREFIX_PATH': '/workspace/install/control:/workspace/install/camera:/opt/ros/iron/install', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/camera', 'CUDA_HOME': '/usr/local/cuda', 'PYTHONPATH': '/workspace/build/camera/prefix_override:/workspace/install/camera/lib/python3.8/site-packages:/workspace/install/control/lib/python3.8/site-packages:/workspace/install/camera/lib/python3.8/site-packages:/opt/ros/iron/install/lib/python3.8/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/iron/install'}, 'shell': False}
+[4.857099] (control) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/workspace/build/control/build', '--no-deps', 'install_data'], 'cwd': '/workspace/build/control', 'env': {'OPENBLAS_CORETYPE': 'ARMV8', 'PYTHONIOENCODING': 'utf-8', 'HOSTNAME': 'ubuntu', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/iron/install/opt/rviz_ogre_vendor/lib:/opt/ros/iron/install/lib:/usr/local/cuda/lib64:', 'HOME': '/root', 'PYTHONUNBUFFERED': '1', 'ROS_PYTHON_VERSION': '3', 'COLCON_PREFIX_PATH': '/workspace/install:/opt/ros/iron/install', 'ROS_DISTRO': 'iron', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/opt/ros/iron/install/lib/aarch64-linux-gnu/pkgconfig:/opt/ros/iron/install/lib/pkgconfig', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TORCH_INSTALL': 'https://developer.download.nvidia.com/compute/redist/jp/v511/pytorch/torch-2.0.0+nv23.05-cp38-cp38-linux_aarch64.whl', 'TERM': 'xterm', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/iron/install/bin:/usr/local/cuda/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin', 'DISPLAY': ':1', 'LD_PRELOAD': '/usr/lib/aarch64-linux-gnu/libgomp.so.1', 'LANG': 'en_US.UTF-8', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'XAUTHORITY': '/root/.Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'ROS_ROOT': '/opt/ros/iron', 'AMENT_PREFIX_PATH': '/workspace/install/control:/workspace/install/camera:/opt/ros/iron/install', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'PWD': '/workspace/build/control', 'CUDA_HOME': '/usr/local/cuda', 'PYTHONPATH': '/workspace/build/control/prefix_override:/workspace/install/control/lib/python3.8/site-packages:/workspace/install/control/lib/python3.8/site-packages:/workspace/install/camera/lib/python3.8/site-packages:/opt/ros/iron/install/lib/python3.8/site-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/iron/install'}, 'shell': False}
+[4.871455] (-) TimerEvent: {}
+[4.977535] (-) TimerEvent: {}
+[5.081499] (-) TimerEvent: {}
+[5.183082] (-) TimerEvent: {}
+[5.283838] (-) TimerEvent: {}
+[5.384669] (-) TimerEvent: {}
+[5.485549] (-) TimerEvent: {}
+[5.488740] (control) StderrLine: {'line': b"/usr/local/lib/python3.8/dist-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[5.489650] (control) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[5.580453] (camera) StderrLine: {'line': b"/usr/local/lib/python3.8/dist-packages/setuptools/_distutils/dist.py:261: UserWarning: Unknown distribution option: 'tests_require'\n"}
+[5.581539] (camera) StderrLine: {'line': b'  warnings.warn(msg)\n'}
+[5.585696] (-) TimerEvent: {}
+[5.686380] (-) TimerEvent: {}
+[5.787262] (-) TimerEvent: {}
+[5.888133] (-) TimerEvent: {}
+[5.989042] (-) TimerEvent: {}
+[6.090057] (-) TimerEvent: {}
+[6.179102] (control) StdoutLine: {'line': b'running develop\n'}
+[6.180396] (control) StderrLine: {'line': b'/usr/local/lib/python3.8/dist-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[6.180864] (control) StderrLine: {'line': b'!!\n'}
+[6.181213] (control) StderrLine: {'line': b'\n'}
+[6.183965] (control) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.185852] (control) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[6.186254] (control) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[6.186570] (control) StderrLine: {'line': b'        standards-based tools.\n'}
+[6.186879] (control) StderrLine: {'line': b'\n'}
+[6.187222] (control) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[6.187534] (control) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.187813] (control) StderrLine: {'line': b'\n'}
+[6.188101] (control) StderrLine: {'line': b'!!\n'}
+[6.188368] (control) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[6.190560] (-) TimerEvent: {}
+[6.293157] (-) TimerEvent: {}
+[6.312106] (control) StderrLine: {'line': b'/usr/local/lib/python3.8/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[6.312849] (control) StderrLine: {'line': b'!!\n'}
+[6.313224] (control) StderrLine: {'line': b'\n'}
+[6.313641] (control) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.313946] (control) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[6.314244] (control) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[6.314534] (control) StderrLine: {'line': b'        standards-based tools.\n'}
+[6.314817] (control) StderrLine: {'line': b'\n'}
+[6.315077] (control) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[6.315339] (control) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.315593] (control) StderrLine: {'line': b'\n'}
+[6.315902] (control) StderrLine: {'line': b'!!\n'}
+[6.316167] (control) StderrLine: {'line': b'  self.initialize_options()\n'}
+[6.351355] (camera) StdoutLine: {'line': b'running develop\n'}
+[6.353656] (camera) StderrLine: {'line': b'/usr/local/lib/python3.8/dist-packages/setuptools/command/develop.py:41: EasyInstallDeprecationWarning: easy_install command is deprecated.\n'}
+[6.354178] (camera) StderrLine: {'line': b'!!\n'}
+[6.354511] (camera) StderrLine: {'line': b'\n'}
+[6.354866] (camera) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.355136] (camera) StderrLine: {'line': b'        Please avoid running ``setup.py`` and ``easy_install``.\n'}
+[6.355417] (camera) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[6.355712] (camera) StderrLine: {'line': b'        standards-based tools.\n'}
+[6.355968] (camera) StderrLine: {'line': b'\n'}
+[6.356261] (camera) StderrLine: {'line': b'        See https://github.com/pypa/setuptools/issues/917 for details.\n'}
+[6.356560] (camera) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.356814] (camera) StderrLine: {'line': b'\n'}
+[6.357213] (camera) StderrLine: {'line': b'!!\n'}
+[6.358668] (camera) StderrLine: {'line': b'  easy_install.initialize_options(self)\n'}
+[6.393399] (-) TimerEvent: {}
+[6.484544] (camera) StderrLine: {'line': b'/usr/local/lib/python3.8/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.\n'}
+[6.485444] (camera) StderrLine: {'line': b'!!\n'}
+[6.485879] (camera) StderrLine: {'line': b'\n'}
+[6.486248] (camera) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.486604] (camera) StderrLine: {'line': b'        Please avoid running ``setup.py`` directly.\n'}
+[6.486913] (camera) StderrLine: {'line': b'        Instead, use pypa/build, pypa/installer or other\n'}
+[6.487250] (camera) StderrLine: {'line': b'        standards-based tools.\n'}
+[6.487584] (camera) StderrLine: {'line': b'\n'}
+[6.487875] (camera) StderrLine: {'line': b'        See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.\n'}
+[6.488220] (camera) StderrLine: {'line': b'        ********************************************************************************\n'}
+[6.488546] (camera) StderrLine: {'line': b'\n'}
+[6.488833] (camera) StderrLine: {'line': b'!!\n'}
+[6.489531] (camera) StderrLine: {'line': b'  self.initialize_options()\n'}
+[6.493482] (-) TimerEvent: {}
+[6.594250] (-) TimerEvent: {}
+[6.695039] (-) TimerEvent: {}
+[6.795840] (-) TimerEvent: {}
+[6.896634] (-) TimerEvent: {}
+[6.997498] (-) TimerEvent: {}
+[7.083558] (control) StdoutLine: {'line': b'running egg_info\n'}
+[7.097672] (-) TimerEvent: {}
+[7.152119] (control) StdoutLine: {'line': b'writing control.egg-info/PKG-INFO\n'}
+[7.153598] (control) StdoutLine: {'line': b'writing dependency_links to control.egg-info/dependency_links.txt\n'}
+[7.154518] (control) StdoutLine: {'line': b'writing entry points to control.egg-info/entry_points.txt\n'}
+[7.156475] (control) StdoutLine: {'line': b'writing requirements to control.egg-info/requires.txt\n'}
+[7.158312] (control) StdoutLine: {'line': b'writing top-level names to control.egg-info/top_level.txt\n'}
+[7.187873] (camera) StdoutLine: {'line': b'running egg_info\n'}
+[7.197842] (-) TimerEvent: {}
+[7.251624] (camera) StdoutLine: {'line': b'writing camera.egg-info/PKG-INFO\n'}
+[7.253618] (camera) StdoutLine: {'line': b'writing dependency_links to camera.egg-info/dependency_links.txt\n'}
+[7.254827] (camera) StdoutLine: {'line': b'writing entry points to camera.egg-info/entry_points.txt\n'}
+[7.255767] (camera) StdoutLine: {'line': b'writing requirements to camera.egg-info/requires.txt\n'}
+[7.256571] (camera) StdoutLine: {'line': b'writing top-level names to camera.egg-info/top_level.txt\n'}
+[7.295079] (control) StdoutLine: {'line': b"reading manifest file 'control.egg-info/SOURCES.txt'\n"}
+[7.297996] (-) TimerEvent: {}
+[7.299768] (control) StdoutLine: {'line': b"writing manifest file 'control.egg-info/SOURCES.txt'\n"}
+[7.392086] (camera) StdoutLine: {'line': b"reading manifest file 'camera.egg-info/SOURCES.txt'\n"}
+[7.397119] (camera) StdoutLine: {'line': b"writing manifest file 'camera.egg-info/SOURCES.txt'\n"}
+[7.398097] (-) TimerEvent: {}
+[7.498750] (-) TimerEvent: {}
+[7.505345] (control) StdoutLine: {'line': b'running build_ext\n'}
+[7.506186] (control) StdoutLine: {'line': b'Creating /workspace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)\n'}
+[7.509487] (control) StdoutLine: {'line': b'Installing motor_node script to /workspace/install/control/lib/control\n'}
+[7.510776] (control) StdoutLine: {'line': b'\n'}
+[7.511618] (control) StdoutLine: {'line': b'Installed /workspace/build/control\n'}
+[7.511950] (control) StdoutLine: {'line': b'running install_data\n'}
+[7.595763] (camera) StdoutLine: {'line': b'running build_ext\n'}
+[7.598368] (camera) StdoutLine: {'line': b'Creating /workspace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)\n'}
+[7.600552] (-) TimerEvent: {}
+[7.605593] (camera) StdoutLine: {'line': b'Installing camera_node script to /workspace/install/camera/lib/camera\n'}
+[7.606380] (camera) StdoutLine: {'line': b'Installing lane_follower_node script to /workspace/install/camera/lib/camera\n'}
+[7.606867] (camera) StdoutLine: {'line': b'Installing yolo_node script to /workspace/install/camera/lib/camera\n'}
+[7.607210] (camera) StdoutLine: {'line': b'\n'}
+[7.607484] (camera) StdoutLine: {'line': b'Installed /workspace/build/camera\n'}
+[7.607806] (camera) StdoutLine: {'line': b'running install_data\n'}
+[7.621857] (control) CommandEnded: {'returncode': 0}
+[7.700765] (-) TimerEvent: {}
+[7.806108] (-) TimerEvent: {}
+[7.889604] (control) JobEnded: {'identifier': 'control', 'rc': 0}
+[7.894579] (camera) CommandEnded: {'returncode': 0}
+[7.906454] (-) TimerEvent: {}
+[8.007377] (-) TimerEvent: {}
+[8.108626] (-) TimerEvent: {}
+[8.163281] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[8.166822] (-) EventReactorShutdown: {}

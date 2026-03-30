@@ -1,0 +1,35 @@
+[0.000000] (-) TimerEvent: {}
+[0.001875] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.002520] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.002811] (camera) JobStarted: {'identifier': 'camera'}
+[0.099250] (-) TimerEvent: {}
+[0.200425] (-) TimerEvent: {}
+[0.302647] (-) TimerEvent: {}
+[0.404390] (-) TimerEvent: {}
+[0.506865] (-) TimerEvent: {}
+[0.608835] (-) TimerEvent: {}
+[0.634224] (control) JobStarted: {'identifier': 'control'}
+[0.710468] (-) TimerEvent: {}
+[0.811689] (-) TimerEvent: {}
+[0.915571] (-) TimerEvent: {}
+[1.017643] (-) TimerEvent: {}
+[1.119753] (-) TimerEvent: {}
+[1.221875] (-) TimerEvent: {}
+[1.323217] (-) TimerEvent: {}
+[1.428577] (-) TimerEvent: {}
+[1.530702] (-) TimerEvent: {}
+[1.632023] (-) TimerEvent: {}
+[1.734374] (-) TimerEvent: {}
+[1.839435] (-) TimerEvent: {}
+[1.940659] (-) TimerEvent: {}
+[2.041659] (-) TimerEvent: {}
+[2.143444] (-) TimerEvent: {}
+[2.245878] (-) TimerEvent: {}
+[2.348867] (-) TimerEvent: {}
+[2.450635] (-) TimerEvent: {}
+[2.552252] (-) TimerEvent: {}
+[2.653275] (-) TimerEvent: {}
+[2.703196] (control) StderrLine: {'line': b'Traceback (most recent call last):\n  File "/usr/lib/python3/dist-packages/colcon_core/executor/__init__.py", line 91, in __call__\n    rc = await self.task(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/__init__.py", line 93, in __call__\n    return await task_method(*args, **kwargs)\n  File "/usr/lib/python3/dist-packages/colcon_ros/task/ament_python/build.py", line 102, in build\n    return await extension.build(additional_hooks=additional_hooks)\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 85, in build\n    available_commands = await self._get_available_commands(\n  File "/usr/lib/python3/dist-packages/colcon_core/task/python/build.py", line 175, in _get_available_commands\n    output = await check_output(\n  File "/usr/lib/python3/dist-packages/colcon_core/subprocess.py", line 129, in check_output\n    assert not rc, f\'Expected {args} to pass: {stderr_data}\'\nAssertionError: Expected [\'/usr/bin/python3\', \'setup.py\', \'--help-commands\'] to pass: Traceback (most recent call last):\n  File "setup.py", line 1, in <module>\n    from setuptools import find_packages, setup\n  File "/usr/local/lib/python3.8/dist-packages/setuptools/__init__.py", line 27, in <module>\n    from .dist import Distribution\n  File "/usr/local/lib/python3.8/dist-packages/setuptools/dist.py", line 30, in <module>\n    from . import (\n  File "/usr/local/lib/python3.8/dist-packages/setuptools/_entry_points.py", line 45, in <module>\n    def validate(eps: metadata.EntryPoints):\nAttributeError: module \'importlib_metadata\' has no attribute \'EntryPoints\'\n\n'}
+[2.709222] (control) JobEnded: {'identifier': 'control', 'rc': 1}
+[2.711386] (camera) JobEnded: {'identifier': 'camera', 'rc': 'SIGINT'}
+[2.721953] (-) EventReactorShutdown: {}

@@ -44,14 +44,14 @@ class LaneDetectorFollowerNode(Node):
         super().__init__('lane_detector_follower_node')
 
         self.bridge = CvBridge()
-        self.current_mode = 'dual'
+        self.current_mode = 'yellow_only'
         self.last_found = False
 
         # 直接沿用你原本三份程式的 PID 參數與目標中心
         self.pid_configs: Dict[str, PIDConfig] = {
-            'dual': PIDConfig(kp=0.3, ki=0.01, kd=0.25, base_speed=150, target_x=320),
-            'white_only': PIDConfig(kp=3.0, ki=0.01, kd=0.45, base_speed=150, target_x=520),
-            'yellow_only': PIDConfig(kp=3.5, ki=0.01, kd=0.45, base_speed=150, target_x=130),
+            'dual': PIDConfig(kp=0.7, ki=0.0, kd=0.0, base_speed=50, target_x=320),
+            'white_only': PIDConfig(kp=0.7, ki=0.0, kd=0.0, base_speed=50, target_x=330),
+            'yellow_only': PIDConfig(kp=0.7, ki=0.0, kd=0.0, base_speed=50, target_x=250),
         }
         self.pid_states: Dict[str, PIDState] = {
             mode: PIDState() for mode in self.pid_configs
@@ -124,7 +124,7 @@ class LaneDetectorFollowerNode(Node):
             lane_info['error'] = None
             lane_info['correction'] = None
             self.publish_lane_info(lane_info)
-            self.publish_motor_cmd(0, 0, reason='lane_not_found')
+            # self.publish_motor_cmd(0, 0, reason='lane_not_found')
             self.publish_debug_image(debug_frame, msg.header.frame_id)
             return
 
@@ -132,8 +132,8 @@ class LaneDetectorFollowerNode(Node):
         error = float(road_center - cfg.target_x)
         correction = self.pid_states[self.current_mode].update(error, cfg)
 
-        left_speed = int(np.clip(cfg.base_speed - correction, -50, 50)) 
-        right_speed = int(np.clip(cfg.base_speed + correction, -50, 50))
+        left_speed = int(np.clip(cfg.base_speed + correction, -200, 200)) 
+        right_speed = int(np.clip(cfg.base_speed - correction, -200, 200))
 
         lane_info.update({
             'error': error,
@@ -192,18 +192,18 @@ class LaneDetectorFollowerNode(Node):
 
     def detect_dual_lane(self, frame: np.ndarray) -> Tuple[int, bool, np.ndarray]:
         height, width, _ = frame.shape
-        y_start = int(height * 2 / 3)
+        y_start = int(height * 1.5/ 3)
         y_end = min(y_start + 150, height)
-        x_start = int(width / 2 - 300)
-        x_end = int(width / 2 + 300)
+        x_start = int(width / 2 - 310)
+        x_end = int(width / 2 + 310)
 
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([0, 74, 0])
-        upper_yellow = np.array([27, 255, 255])
-        lower_white = np.array([0, 0, 56])
-        upper_white = np.array([180, 50, 255])
+        lower_yellow = np.array([0, 44, 100])
+        upper_yellow = np.array([40, 255, 255])
+        lower_white = np.array([0, 0, 225])
+        upper_white = np.array([180, 8, 255])
 
         mask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)
         mask_white = cv2.inRange(hsv, lower_white, upper_white)
@@ -228,16 +228,16 @@ class LaneDetectorFollowerNode(Node):
 
     def detect_white_lane(self, frame: np.ndarray) -> Tuple[int, bool, np.ndarray]:
         height, width, _ = frame.shape
-        y_start = int(height * 2 / 3)
+        y_start = int(height * 1.5 / 3)
         y_end = min(y_start + 150, height)
-        x_start = int(width / 2 - 120)
-        x_end = int(width / 2 + 300)
+        x_start = int(width / 2 - 120) #    200s
+        x_end = int(width / 2 + 310)
 
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_white = np.array([50, 0, 132])
-        upper_white = np.array([180, 34, 255])
+        lower_white = np.array([0, 0, 225])
+        upper_white = np.array([180, 8, 255])
         mask_white = cv2.inRange(hsv, lower_white, upper_white)
 
         white_x = self.find_centroid_x(mask_white)
@@ -245,8 +245,9 @@ class LaneDetectorFollowerNode(Node):
 
         if white_x is not None:
             center_x = white_x - 200
+            self.get_logger().info(f'center_x: {center_x}')
         else:
-            center_x = 250
+            center_x = 200
 
         road_center = x_start + center_x
         self.draw_debug(frame, x_start, y_start, x_end, y_end, road_center, (255, 0, 255), 'white_only')
@@ -254,16 +255,16 @@ class LaneDetectorFollowerNode(Node):
 
     def detect_yellow_lane(self, frame: np.ndarray) -> Tuple[int, bool, np.ndarray]:
         height, width, _ = frame.shape
-        y_start = int(height * 2 / 3)
+        y_start = int(height * 1.5 / 3)
         y_end = min(y_start + 150, height)
-        x_start = int(width / 2 - 320)
+        x_start = int(width / 2 - 310)
         x_end = int(width / 2 + 150)
 
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([0, 74, 0])
-        upper_yellow = np.array([27, 255, 255])
+        lower_yellow = np.array([0, 44, 100])
+        upper_yellow = np.array([40, 255, 255])
         mask_yellow = cv2.inRange(hsv, lower_yellow, upper_yellow)
 
         yellow_x = self.find_centroid_x(mask_yellow)
@@ -271,8 +272,9 @@ class LaneDetectorFollowerNode(Node):
 
         if yellow_x is not None:
             center_x = yellow_x + 200
+            self.get_logger().info(f'center_x: {center_x}')
         else:
-            center_x = 250
+            center_x = 320
 
         road_center = x_start + center_x
         self.draw_debug(frame, x_start, y_start, x_end, y_end, road_center, (0, 255, 255), 'yellow_only')

@@ -1,0 +1,39 @@
+[4.760s] Invoking command in '/workspace/src/control': PYTHONPATH=/workspace/build/control/prefix_override:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/control build --build-base /workspace/build/control/build install --record /workspace/build/control/install.log --single-version-externally-managed
+[5.646s] running egg_info
+[5.712s] writing ../../build/control/control.egg-info/PKG-INFO
+[5.714s] writing dependency_links to ../../build/control/control.egg-info/dependency_links.txt
+[5.716s] writing entry points to ../../build/control/control.egg-info/entry_points.txt
+[5.716s] writing requirements to ../../build/control/control.egg-info/requires.txt
+[5.718s] writing top-level names to ../../build/control/control.egg-info/top_level.txt
+[5.845s] reading manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[5.848s] writing manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[5.849s] running build
+[5.850s] running build_py
+[5.850s] copying control/control_node.py -> /workspace/build/control/build/lib/control
+[5.851s] copying control/motor_node.py -> /workspace/build/control/build/lib/control
+[5.852s] copying control/__init__.py -> /workspace/build/control/build/lib/control
+[5.853s] running install
+[5.855s] /usr/local/lib/python3.8/dist-packages/setuptools/_distutils/cmd.py:66: SetuptoolsDeprecationWarning: setup.py install is deprecated.
+[5.855s] !!
+[5.855s] 
+[5.855s]         ********************************************************************************
+[5.856s]         Please avoid running ``setup.py`` directly.
+[5.856s]         Instead, use pypa/build, pypa/installer or other
+[5.856s]         standards-based tools.
+[5.856s] 
+[5.857s]         See https://blog.ganssle.io/articles/2021/10/setup-py-deprecated.html for details.
+[5.857s]         ********************************************************************************
+[5.857s] 
+[5.857s] !!
+[5.858s]   self.initialize_options()
+[5.871s] running install_lib
+[5.937s] running install_data
+[6.001s] copying resource/control -> /workspace/install/control/share/ament_index/resource_index/packages
+[6.001s] copying package.xml -> /workspace/install/control/share/control
+[6.002s] running install_egg_info
+[6.072s] removing '/workspace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info' (and everything under it)
+[6.073s] Copying ../../build/control/control.egg-info to /workspace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info
+[6.077s] running install_scripts
+[6.658s] Installing motor_node script to /workspace/install/control/lib/control
+[6.659s] writing list of installed files to '/workspace/build/control/install.log'
+[6.752s] Invoked command in '/workspace/src/control' returned '0': PYTHONPATH=/workspace/build/control/prefix_override:/workspace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/control build --build-base /workspace/build/control/build install --record /workspace/build/control/install.log --single-version-externally-managed

@@ -1,0 +1,250 @@
+[8.825s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[8.826s] DEBUG:colcon:Parsed command line arguments: Namespace(ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffbbb436d0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffbbb436d0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0xffffbbb5d760>)
+[9.034s] ERROR:colcon.colcon_core.extension_point:Exception loading extension 'colcon_core.package_identification.python_setup_py': module 'importlib_metadata' has no attribute 'EntryPoints'
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/colcon_core/extension_point.py", line 116, in load_extension_points
+    extension_type = load_extension_point(name, value, group)
+  File "/usr/lib/python3/dist-packages/colcon_core/extension_point.py", line 157, in load_extension_point
+    return EntryPoint(name, value, group).load()
+  File "/usr/lib/python3.8/importlib/metadata.py", line 77, in load
+    module = import_module(match.group('module'))
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 9, in <module>
+    import setuptools
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/__init__.py", line 27, in <module>
+    from .dist import Distribution
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/dist.py", line 30, in <module>
+    from . import (
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/_entry_points.py", line 45, in <module>
+    def validate(eps: metadata.EntryPoints):
+AttributeError: module 'importlib_metadata' has no attribute 'EntryPoints'
+
+[9.213s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[9.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[9.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[9.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[9.214s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[9.215s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[9.215s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/workspace'
+[9.215s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[9.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[9.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[9.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[9.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[9.216s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[9.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[9.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[9.217s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[9.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[9.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[9.272s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[9.273s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[9.273s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[9.273s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[9.274s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ignore', 'ignore_ament_install']
+[9.274s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore'
+[9.275s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore_ament_install'
+[9.275s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_pkg']
+[9.275s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_pkg'
+[9.275s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_meta']
+[9.275s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_meta'
+[9.276s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ros']
+[9.276s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ros'
+[9.276s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['cmake', 'python']
+[9.276s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'cmake'
+[9.276s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python'
+[9.277s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['ignore', 'ignore_ament_install']
+[9.277s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'ignore'
+[9.278s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'ignore_ament_install'
+[9.278s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['colcon_pkg']
+[9.278s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'colcon_pkg'
+[9.278s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['colcon_meta']
+[9.278s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'colcon_meta'
+[9.279s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['ros']
+[9.279s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'ros'
+[9.280s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['cmake', 'python']
+[9.281s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'cmake'
+[9.281s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'python'
+[9.281s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[9.282s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[9.282s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[9.283s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[9.283s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[9.283s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[9.284s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[9.284s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[9.284s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[9.284s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[9.285s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[9.285s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[9.285s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[9.285s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[9.285s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[9.286s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[9.286s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[9.286s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[9.286s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ignore', 'ignore_ament_install']
+[9.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore'
+[9.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore_ament_install'
+[9.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_pkg']
+[9.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_pkg'
+[9.287s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_meta']
+[9.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_meta'
+[9.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ros']
+[9.288s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ros'
+[9.298s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera' with type 'ros.ament_python' and name 'camera'
+[9.298s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ignore', 'ignore_ament_install']
+[9.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore'
+[9.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore_ament_install'
+[9.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_pkg']
+[9.299s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_pkg'
+[9.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_meta']
+[9.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_meta'
+[9.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ros']
+[9.300s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ros'
+[9.302s] DEBUG:colcon.colcon_core.package_identification:Package 'src/control' with type 'ros.ament_python' and name 'control'
+[9.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[9.302s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[9.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[9.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[9.303s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[9.639s] ERROR:colcon.colcon_core.extension_point:Exception loading extension 'colcon_core.package_augmentation.ros_ament_python': module 'importlib_metadata' has no attribute 'EntryPoints'
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/colcon_core/extension_point.py", line 116, in load_extension_points
+    extension_type = load_extension_point(name, value, group)
+  File "/usr/lib/python3/dist-packages/colcon_core/extension_point.py", line 157, in load_extension_point
+    return EntryPoint(name, value, group).load()
+  File "/usr/lib/python3.8/importlib/metadata.py", line 77, in load
+    module = import_module(match.group('module'))
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/usr/lib/python3/dist-packages/colcon_ros/package_augmentation/ros_ament_python.py", line 8, in <module>
+    from colcon_python_setup_py.package_identification.python_setup_py \
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 9, in <module>
+    import setuptools
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/__init__.py", line 27, in <module>
+    from .dist import Distribution
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/dist.py", line 30, in <module>
+    from . import (
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/_entry_points.py", line 45, in <module>
+    def validate(eps: metadata.EntryPoints):
+AttributeError: module 'importlib_metadata' has no attribute 'EntryPoints'
+
+[9.717s] ERROR:colcon.colcon_core.extension_point:Exception loading extension 'colcon_core.package_augmentation.python_setup_py': module 'importlib_metadata' has no attribute 'EntryPoints'
+Traceback (most recent call last):
+  File "/usr/lib/python3/dist-packages/colcon_core/extension_point.py", line 116, in load_extension_points
+    extension_type = load_extension_point(name, value, group)
+  File "/usr/lib/python3/dist-packages/colcon_core/extension_point.py", line 157, in load_extension_point
+    return EntryPoint(name, value, group).load()
+  File "/usr/lib/python3.8/importlib/metadata.py", line 77, in load
+    module = import_module(match.group('module'))
+  File "/usr/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 975, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 671, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 848, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_augmentation/python_setup_py.py", line 9, in <module>
+    from colcon_python_setup_py.package_identification.python_setup_py import \
+  File "/usr/lib/python3/dist-packages/colcon_python_setup_py/package_identification/python_setup_py.py", line 9, in <module>
+    import setuptools
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/__init__.py", line 27, in <module>
+    from .dist import Distribution
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/dist.py", line 30, in <module>
+    from . import (
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/_entry_points.py", line 45, in <module>
+    def validate(eps: metadata.EntryPoints):
+AttributeError: module 'importlib_metadata' has no attribute 'EntryPoints'
+
+[10.036s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_args' from command line to 'None'
+[10.036s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_target' from command line to 'None'
+[10.036s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[10.037s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_clean_cache' from command line to 'False'
+[10.037s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_clean_first' from command line to 'False'
+[10.037s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_force_configure' from command line to 'False'
+[10.037s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'ament_cmake_args' from command line to 'None'
+[10.037s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'catkin_cmake_args' from command line to 'None'
+[10.037s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[10.037s] DEBUG:colcon.colcon_core.verb:Building package 'camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/build/camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/install/camera', 'merge_install': False, 'path': '/workspace/src/camera', 'symlink_install': True, 'test_result_base': None}
+[10.187s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_args' from command line to 'None'
+[10.187s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_target' from command line to 'None'
+[10.187s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[10.187s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_clean_cache' from command line to 'False'
+[10.187s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_clean_first' from command line to 'False'
+[10.188s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_force_configure' from command line to 'False'
+[10.188s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'ament_cmake_args' from command line to 'None'
+[10.188s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'catkin_cmake_args' from command line to 'None'
+[10.188s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[10.188s] DEBUG:colcon.colcon_core.verb:Building package 'control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/workspace/build/control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/workspace/install/control', 'merge_install': False, 'path': '/workspace/src/control', 'symlink_install': True, 'test_result_base': None}
+[10.323s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[10.483s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[10.485s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/workspace/src/camera' with build type 'ament_python'
+[10.486s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera', 'ament_prefix_path')
+[10.654s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[10.655s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/install/camera/share/camera/hook/ament_prefix_path.ps1'
+[10.657s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/install/camera/share/camera/hook/ament_prefix_path.dsv'
+[10.660s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/install/camera/share/camera/hook/ament_prefix_path.sh'
+[10.821s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[10.821s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.425s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/workspace/src/control' with build type 'ament_python'
+[11.429s] Level 1:colcon.colcon_core.shell:create_environment_hook('control', 'ament_prefix_path')
+[11.609s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/install/control/share/control/hook/ament_prefix_path.ps1'
+[11.611s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/workspace/install/control/share/control/hook/ament_prefix_path.dsv'
+[11.613s] INFO:colcon.colcon_core.shell:Creating environment hook '/workspace/install/control/share/control/hook/ament_prefix_path.sh'
+[11.776s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[11.776s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[12.337s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'camera' doesn't explicitly install a marker in the package index (colcon-ros currently does it implicitly but that fallback will be removed in the future)
+[12.343s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'camera' doesn't explicitly install the 'package.xml' file (colcon-ros currently does it implicitly but that fallback will be removed in the future)
+[12.345s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/workspace/src/camera'
+[12.519s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[12.520s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[13.038s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'control' doesn't explicitly install a marker in the package index (colcon-ros currently does it implicitly but that fallback will be removed in the future)
+[13.040s] WARNING:colcon.colcon_ros.task.ament_python.build:Package 'control' doesn't explicitly install the 'package.xml' file (colcon-ros currently does it implicitly but that fallback will be removed in the future)
+[13.041s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/workspace/src/control'
+[13.206s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[13.206s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[14.326s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[14.327s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[14.328s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with 'Expected ['/usr/bin/python3', 'setup.py', '--help-commands'] to pass: Traceback (most recent call last):
+  File "setup.py", line 1, in <module>
+    from setuptools import find_packages, setup
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/__init__.py", line 27, in <module>
+    from .dist import Distribution
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/dist.py", line 30, in <module>
+    from . import (
+  File "/usr/local/lib/python3.8/dist-packages/setuptools/_entry_points.py", line 45, in <module>
+    def validate(eps: metadata.EntryPoints):
+AttributeError: module 'importlib_metadata' has no attribute 'EntryPoints'
+'
+[14.328s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[14.517s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[14.517s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[14.519s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[14.520s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[14.546s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.ServiceUnknown: The name org.freedesktop.Notifications was not provided by any .service files
+[14.548s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[14.768s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/install/local_setup.ps1'
+[14.774s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/install/_local_setup_util_ps1.py'
+[14.780s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/install/setup.ps1'
+[14.925s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/install/local_setup.sh'
+[14.928s] INFO:colcon.colcon_core.shell:Creating prefix util module '/workspace/install/_local_setup_util_sh.py'
+[14.930s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/install/setup.sh'
+[15.073s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/install/local_setup.bash'
+[15.075s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/install/setup.bash'
+[15.243s] INFO:colcon.colcon_core.shell:Creating prefix script '/workspace/install/local_setup.zsh'
+[15.247s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/workspace/install/setup.zsh'
