@@ -26,7 +26,7 @@ class YoloNode(Node):
             10
         )
 
-        self.publisher = self.create_publisher(String, 'yolo_detections', 10)
+        self.publisher = self.create_publisher(String, 'yolo_detection', 10)
 
         model_path = './src/camera/best.pt'
         if not os.path.exists(model_path):

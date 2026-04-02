@@ -9,7 +9,9 @@ setup.py
 ../../build/control/control.egg-info/top_level.txt
 ../../build/control/control.egg-info/zip-safe
 control/__init__.py
+control/avoid_node.py
 control/control_node.py
+control/controller_node.py
 control/motor_node.py
 control.egg-info/PKG-INFO
 control.egg-info/SOURCES.txt

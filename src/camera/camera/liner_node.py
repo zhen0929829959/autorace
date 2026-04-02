@@ -18,22 +18,34 @@ class LaneFollowerNode(Node):
 
         # ===== 基本設定 =====
         self.bridge = CvBridge()
-        self.mode = 'dual'   # 預設模式：雙線循跡
+
+        # follow_mode: 決定循哪條線
+        self.mode = 'dual'
+
+        # drive_mode: 決定現在是不是這顆 node 有控制權
+        self.drive_mode = 'line_follow'
 
         # ===== PID 參數 =====
-        # 每種模式各自一組參數
         self.pid_settings = {
-            'dual': {'kp': 0.7,'ki': 0.01,'kd': 0.25,'base_speed': 50,'target_x': 340},
-            'white_only': {'kp': 1.7,'ki': 0.0,'kd': 0.0,'base_speed': 50,'target_x': 340},
-            'yellow_only': {'kp': 3.5,'ki': 0.0,'kd': 0.0,'base_speed': 50,'target_x': 340}
+            'dual': {
+                'kp': 0.7, 'ki': 0.01, 'kd': 0.25,
+                'base_speed': 50, 'target_x': 340
+            },
+            'white': {
+                'kp': 1.7, 'ki': 0.0, 'kd': 0.0,
+                'base_speed': 50, 'target_x': 340
+            },
+            'yellow': {
+                'kp': 3.5, 'ki': 0.0, 'kd': 0.0,
+                'base_speed': 50, 'target_x': 340
+            }
         }
 
         # ===== PID 狀態 =====
-        # 每種模式都要記住自己的前一次誤差、積分值
         self.pid_state = {
             'dual': {'prev_error': 0.0, 'integral': 0.0},
-            'white_only': {'prev_error': 0.0, 'integral': 0.0},
-            'yellow_only': {'prev_error': 0.0, 'integral': 0.0}
+            'white': {'prev_error': 0.0, 'integral': 0.0},
+            'yellow': {'prev_error': 0.0, 'integral': 0.0}
         }
 
         # ===== 訂閱 topic =====
@@ -51,40 +63,60 @@ class LaneFollowerNode(Node):
             10
         )
 
+        self.drive_mode_sub = self.create_subscription(
+            String,
+            '/drive_mode',
+            self.drive_mode_callback,
+            10
+        )
+
         # ===== 發布 topic =====
         self.lane_info_pub = self.create_publisher(String, '/lane_info', 10)
         self.motor_cmd_pub = self.create_publisher(String, '/motor_cmd', 10)
         self.debug_image_pub = self.create_publisher(Image, '/lane/debug_image', 10)
 
         self.get_logger().info('Lane follower node started')
-        self.get_logger().info('Default mode: dual')
+        self.get_logger().info('Default follow_mode: dual')
+        self.get_logger().info('Default drive_mode: line_follow')
 
     # =========================================================
-    # 模式切換
+    # follow_mode 切換
     # =========================================================
     def mode_callback(self, msg):
         text = msg.data.strip()
         new_mode = text
 
-        # 如果收到的是 JSON，例如 {"mode":"white_only"}
+        # 如果收到的是 JSON，例如 {"mode":"white"}
         if text.startswith('{'):
             try:
                 data = json.loads(text)
                 new_mode = data.get('mode', self.mode)
-            except:
+            except Exception:
                 self.get_logger().warn('follow_mode JSON 格式錯誤')
                 return
 
-        # 檢查模式是否合法
         if new_mode not in self.pid_settings:
-            self.get_logger().warn('未知模式，只能用 dual / white_only / yellow_only')
+            self.get_logger().warn('未知 follow_mode，只能用 dual / white / yellow')
             return
 
-        # 如果模式改變，就切換
         if new_mode != self.mode:
             self.mode = new_mode
             self.reset_pid(self.mode)
-            self.get_logger().info(f'Switch mode to: {self.mode}')
+            self.get_logger().info(f'Switch follow_mode to: {self.mode}')
+
+    # =========================================================
+    # drive_mode 切換
+    # =========================================================
+    def drive_mode_callback(self, msg):
+        new_drive_mode = msg.data.strip()
+
+        if new_drive_mode != self.drive_mode:
+            self.drive_mode = new_drive_mode
+            self.get_logger().info(f'Switch drive_mode to: {self.drive_mode}')
+
+            # 切出 line_follow 時，順手把 PID 重置
+            if self.drive_mode != 'line_follow':
+                self.reset_pid(self.mode)
 
     def reset_pid(self, mode):
         self.pid_state[mode]['prev_error'] = 0.0
@@ -100,17 +132,25 @@ class LaneFollowerNode(Node):
             self.get_logger().error(f'影像轉換失敗: {e}')
             return
 
-        # 根據目前模式找線
+        # 無論是否有控制權，都可以發 debug image 方便看畫面
         road_center, found, debug_frame = self.detect_lane(frame, self.mode)
 
-        cv2.imshow('line_debug_camera', debug_frame)
-        cv2.waitKey(1)
-
         lane_info = {
-            'mode': self.mode,
+            'follow_mode': self.mode,
+            'drive_mode': self.drive_mode,
             'found': found,
             'road_center': int(road_center)
         }
+
+        # 如果現在不是 line_follow 模式，這顆 node 不准發 motor_cmd
+        if self.drive_mode != 'line_follow':
+            lane_info['error'] = None
+            lane_info['correction'] = None
+            lane_info['note'] = 'drive_mode is not line_follow, skip motor_cmd'
+
+            self.publish_lane_info(lane_info)
+            self.publish_debug_image(debug_frame, msg.header.frame_id)
+            return
 
         # 沒找到線
         if not found:
@@ -170,7 +210,9 @@ class LaneFollowerNode(Node):
         cmd = {
             'left_speed': int(left_speed),
             'right_speed': int(right_speed),
-            'mode': self.mode,
+            'follow_mode': self.mode,
+            'drive_mode': self.drive_mode,
+            'source': 'line_follow',
             'reason': reason
         }
         msg = String()
@@ -197,9 +239,9 @@ class LaneFollowerNode(Node):
 
         if mode == 'dual':
             return self.detect_dual_lane(debug_frame)
-        elif mode == 'white_only':
+        elif mode == 'white':
             return self.detect_white_lane(debug_frame)
-        elif mode == 'yellow_only':
+        elif mode == 'yellow':
             return self.detect_yellow_lane(debug_frame)
         else:
             return 0, False, debug_frame
@@ -210,9 +252,9 @@ class LaneFollowerNode(Node):
     def detect_dual_lane(self, frame):
         h, w, _ = frame.shape
 
-        y_start = int(h *2/ 3)
+        y_start = int(h * 2 / 3)
         y_end = min(y_start + 150, h)
-        x_start = int(w / 2 - 310) #30
+        x_start = int(w / 2 - 310)
         x_end = int(w / 2 + 310)
 
         roi = frame[y_start:y_end, x_start:x_end]
@@ -252,7 +294,7 @@ class LaneFollowerNode(Node):
     def detect_white_lane(self, frame):
         h, w, _ = frame.shape
 
-        y_start = int(h *2/3)
+        y_start = int(h * 2 / 3)
         y_end = min(y_start + 150, h)
         x_start = int(w / 2 - 120)
         x_end = int(w / 2 + 310)
@@ -275,7 +317,7 @@ class LaneFollowerNode(Node):
 
         road_center = x_start + center_x_in_roi
 
-        self.draw_debug(frame, x_start, y_start, x_end, y_end, road_center, (255, 0, 255), 'white_only')
+        self.draw_debug(frame, x_start, y_start, x_end, y_end, road_center, (255, 0, 255), 'white')
         return road_center, found, frame
 
     # =========================================================
@@ -307,7 +349,7 @@ class LaneFollowerNode(Node):
 
         road_center = x_start + center_x_in_roi
 
-        self.draw_debug(frame, x_start, y_start, x_end, y_end, road_center, (0, 255, 255), 'yellow_only')
+        self.draw_debug(frame, x_start, y_start, x_end, y_end, road_center, (0, 255, 255), 'yellow')
         return road_center, found, frame
 
     # =========================================================

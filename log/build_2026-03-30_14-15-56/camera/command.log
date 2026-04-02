@@ -1,2 +1,0 @@
-Invoking command in '/workspace/build/camera': PYTHONPATH=/workspace/build/camera/prefix_override:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /workspace/build/camera/build --no-deps install_data
-Invoked command in '/workspace/build/camera' returned '0': PYTHONPATH=/workspace/build/camera/prefix_override:/workspace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /workspace/build/camera/build --no-deps install_data

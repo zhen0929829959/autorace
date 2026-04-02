@@ -1,3 +1,5 @@
 [console_scripts]
-main_controller_node = control.control_node:main
+avoid_node = control.avoid_node:main
+controller_node = control.controller_node:main
 motor_node = control.motor_node:main
+

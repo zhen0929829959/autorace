@@ -18,7 +18,7 @@ class UsbCameraNode(Node):
 
         # Open USB camera
         # self.cap = cv2.VideoCapture("/dev/video0")
-        self.cap = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)
+        self.cap = cv2.VideoCapture('/dev/video1', cv2.CAP_V4L2)
         if not self.cap.isOpened():
             self.get_logger().error('Cannot open camera')
             return

@@ -1,1 +1,1 @@
-/workspace/src/camera/setup.py
+/home/iclab/autorace/src/camera/setup.py
