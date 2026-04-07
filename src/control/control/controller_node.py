@@ -11,16 +11,11 @@ from std_msgs.msg import String
 
 
 class MissionState(Enum):
-    TRAFFICLIGHT = 'trafficlight'
     FOLLOW_DUAL = 'follow_dual'
     FOLLOW_WHITE = 'follow_white'
     FOLLOW_YELLOW = 'follow_yellow'
+    WAIT_OBSTACLE = 'wait_obstacle'   # 已看到施工號誌，持續循白線等障礙
     AVOID = 'avoid'
-    DETECT_P = 'detect_p'
-    PARKING = 'parking'
-    TURN_LINE2 = 'turn_line2'
-    RED_BARRIER = 'red_barrier'
-    MAZE = 'maze'
     FINISH = 'finish'
 
 
@@ -30,24 +25,29 @@ class ControllerNode(Node):
 
         # ========= 狀態 =========
         self.state = MissionState.FOLLOW_DUAL
-        self.follow_mode = 'dual'
+        self.follow_mode = 'yellow'
         self.drive_mode = 'line_follow'
 
+        # YOLO 防抖
         self.current_sign = None
         self.last_sign_time = 0.0
-        self.last_mode_change_time = 0.0
-
-        self.sign_hold_time = 0.3
-        self.mode_cooldown = 1.0
-
         self.pending_class_id = None
         self.pending_since = None
 
+        self.sign_hold_time = 0.3
+        self.mode_cooldown = 0.5
+        self.last_mode_change_time = 0.0
+
+        # 雷達資料
         self.front_distance = 9999.0
+
+        # 避障執行保護，避免重複進入
+        self.avoid_running = False
 
         # ========= Publisher =========
         self.follow_mode_pub = self.create_publisher(String, '/follow_mode', 10)
         self.drive_mode_pub = self.create_publisher(String, '/drive_mode', 10)
+        self.motor_cmd_pub = self.create_publisher(String, '/motor_cmd', 10)
 
         # ========= Subscriber =========
         self.yolo_sub = self.create_subscription(
@@ -64,17 +64,10 @@ class ControllerNode(Node):
             10
         )
 
-        self.avoid_done_sub = self.create_subscription(
-            String,
-            '/avoid_done',
-            self.avoid_done_callback,
-            10
-        )
-
-        # 定時發布目前模式
+        # 定時發布模式
         self.mode_timer = self.create_timer(0.2, self.publish_modes)
 
-        self.get_logger().info('Main Controller Node started.')
+        self.get_logger().info('Controller Node started.')
         self.log_state()
 
     # =====================================================
@@ -89,13 +82,21 @@ class ControllerNode(Node):
         msg2.data = self.drive_mode
         self.drive_mode_pub.publish(msg2)
 
+    def publish_motor_cmd(self, left_speed, right_speed):
+        msg = String()
+        msg.data = json.dumps({
+            'left_speed': int(left_speed),
+            'right_speed': int(right_speed)
+        })
+        self.motor_cmd_pub.publish(msg)
+
     # =====================================================
     # 狀態切換
     # =====================================================
     def set_state(self, new_state, follow_mode=None, drive_mode=None, reason=''):
         now = time.time()
 
-        if now - self.last_mode_change_time < self.mode_cooldown:
+        if (now - self.last_mode_change_time) < self.mode_cooldown:
             return
 
         old_state = self.state
@@ -155,6 +156,72 @@ class ControllerNode(Node):
             return None
 
     # =====================================================
+    # 判斷前方是否有障礙
+    # =====================================================
+    def is_obstacle_ahead(self):
+        return self.front_distance < 225
+
+    # =====================================================
+    # 避障流程（固定地圖版）
+    # =====================================================
+    def run_avoid_sequence(self):
+        if self.avoid_running:
+            return
+
+        self.avoid_running = True
+
+        self.get_logger().info('Start avoid sequence')
+
+        # 切成 controller 接管馬達
+        self.drive_mode = 'controller'
+        self.publish_modes()
+
+        # 第一段：右轉 -> 直走 -> 左轉
+        self.publish_motor_cmd(80, -80)
+        time.sleep(2.1)
+
+        self.publish_motor_cmd(140, 140)
+        time.sleep(2.4)
+
+        self.publish_motor_cmd(-80, 80)
+        time.sleep(2.1)
+
+        # 第二段：一路直走，直到前方再次看到障礙
+        while rclpy.ok():
+            if self.is_obstacle_ahead():
+                self.get_logger().info('>> 前方有障礙，準備進入下一段')
+                break
+            else:
+                self.get_logger().info('>> 前方清空，直行')
+                self.publish_motor_cmd(140, 140)
+
+            time.sleep(0.1)
+
+        # 第三段：左轉 -> 直走 -> 右轉 -> 直走
+        self.publish_motor_cmd(-80, 80)
+        time.sleep(2.1)
+
+        self.publish_motor_cmd(140, 140)
+        time.sleep(2.4)
+
+        self.publish_motor_cmd(80, -80)
+        time.sleep(2.1)
+
+        self.publish_motor_cmd(140, 140)
+        time.sleep(2.0)
+
+        # 避障結束，回到循白線
+        self.set_state(
+            MissionState.FOLLOW_WHITE,
+            follow_mode='white',
+            drive_mode='line_follow',
+            reason='Avoid sequence finished, back to white line'
+        )
+
+        self.avoid_running = False
+        self.get_logger().info('Avoid finished')
+
+    # =====================================================
     # callback
     # =====================================================
     def yolo_callback(self, msg):
@@ -170,7 +237,7 @@ class ControllerNode(Node):
 
         now = time.time()
 
-        # 防抖動
+        # 防抖
         if class_id != self.pending_class_id:
             self.pending_class_id = class_id
             self.pending_since = now
@@ -194,52 +261,34 @@ class ControllerNode(Node):
         )
 
         # =================================================
-        # 根據目前 state 決定怎麼轉
+        # 狀態切換邏輯
         # =================================================
 
-        # 一開始雙線，看到左右轉號誌
+        # 一開始雙線，看到左轉或右轉號誌 -> 切白線
         if self.state == MissionState.FOLLOW_DUAL:
-            if class_id == 6:
+            if class_id == 6 :
                 self.set_state(
                     MissionState.FOLLOW_WHITE,
                     follow_mode='white',
                     drive_mode='line_follow',
-                    reason='Detected right turn sign (class 6)'
+                    reason=f'Detected turn sign class {class_id}'
+                )
+            if class_id == 2 :
+                self.set_state(
+                    MissionState.FOLLOW_YELLOW,
+                    follow_mode='yellow',
+                    drive_mode='line_follow',
+                    reason=f'Detected turn sign class {class_id}'
                 )
 
-            elif class_id == 2:
+        # 看到施工號誌 -> 進入等待障礙狀態
+        elif self.state == MissionState.FOLLOW_WHITE or self.state == MissionState.FOLLOW_YELLOW:
+            if class_id == 5:
                 self.set_state(
-                    MissionState.FOLLOW_WHITE,   # 你現在先都走白線
+                    MissionState.WAIT_OBSTACLE,
                     follow_mode='white',
                     drive_mode='line_follow',
-                    reason='Detected left turn sign (class 2)'
-                )
-
-        # 白線跟隨時看到 P
-        elif self.state == MissionState.FOLLOW_WHITE:
-            if class_id == 3:
-                self.set_state(
-                    MissionState.PARKING,
-                    drive_mode='parking',
-                    reason='Detected parking sign (class 3)'
-                )
-
-        # 停車後切回雙線或後續流程
-        elif self.state == MissionState.TURN_LINE2:
-            if class_id == 7:
-                self.set_state(
-                    MissionState.RED_BARRIER,
-                    drive_mode='line_follow',
-                    follow_mode='dual',
-                    reason='Detected stop sign (class 7)'
-                )
-
-        elif self.state == MissionState.RED_BARRIER:
-            if class_id == 4:
-                self.set_state(
-                    MissionState.MAZE,
-                    drive_mode='maze',
-                    reason='Detected tunnel sign (class 4)'
+                    reason='Detected construction sign (class 5), keep following white line'
                 )
 
     def lidar_callback(self, msg):
@@ -249,28 +298,16 @@ class ControllerNode(Node):
 
         self.front_distance = data.get('front_min', 9999.0)
 
-        # 只有在循線狀態才會因障礙切到避障
-        if self.state in [MissionState.FOLLOW_WHITE, MissionState.FOLLOW_YELLOW, MissionState.FOLLOW_DUAL]:
-            if self.front_distance < 225:
+        # 看到施工號誌後，開始等前方障礙
+        if self.state == MissionState.WAIT_OBSTACLE:
+            if self.is_obstacle_ahead() and not self.avoid_running:
                 self.set_state(
                     MissionState.AVOID,
-                    drive_mode='avoid',
+                    follow_mode='white',
+                    drive_mode='controller',
                     reason=f'Obstacle detected, front={self.front_distance}'
                 )
-
-    def avoid_done_callback(self, msg):
-        result = msg.data.strip()
-
-        if self.state != MissionState.AVOID:
-            return
-
-        if result == 'done':
-            self.set_state(
-                MissionState.FOLLOW_WHITE,
-                drive_mode='line_follow',
-                follow_mode='white',
-                reason='Avoid finished'
-            )
+                self.run_avoid_sequence()
 
 
 def main(args=None):
@@ -280,7 +317,7 @@ def main(args=None):
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        node.get_logger().info('Main Controller stopped by user.')
+        node.get_logger().info('Controller stopped by user.')
     finally:
         node.destroy_node()
         rclpy.shutdown()

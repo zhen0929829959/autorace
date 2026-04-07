@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
 import rclpy
 from rclpy.node import Node
@@ -6,11 +7,13 @@ from rclpy.node import Node
 import cv2
 from cv_bridge import CvBridge
 from sensor_msgs.msg import Image
-from ultralytics import YOLO
 from std_msgs.msg import String
+from ultralytics import YOLO
+
 import json
 import torch
-import os
+
+MIN_AREA_THRESHOLD = 4000
 
 
 class YoloNode(Node):
@@ -19,6 +22,7 @@ class YoloNode(Node):
 
         self.bridge = CvBridge()
 
+        # 訂閱相機
         self.subscription = self.create_subscription(
             Image,
             '/camera/image_raw',
@@ -26,21 +30,21 @@ class YoloNode(Node):
             10
         )
 
-        self.publisher = self.create_publisher(String, 'yolo_detection', 10)
+        # 發布 detection
+        self.publisher = self.create_publisher(
+            String,
+            '/yolo_detection',
+            10
+        )
 
-        model_path = './src/camera/best.pt'
-        if not os.path.exists(model_path):
-            self.get_logger().error(f'Model not found: {model_path}')
-            raise FileNotFoundError(model_path)
-
-        # Check CUDA
+        # ===== 檢查 CUDA =====
         self.use_cuda = torch.cuda.is_available()
         self.device = 'cuda:0' if self.use_cuda else 'cpu'
 
         self.get_logger().info(f'Loading YOLO model on {self.device}')
-        self.model = YOLO(model_path)
+        self.model = YOLO('src/camera/best.pt')
 
-        # Move model to selected device
+        # ===== 模型搬到 GPU / CPU =====
         self.model.to(self.device)
 
         if self.use_cuda:
@@ -50,49 +54,89 @@ class YoloNode(Node):
         else:
             self.get_logger().warn('CUDA not available, using CPU.')
 
+        self.get_logger().info('YOLO node started')
 
     def image_callback(self, msg):
         try:
-            image = self.bridge.imgmsg_to_cv2(msg, desired_encoding='bgr8')
+            frame = self.bridge.imgmsg_to_cv2(msg, 'bgr8')
         except Exception as e:
             self.get_logger().error(f'cv_bridge error: {e}')
             return
 
-        # Inference on selected device
-        results = self.model(image, device=0 if self.use_cuda else 'cpu', verbose=False)
+        # ===== YOLO 推論 =====
+        results = self.model(
+            frame,
+            device=0 if self.use_cuda else 'cpu',
+            verbose=False
+        )
 
-        detections = []
-        for result in results[0].boxes:
-            bbox = result.xyxy[0].tolist()
-            confidence = float(result.conf[0].item())
-            class_id = int(result.cls[0].item())
+        max_area = 0
+        best_class_id = None
+        best_confidence = 0.0
+        best_box = None
 
-            detections.append({
-                "bbox": bbox,
-                "confidence": confidence,
-                "class_id": class_id
-            })
+        # ===== 找最大框 =====
+        for result in results:
+            for box in result.boxes:
+                x1, y1, x2, y2 = map(int, box.xyxy[0])
+                confidence = float(box.conf[0])
+                class_id = int(box.cls[0])
 
-        j_detections = json.dumps(detections)
+                area = (x2 - x1) * (y2 - y1)
 
-        annotated_image = results[0].plot()
+                if area > max_area:
+                    max_area = area
+                    best_class_id = class_id
+                    best_confidence = confidence
+                    best_box = (x1, y1, x2, y2)
 
-        out_msg = String()
-        out_msg.data = j_detections
-        self.publisher.publish(out_msg)
+        # ===== 判斷是否有效 =====
+        if best_box is not None and max_area > MIN_AREA_THRESHOLD:
+            data = {
+                "class_id": best_class_id,
+                "confidence": best_confidence,
+                "area": max_area
+            }
 
-        cv2.imshow("Detection Results", annotated_image)
+            msg_out = String()
+            msg_out.data = json.dumps(data)
+            self.publisher.publish(msg_out)
+
+            self.get_logger().info(
+                f'Detect class={best_class_id}, area={max_area}, conf={best_confidence:.2f}'
+            )
+
+            # debug 畫框
+            x1, y1, x2, y2 = best_box
+            label = f"ID:{best_class_id} ({best_confidence:.2f})"
+            cv2.rectangle(frame, (x1, y1), (x2, y2), (0, 255, 0), 2)
+            cv2.putText(
+                frame,
+                label,
+                (x1, y1 - 10),
+                cv2.FONT_HERSHEY_SIMPLEX,
+                0.5,
+                (255, 255, 0),
+                2
+            )
+        else:
+            # 沒偵測到 → 發 None
+            msg_out = String()
+            msg_out.data = json.dumps({"class_id": None})
+            self.publisher.publish(msg_out)
+
+        cv2.imshow("YOLO", frame)
         cv2.waitKey(1)
 
 
-def main():
-    rclpy.init()
+def main(args=None):
+    rclpy.init(args=args)
     node = YoloNode()
 
     try:
         rclpy.spin(node)
     except KeyboardInterrupt:
-        pass
+        node.get_logger().info('YOLO stopped')
     finally:
         cv2.destroyAllWindows()
         node.destroy_node()

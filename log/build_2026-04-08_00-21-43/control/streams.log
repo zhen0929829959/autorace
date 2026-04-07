@@ -1,0 +1,21 @@
+[3.403s] Invoking command in '/home/iclab/autorace/build/control': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data --force
+[4.320s] running develop
+[4.845s] running egg_info
+[4.846s] writing control.egg-info/PKG-INFO
+[4.846s] writing dependency_links to control.egg-info/dependency_links.txt
+[4.847s] writing entry points to control.egg-info/entry_points.txt
+[4.848s] writing requirements to control.egg-info/requires.txt
+[4.848s] writing top-level names to control.egg-info/top_level.txt
+[4.955s] reading manifest file 'control.egg-info/SOURCES.txt'
+[4.958s] writing manifest file 'control.egg-info/SOURCES.txt'
+[5.084s] running build_ext
+[5.085s] Creating /home/iclab/autorace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)
+[5.088s] Installing controller_node script to /home/iclab/autorace/install/control/lib/control
+[5.089s] Installing lidar_node script to /home/iclab/autorace/install/control/lib/control
+[5.089s] Installing motor_node script to /home/iclab/autorace/install/control/lib/control
+[5.090s] 
+[5.091s] Installed /home/iclab/autorace/build/control
+[5.091s] running symlink_data
+[5.091s] symbolically linking /home/iclab/autorace/build/control/resource/control -> /home/iclab/autorace/install/control/share/ament_index/resource_index/packages
+[5.092s] symbolically linking /home/iclab/autorace/build/control/package.xml -> /home/iclab/autorace/install/control/share/control
+[5.194s] Invoked command in '/home/iclab/autorace/build/control' returned '0': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data --force

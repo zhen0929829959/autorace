@@ -18,7 +18,7 @@ class UsbCameraNode(Node):
 
         # Open USB camera
         # self.cap = cv2.VideoCapture("/dev/video0")
-        self.cap = cv2.VideoCapture('/dev/video1', cv2.CAP_V4L2)
+        self.cap = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)
         if not self.cap.isOpened():
             self.get_logger().error('Cannot open camera')
             return
@@ -26,7 +26,11 @@ class UsbCameraNode(Node):
         # 教學穩定設定
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+        # 關閉自動曝光（V4L2）
+        self.cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
 
+        # 設定固定曝光（數值需調整）
+        self.cap.set(cv2.CAP_PROP_EXPOSURE, -6)
         # 約 20 FPS
         self.timer = self.create_timer(0.016, self.timer_callback)
 

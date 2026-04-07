@@ -1,0 +1,29 @@
+[0.000000] (-) TimerEvent: {}
+[0.001129] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.002226] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.002453] (camera) JobStarted: {'identifier': 'camera'}
+[0.056354] (control) JobStarted: {'identifier': 'control'}
+[0.101489] (-) TimerEvent: {}
+[0.207695] (-) TimerEvent: {}
+[0.309429] (-) TimerEvent: {}
+[0.423157] (-) TimerEvent: {}
+[0.524009] (-) TimerEvent: {}
+[0.625603] (-) TimerEvent: {}
+[0.728532] (-) TimerEvent: {}
+[0.832815] (-) TimerEvent: {}
+[0.852928] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[0.935327] (-) TimerEvent: {}
+[1.037153] (-) TimerEvent: {}
+[1.138022] (-) TimerEvent: {}
+[1.239507] (-) TimerEvent: {}
+[1.340293] (-) TimerEvent: {}
+[1.441748] (-) TimerEvent: {}
+[1.543096] (-) TimerEvent: {}
+[1.645179] (-) TimerEvent: {}
+[1.746138] (-) TimerEvent: {}
+[1.847346] (-) TimerEvent: {}
+[1.948056] (-) TimerEvent: {}
+[2.049627] (-) TimerEvent: {}
+[2.152242] (-) TimerEvent: {}
+[2.169767] (control) JobEnded: {'identifier': 'control', 'rc': 'SIGINT'}
+[2.173797] (-) EventReactorShutdown: {}

@@ -22,7 +22,7 @@ setup(
         'console_scripts': [
             'motor_node = control.motor_node:main',
             'controller_node= control.controller_node:main',
-            'avoid_node = control.avoid_node:main'
+            'lidar_node = control.lidar_node:main'
         ],
     },
 )

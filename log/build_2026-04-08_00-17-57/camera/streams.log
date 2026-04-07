@@ -1,0 +1,26 @@
+[3.750s] Invoking command in '/home/iclab/autorace/src/camera': PYTHONPATH=/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera build --build-base /home/iclab/autorace/build/camera/build install --record /home/iclab/autorace/build/camera/install.log --single-version-externally-managed install_data
+[4.635s] running egg_info
+[4.637s] writing ../../build/camera/camera.egg-info/PKG-INFO
+[4.638s] writing dependency_links to ../../build/camera/camera.egg-info/dependency_links.txt
+[4.638s] writing entry points to ../../build/camera/camera.egg-info/entry_points.txt
+[4.640s] writing requirements to ../../build/camera/camera.egg-info/requires.txt
+[4.641s] writing top-level names to ../../build/camera/camera.egg-info/top_level.txt
+[4.755s] reading manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[4.758s] writing manifest file '../../build/camera/camera.egg-info/SOURCES.txt'
+[4.759s] running build
+[4.759s] running build_py
+[4.759s] copying camera/liner_node.py -> /home/iclab/autorace/build/camera/build/lib/camera
+[4.761s] running install
+[4.764s] running install_lib
+[4.768s] copying /home/iclab/autorace/build/camera/build/lib/camera/liner_node.py -> /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera
+[4.770s] byte-compiling /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera/liner_node.py to liner_node.cpython-38.pyc
+[4.782s] running install_data
+[4.782s] running install_egg_info
+[4.794s] removing '/home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info' (and everything under it)
+[4.795s] Copying ../../build/camera/camera.egg-info to /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera-0.0.0-py3.8.egg-info
+[4.795s] running install_scripts
+[4.857s] Installing camera_node script to /home/iclab/autorace/install/camera/lib/camera
+[4.858s] Installing lane_follower_node script to /home/iclab/autorace/install/camera/lib/camera
+[4.860s] Installing yolo_node script to /home/iclab/autorace/install/camera/lib/camera
+[4.861s] writing list of installed files to '/home/iclab/autorace/build/camera/install.log'
+[4.948s] Invoked command in '/home/iclab/autorace/src/camera' returned '0': PYTHONPATH=/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/camera build --build-base /home/iclab/autorace/build/camera/build install --record /home/iclab/autorace/build/camera/install.log --single-version-externally-managed install_data

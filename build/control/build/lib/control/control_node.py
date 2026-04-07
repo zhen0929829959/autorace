@@ -34,7 +34,7 @@ class MainControllerNode(Node):
         # ===== Subscriber =====
         self.yolo_sub = self.create_subscription(
             String,
-            '/yolo_detection',
+            '/yolo_detections',
             self.yolo_callback,
             10
         )
