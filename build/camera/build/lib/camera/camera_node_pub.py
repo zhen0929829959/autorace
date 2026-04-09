@@ -27,10 +27,10 @@ class UsbCameraNode(Node):
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
         # 關閉自動曝光（V4L2）
-        self.cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
+        # self.cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
 
-        # 設定固定曝光（數值需調整）
-        self.cap.set(cv2.CAP_PROP_EXPOSURE, -6)
+        # # 設定固定曝光（數值需調整）
+        # self.cap.set(cv2.CAP_PROP_EXPOSURE, -6)
         # 約 20 FPS
         self.timer = self.create_timer(0.016, self.timer_callback)
 

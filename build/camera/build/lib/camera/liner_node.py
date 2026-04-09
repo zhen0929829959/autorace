@@ -20,7 +20,7 @@ class LaneFollowerNode(Node):
         self.bridge = CvBridge()
 
         # follow_mode: 決定循哪條線
-        self.mode = 'white'
+        self.mode = 'none'
         # self.mode = 'yellow'
 
         # drive_mode: 決定現在是不是這顆 node 有控制權
@@ -29,16 +29,20 @@ class LaneFollowerNode(Node):
         # ===== PID 參數 =====
         self.pid_settings = {
             'dual': {
-                'kp': 5.0, 'ki': 0.01, 'kd': 0.25,
-                'base_speed': 50, 'target_x': 340
+                'kp': 2.0, 'ki': 0.00, 'kd': 0.0,
+                'base_speed': 100, 'target_x': 340
             },
             'white': {
-                'kp': 2.0, 'ki': 0.00, 'kd': 0.5,
+                'kp': 2.0, 'ki': 0.00, 'kd': 0.0,
                 'base_speed': 100, 'target_x': 340
             },
             'yellow': {
-                'kp': 5.0, 'ki': 0.0, 'kd': 0.0,
-                'base_speed': 50, 'target_x': 340
+                'kp': 2.0, 'ki': 0.0, 'kd': 0.0,
+                'base_speed': 100, 'target_x': 340
+            },
+            'none': {
+                'kp': 0.0, 'ki': 0.0, 'kd': 0.0,
+                'base_speed': 0, 'target_x': 0
             }
         }
 
@@ -46,7 +50,8 @@ class LaneFollowerNode(Node):
         self.pid_state = {
             'dual': {'prev_error': 0.0, 'integral': 0.0},
             'white': {'prev_error': 0.0, 'integral': 0.0},
-            'yellow': {'prev_error': 0.0, 'integral': 0.0}
+            'yellow': {'prev_error': 0.0, 'integral': 0.0},
+            'none': {'prev_error': 0.0, 'integral': 0.0}
         }
 
         # ===== 訂閱 topic =====
@@ -156,28 +161,28 @@ class LaneFollowerNode(Node):
             self.publish_debug_image(debug_frame, msg.header.frame_id)
             return
 
-        # 沒找到線
-        if not found:
-            lane_info['error'] = None
-            lane_info['correction'] = None
+        # # 沒找到線
+        # if not found:
+        #     lane_info['error'] = None
+        #     lane_info['correction'] = None
 
-            self.publish_lane_info(lane_info)
-            self.publish_debug_image(debug_frame, msg.header.frame_id)
-            if self.mode == 'dual':
-                self.publish_motor_cmd(50, 50, 'lane_not_found')
-            elif self.mode == 'white':
-                self.publish_motor_cmd(-80, 30, 'lane_not_found')
-            elif self.mode == 'yellow':
-                self.publish_motor_cmd(30, -80, 'lane_not_found')
-            return
+        #     self.publish_lane_info(lane_info)
+        #     self.publish_debug_image(debug_frame, msg.header.frame_id)
+        #     if self.mode == 'dual':
+        #         self.publish_motor_cmd(50, 50, 'lane_not_found')
+        #     elif self.mode == 'white':
+        #         self.publish_motor_cmd(30, 80, 'lane_not_found')
+        #     elif self.mode == 'yellow':
+        #         self.publish_motor_cmd(80, 30, 'lane_not_found')
+        #     return
 
         # 找到線後做 PID
         setting = self.pid_settings[self.mode]
         error = road_center - setting['target_x']
         correction = self.calculate_pid(error, self.mode)
 
-        left_speed = int(np.clip(setting['base_speed'] - correction, -200, 200))
-        right_speed = int(np.clip(setting['base_speed'] + correction, -200, 200))
+        left_speed = int(np.clip(setting['base_speed'] + correction, -200, 200))
+        right_speed = int(np.clip(setting['base_speed'] - correction, -200, 200))
 
         lane_info['error'] = float(error)
         lane_info['target_x'] = setting['target_x']
@@ -269,12 +274,11 @@ class LaneFollowerNode(Node):
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([0, 100, 100])
-        upper_yellow = np.array([40, 255, 255])
+        lower_yellow = np.array([0, 82, 177])
+        upper_yellow = np.array([171, 255, 255])
 
-
-        lower_white = np.array([40, 0, 148])
-        upper_white = np.array([180, 255, 255])
+        lower_white = np.array([30, 22, 156])
+        upper_white = np.array([179, 69, 255])
 
         yellow_mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
         white_mask = cv2.inRange(hsv, lower_white, upper_white)
@@ -312,9 +316,8 @@ class LaneFollowerNode(Node):
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-
-        lower_white = np.array([40, 0, 148])
-        upper_white = np.array([180, 255, 255])
+        lower_white = np.array([30, 22, 156])
+        upper_white = np.array([179, 69, 255])
 
         white_mask = cv2.inRange(hsv, lower_white, upper_white)
         white_x = self.find_line_center_x(white_mask)
@@ -324,7 +327,7 @@ class LaneFollowerNode(Node):
         if white_x is not None:
             center_x_in_roi = white_x - 255
         else:
-            center_x_in_roi = 320
+            center_x_in_roi = 40
 
         road_center = x_start + center_x_in_roi
 
@@ -345,8 +348,8 @@ class LaneFollowerNode(Node):
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([0, 100, 100])
-        upper_yellow = np.array([40, 255, 255])
+        lower_yellow = np.array([0, 82, 177])
+        upper_yellow = np.array([171, 255, 255])
 
         yellow_mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
         yellow_x = self.find_line_center_x(yellow_mask)
@@ -354,9 +357,9 @@ class LaneFollowerNode(Node):
         found = yellow_x is not None
 
         if yellow_x is not None:
-            center_x_in_roi = yellow_x + 235
+            center_x_in_roi = yellow_x + 255
         else:
-            center_x_in_roi = 360
+            center_x_in_roi = 380
 
         road_center = x_start + center_x_in_roi
 

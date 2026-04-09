@@ -13,7 +13,7 @@ from ultralytics import YOLO
 import json
 import torch
 
-MIN_AREA_THRESHOLD = 3500
+MIN_AREA_THRESHOLD = 7000
 
 
 class YoloNode(Node):

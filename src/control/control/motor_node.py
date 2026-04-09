@@ -18,9 +18,10 @@ except ImportError:
 
 class MotorNode(Node):
     """
-    訂閱 /motor_cmd，將左右輪速度送到 Dynamixel。
+    訂閱 /line/motor_cmd、/controller/motor_cmd、/drive_mode，
+    根據目前 drive_mode 決定要把哪一組左右輪速度送到 Dynamixel。
 
-    目前預設使用 std_msgs/String + JSON：
+    /line/motor_cmd 與 /controller/motor_cmd 預設使用 std_msgs/String + JSON：
     {
         "left_speed": 120,
         "right_speed": 180
@@ -61,10 +62,32 @@ class MotorNode(Node):
         self.invert_right = bool(self.get_parameter('invert_right').value)
         self.stop_on_invalid_cmd = bool(self.get_parameter('stop_on_invalid_cmd').value)
 
-        self.subscription = self.create_subscription(
+        # ===== 新增：目前控制模式 =====
+        self.drive_mode = 'line_follow'
+
+        # ===== 新增：兩路來源各自最新命令 =====
+        self.line_cmd = (0, 0)
+        self.controller_cmd = (0, 0)
+
+        # ===== 新增：訂閱三個 topic =====
+        self.drive_mode_sub = self.create_subscription(
             String,
-            '/motor_cmd',
-            self.motor_cmd_callback,
+            '/drive_mode',
+            self.drive_mode_callback,
+            10,
+        )
+
+        self.line_cmd_sub = self.create_subscription(
+            String,
+            '/line/motor_cmd',
+            self.line_motor_cmd_callback,
+            10,
+        )
+
+        self.controller_cmd_sub = self.create_subscription(
+            String,
+            '/controller/motor_cmd',
+            self.controller_motor_cmd_callback,
             10,
         )
 
@@ -74,7 +97,9 @@ class MotorNode(Node):
 
         self.init_dynamixel()
 
-        self.get_logger().info('motor_node started, subscribing to /motor_cmd')
+        self.get_logger().info(
+            'motor_node started, subscribing to /line/motor_cmd, /controller/motor_cmd, /drive_mode'
+        )
 
     # ------------------------------------------------------------------
     # Dynamixel init
@@ -137,19 +162,51 @@ class MotorNode(Node):
         return True
 
     # ------------------------------------------------------------------
-    # Motor command handling
+    # 新增：Drive mode handling
     # ------------------------------------------------------------------
-    def motor_cmd_callback(self, msg: String) -> None:
+    def drive_mode_callback(self, msg: String) -> None:
+        new_drive_mode = msg.data.strip()
+
+        if new_drive_mode != self.drive_mode:
+            self.drive_mode = new_drive_mode
+            self.get_logger().info(f'Switch drive_mode to: {self.drive_mode}')
+
+    # ------------------------------------------------------------------
+    # 新增：Line / Controller command handling
+    # ------------------------------------------------------------------
+    def line_motor_cmd_callback(self, msg: String) -> None:
         left_speed, right_speed = self.parse_motor_cmd(msg.data)
 
-        # if left_speed is None or right_speed is None:
-        #     self.get_logger().warn(f'Invalid /motor_cmd payload: {msg.data}')
-        #     if self.stop_on_invalid_cmd:
-        #         self.set_motor_speed(0, 0)
-        #     return
+        if left_speed is None or right_speed is None:
+            self.get_logger().warn(f'Invalid /line/motor_cmd payload: {msg.data}')
+            if self.stop_on_invalid_cmd and self.drive_mode == 'line_follow':
+                self.set_motor_speed(0, 0)
+            return
 
-        self.set_motor_speed(left_speed, right_speed)
+        self.line_cmd = (left_speed, right_speed)
 
+        # 只有目前控制權在 line_follow 時，才真的送到馬達
+        if self.drive_mode == 'line_follow':
+            self.set_motor_speed(left_speed, right_speed)
+
+    def controller_motor_cmd_callback(self, msg: String) -> None:
+        left_speed, right_speed = self.parse_motor_cmd(msg.data)
+
+        if left_speed is None or right_speed is None:
+            self.get_logger().warn(f'Invalid /controller/motor_cmd payload: {msg.data}')
+            if self.stop_on_invalid_cmd and self.drive_mode == 'controller':
+                self.set_motor_speed(0, 0)
+            return
+
+        self.controller_cmd = (left_speed, right_speed)
+
+        # 只有目前控制權在 controller 時，才真的送到馬達
+        if self.drive_mode == 'controller':
+            self.set_motor_speed(left_speed, right_speed)
+
+    # ------------------------------------------------------------------
+    # Motor command parsing
+    # ------------------------------------------------------------------
     def parse_motor_cmd(self, raw: str) -> Tuple[int, int]:
         try:
             data = json.loads(raw)

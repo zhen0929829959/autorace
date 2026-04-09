@@ -1,0 +1,170 @@
+[0.000000] (-) TimerEvent: {}
+[0.007434] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.008285] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.009315] (camera) JobStarted: {'identifier': 'camera'}
+[0.089718] (control) JobStarted: {'identifier': 'control'}
+[0.100633] (-) TimerEvent: {}
+[0.202643] (-) TimerEvent: {}
+[0.305402] (-) TimerEvent: {}
+[0.406581] (-) TimerEvent: {}
+[0.507391] (-) TimerEvent: {}
+[0.608030] (-) TimerEvent: {}
+[0.708764] (-) TimerEvent: {}
+[0.810574] (-) TimerEvent: {}
+[0.913276] (-) TimerEvent: {}
+[1.013967] (-) TimerEvent: {}
+[1.114933] (-) TimerEvent: {}
+[1.218419] (-) TimerEvent: {}
+[1.319651] (-) TimerEvent: {}
+[1.420402] (-) TimerEvent: {}
+[1.521037] (-) TimerEvent: {}
+[1.621768] (-) TimerEvent: {}
+[1.722458] (-) TimerEvent: {}
+[1.823297] (-) TimerEvent: {}
+[1.924340] (-) TimerEvent: {}
+[2.027610] (-) TimerEvent: {}
+[2.129472] (-) TimerEvent: {}
+[2.231054] (-) TimerEvent: {}
+[2.331791] (-) TimerEvent: {}
+[2.432904] (-) TimerEvent: {}
+[2.534540] (-) TimerEvent: {}
+[2.636013] (-) TimerEvent: {}
+[2.737413] (-) TimerEvent: {}
+[2.841855] (-) TimerEvent: {}
+[2.942535] (-) TimerEvent: {}
+[3.043234] (-) TimerEvent: {}
+[3.145170] (-) TimerEvent: {}
+[3.246067] (-) TimerEvent: {}
+[3.346843] (-) TimerEvent: {}
+[3.447629] (-) TimerEvent: {}
+[3.548507] (-) TimerEvent: {}
+[3.655296] (-) TimerEvent: {}
+[3.757011] (-) TimerEvent: {}
+[3.858449] (-) TimerEvent: {}
+[3.959274] (-) TimerEvent: {}
+[4.067302] (-) TimerEvent: {}
+[4.171464] (-) TimerEvent: {}
+[4.272127] (-) TimerEvent: {}
+[4.372758] (-) TimerEvent: {}
+[4.473436] (-) TimerEvent: {}
+[4.574099] (-) TimerEvent: {}
+[4.674786] (-) TimerEvent: {}
+[4.775544] (-) TimerEvent: {}
+[4.876612] (-) TimerEvent: {}
+[4.977336] (-) TimerEvent: {}
+[5.078037] (-) TimerEvent: {}
+[5.178786] (-) TimerEvent: {}
+[5.279497] (-) TimerEvent: {}
+[5.380202] (-) TimerEvent: {}
+[5.480845] (-) TimerEvent: {}
+[5.587323] (-) TimerEvent: {}
+[5.688075] (-) TimerEvent: {}
+[5.790647] (-) TimerEvent: {}
+[5.891362] (-) TimerEvent: {}
+[5.991987] (-) TimerEvent: {}
+[6.102991] (-) TimerEvent: {}
+[6.203715] (-) TimerEvent: {}
+[6.304450] (-) TimerEvent: {}
+[6.409104] (-) TimerEvent: {}
+[6.509892] (-) TimerEvent: {}
+[6.622514] (-) TimerEvent: {}
+[6.708495] (camera) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/iclab/autorace/build/camera/build', '--no-deps', 'symlink_data'], 'cwd': '/home/iclab/autorace/build/camera', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'HTTPS_PROXY': 'http://gate1.tku.edu.tw:3128/', 'no_proxy': '*.tku.edu.tw', 'USER': 'iclab', 'SSH_AGENT_PID': '7178', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/iclab', 'DESKTOP_SESSION': 'ubuntu', 'NO_PROXY': '*.tku.edu.tw', 'JETSON_L4T': '35.6.4', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'JETSON_MODEL': 'Jetson-AGX', 'MANAGERPID': '6841', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'https_proxy': 'http://gate1.tku.edu.tw:3128/', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'iclab', 'JETSON_MODULE': 'NVIDIA Jetson AGX Xavier (16 GB ram)', 'JETSON_SERIAL_NUMBER': '0424218030977', 'http_proxy': 'http://gate1.tku.edu.tw:3128/', 'JOURNAL_STREAM': '8:88968', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'JETSON_CODENAME': 'Galen', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'iclab', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/home/iclab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/7287,unix/ubuntu:/tmp/.ICE-unix/7287', 'INVOCATION_ID': 'e2abf9001bbd48faa4fb010ce15d1dd3', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/14ac64e4_1db4_4445_b777_19223af08c71', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra194', 'GNOME_TERMINAL_SERVICE': ':1.84', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'JETSON_CUDA_ARCH_BIN': '7.2', 'PWD': '/home/iclab/autorace/build/camera', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'HTTP_PROXY': 'http://gate1.tku.edu.tw:3128/', 'COLCON': '1', 'VTE_VERSION': '6003', 'JETSON_JETPACK': '', 'JETSON_P_NUMBER': 'p2888-0001'}, 'shell': False}
+[6.722723] (-) TimerEvent: {}
+[6.806308] (control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/iclab/autorace/build/control/build', '--no-deps', 'symlink_data'], 'cwd': '/home/iclab/autorace/build/control', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'HTTPS_PROXY': 'http://gate1.tku.edu.tw:3128/', 'no_proxy': '*.tku.edu.tw', 'USER': 'iclab', 'SSH_AGENT_PID': '7178', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/iclab', 'DESKTOP_SESSION': 'ubuntu', 'NO_PROXY': '*.tku.edu.tw', 'JETSON_L4T': '35.6.4', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'JETSON_MODEL': 'Jetson-AGX', 'MANAGERPID': '6841', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'https_proxy': 'http://gate1.tku.edu.tw:3128/', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'iclab', 'JETSON_MODULE': 'NVIDIA Jetson AGX Xavier (16 GB ram)', 'JETSON_SERIAL_NUMBER': '0424218030977', 'http_proxy': 'http://gate1.tku.edu.tw:3128/', 'JOURNAL_STREAM': '8:88968', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'JETSON_CODENAME': 'Galen', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'iclab', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/home/iclab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/7287,unix/ubuntu:/tmp/.ICE-unix/7287', 'INVOCATION_ID': 'e2abf9001bbd48faa4fb010ce15d1dd3', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/14ac64e4_1db4_4445_b777_19223af08c71', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra194', 'GNOME_TERMINAL_SERVICE': ':1.84', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'JETSON_CUDA_ARCH_BIN': '7.2', 'PWD': '/home/iclab/autorace/build/control', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'HTTP_PROXY': 'http://gate1.tku.edu.tw:3128/', 'COLCON': '1', 'VTE_VERSION': '6003', 'JETSON_JETPACK': '', 'JETSON_P_NUMBER': 'p2888-0001'}, 'shell': False}
+[6.823403] (-) TimerEvent: {}
+[6.924995] (-) TimerEvent: {}
+[7.025799] (-) TimerEvent: {}
+[7.126530] (-) TimerEvent: {}
+[7.227290] (-) TimerEvent: {}
+[7.328150] (-) TimerEvent: {}
+[7.429362] (-) TimerEvent: {}
+[7.529985] (-) TimerEvent: {}
+[7.630701] (-) TimerEvent: {}
+[7.731409] (-) TimerEvent: {}
+[7.832228] (-) TimerEvent: {}
+[7.932893] (-) TimerEvent: {}
+[8.033551] (-) TimerEvent: {}
+[8.134223] (-) TimerEvent: {}
+[8.234881] (-) TimerEvent: {}
+[8.335734] (-) TimerEvent: {}
+[8.436541] (-) TimerEvent: {}
+[8.537253] (-) TimerEvent: {}
+[8.637941] (-) TimerEvent: {}
+[8.738689] (-) TimerEvent: {}
+[8.839405] (-) TimerEvent: {}
+[8.940205] (-) TimerEvent: {}
+[9.040920] (-) TimerEvent: {}
+[9.141684] (-) TimerEvent: {}
+[9.242392] (-) TimerEvent: {}
+[9.268295] (camera) StdoutLine: {'line': b'running develop\n'}
+[9.342602] (-) TimerEvent: {}
+[9.415886] (control) StdoutLine: {'line': b'running develop\n'}
+[9.442835] (-) TimerEvent: {}
+[9.543645] (-) TimerEvent: {}
+[9.644338] (-) TimerEvent: {}
+[9.744977] (-) TimerEvent: {}
+[9.845661] (-) TimerEvent: {}
+[9.946375] (-) TimerEvent: {}
+[10.047068] (-) TimerEvent: {}
+[10.148441] (-) TimerEvent: {}
+[10.249731] (-) TimerEvent: {}
+[10.351205] (-) TimerEvent: {}
+[10.452740] (-) TimerEvent: {}
+[10.553870] (-) TimerEvent: {}
+[10.655527] (-) TimerEvent: {}
+[10.756341] (-) TimerEvent: {}
+[10.857049] (-) TimerEvent: {}
+[10.957844] (-) TimerEvent: {}
+[11.042885] (camera) StdoutLine: {'line': b'running egg_info\n'}
+[11.044833] (camera) StdoutLine: {'line': b'writing camera.egg-info/PKG-INFO\n'}
+[11.045369] (camera) StdoutLine: {'line': b'writing dependency_links to camera.egg-info/dependency_links.txt\n'}
+[11.045746] (camera) StdoutLine: {'line': b'writing entry points to camera.egg-info/entry_points.txt\n'}
+[11.058281] (-) TimerEvent: {}
+[11.064827] (camera) StdoutLine: {'line': b'writing requirements to camera.egg-info/requires.txt\n'}
+[11.065500] (camera) StdoutLine: {'line': b'writing top-level names to camera.egg-info/top_level.txt\n'}
+[11.090855] (control) StdoutLine: {'line': b'running egg_info\n'}
+[11.120373] (control) StdoutLine: {'line': b'writing control.egg-info/PKG-INFO\n'}
+[11.135727] (control) StdoutLine: {'line': b'writing dependency_links to control.egg-info/dependency_links.txt\n'}
+[11.136301] (control) StdoutLine: {'line': b'writing entry points to control.egg-info/entry_points.txt\n'}
+[11.136615] (control) StdoutLine: {'line': b'writing requirements to control.egg-info/requires.txt\n'}
+[11.136922] (control) StdoutLine: {'line': b'writing top-level names to control.egg-info/top_level.txt\n'}
+[11.158525] (-) TimerEvent: {}
+[11.260916] (-) TimerEvent: {}
+[11.361623] (-) TimerEvent: {}
+[11.467356] (-) TimerEvent: {}
+[11.518374] (control) StdoutLine: {'line': b"reading manifest file 'control.egg-info/SOURCES.txt'\n"}
+[11.527387] (control) StdoutLine: {'line': b"writing manifest file 'control.egg-info/SOURCES.txt'\n"}
+[11.567536] (-) TimerEvent: {}
+[11.668257] (-) TimerEvent: {}
+[11.719317] (control) StdoutLine: {'line': b'running build_ext\n'}
+[11.720910] (control) StdoutLine: {'line': b'Creating /home/iclab/autorace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)\n'}
+[11.724447] (control) StdoutLine: {'line': b'Installing controller_node script to /home/iclab/autorace/install/control/lib/control\n'}
+[11.725235] (control) StdoutLine: {'line': b'Installing lidar_node script to /home/iclab/autorace/install/control/lib/control\n'}
+[11.727022] (control) StdoutLine: {'line': b'Installing motor_node script to /home/iclab/autorace/install/control/lib/control\n'}
+[11.729326] (control) StdoutLine: {'line': b'\n'}
+[11.729955] (control) StdoutLine: {'line': b'Installed /home/iclab/autorace/build/control\n'}
+[11.730423] (control) StdoutLine: {'line': b'running symlink_data\n'}
+[11.751990] (camera) StdoutLine: {'line': b"reading manifest file 'camera.egg-info/SOURCES.txt'\n"}
+[11.756079] (camera) StdoutLine: {'line': b"writing manifest file 'camera.egg-info/SOURCES.txt'\n"}
+[11.768495] (-) TimerEvent: {}
+[11.869195] (-) TimerEvent: {}
+[11.905649] (control) CommandEnded: {'returncode': 0}
+[11.979976] (-) TimerEvent: {}
+[12.055323] (control) JobEnded: {'identifier': 'control', 'rc': 0}
+[12.080147] (-) TimerEvent: {}
+[12.180770] (-) TimerEvent: {}
+[12.253697] (camera) StdoutLine: {'line': b'running build_ext\n'}
+[12.270188] (camera) StdoutLine: {'line': b'Creating /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)\n'}
+[12.280979] (-) TimerEvent: {}
+[12.282279] (camera) StdoutLine: {'line': b'Installing camera_node script to /home/iclab/autorace/install/camera/lib/camera\n'}
+[12.284384] (camera) StdoutLine: {'line': b'Installing lane_follower_node script to /home/iclab/autorace/install/camera/lib/camera\n'}
+[12.284865] (camera) StdoutLine: {'line': b'Installing yolo_node script to /home/iclab/autorace/install/camera/lib/camera\n'}
+[12.300368] (camera) StdoutLine: {'line': b'\n'}
+[12.301000] (camera) StdoutLine: {'line': b'Installed /home/iclab/autorace/build/camera\n'}
+[12.301371] (camera) StdoutLine: {'line': b'running symlink_data\n'}
+[12.381201] (-) TimerEvent: {}
+[12.481953] (-) TimerEvent: {}
+[12.586403] (camera) CommandEnded: {'returncode': 0}
+[12.601762] (-) TimerEvent: {}
+[12.672261] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[12.684517] (-) EventReactorShutdown: {}
