@@ -25,6 +25,7 @@ class LaneFollowerNode(Node):
 
         # drive_mode: 決定現在是不是這顆 node 有控制權
         self.drive_mode = 'none'
+        self.detect_green = False
 
         # ===== PID 參數 =====
         self.pid_settings = {
@@ -140,6 +141,8 @@ class LaneFollowerNode(Node):
 
         # 無論是否有控制權，都可以發 debug image 方便看畫面
         road_center, found, debug_frame = self.detect_lane(frame, self.mode)
+        green_detected = self.detect_green_light(frame)
+        self.detect_green = green_detected
 
         cv2.imshow('line_debug_camera', debug_frame)
         cv2.waitKey(1)
@@ -148,7 +151,8 @@ class LaneFollowerNode(Node):
             'follow_mode': self.mode,
             'drive_mode': self.drive_mode,
             'found': found,
-            'road_center': int(road_center)
+            'road_center': int(road_center),
+            'detect_green': self.detect_green
         }
         if self.drive_mode != 'line_follow':
             lane_info['error'] = None
@@ -242,6 +246,32 @@ class LaneFollowerNode(Node):
     # =========================================================
     # 根據模式呼叫不同找線函式
     # =========================================================
+    def detect_green_light(self, frame):
+        """
+        偵測綠燈並標示位置
+        """
+        hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+
+        # 綠色範圍設定 (HSV 空間)
+        lower_green = np.array([50, 24, 255])
+        upper_green = np.array([180, 255, 255])
+        mask = cv2.inRange(hsv, lower_green, upper_green)
+
+        contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+        for cnt in contours:
+            area = cv2.contourArea(cnt)
+            print("area=", area)
+            if area > 10:  # 過濾小雜訊
+                x, y, w, h = cv2.boundingRect(cnt)
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+                cv2.putText(frame, "Green", (x, y - 10),
+                            cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 255, 0), 2)
+                return True
+
+        cv2.putText(frame, "No Green Detected", (10, 30),
+                    cv2.FONT_HERSHEY_SIMPLEX, 0.6, (0, 0, 255), 2)
+        return False
+
     def detect_lane(self, frame, mode):
         if frame is None:
             empty = np.zeros((480, 640, 3), dtype=np.uint8)

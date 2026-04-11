@@ -1,0 +1,19 @@
+[4.186s] Invoking command in '/home/iclab/autorace/build/control': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data
+[5.264s] running develop
+[6.018s] running egg_info
+[6.018s] writing control.egg-info/PKG-INFO
+[6.020s] writing dependency_links to control.egg-info/dependency_links.txt
+[6.022s] writing entry points to control.egg-info/entry_points.txt
+[6.022s] writing requirements to control.egg-info/requires.txt
+[6.024s] writing top-level names to control.egg-info/top_level.txt
+[6.152s] reading manifest file 'control.egg-info/SOURCES.txt'
+[6.155s] writing manifest file 'control.egg-info/SOURCES.txt'
+[6.314s] running build_ext
+[6.316s] Creating /home/iclab/autorace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)
+[6.320s] Installing controller_node script to /home/iclab/autorace/install/control/lib/control
+[6.321s] Installing lidar_node script to /home/iclab/autorace/install/control/lib/control
+[6.322s] Installing motor_node script to /home/iclab/autorace/install/control/lib/control
+[6.322s] 
+[6.323s] Installed /home/iclab/autorace/build/control
+[6.323s] running symlink_data
+[6.459s] Invoked command in '/home/iclab/autorace/build/control' returned '0': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data
