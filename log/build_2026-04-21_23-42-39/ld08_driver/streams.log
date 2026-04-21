@@ -1,0 +1,32 @@
+[2.520s] Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/iclab/autorace/build/ld08_driver -- -j8 -l8
+[2.904s] [100%] Built target ld08_driver
+[2.955s] Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/iclab/autorace/build/ld08_driver -- -j8 -l8
+[3.011s] Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/iclab/autorace/build/ld08_driver
+[3.044s] -- Install configuration: ""
+[3.047s] -- Execute custom install script
+[3.050s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/packages/ld08_driver
+[3.052s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.055s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.058s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig.cmake
+[3.059s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig-version.cmake
+[3.061s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.xml
+[3.067s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/launch/ld08.launch.py
+[3.070s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/lib/ld08_driver/ld08_driver
+[3.072s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/package_run_dependencies/ld08_driver
+[3.075s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/parent_prefix_path/ld08_driver
+[3.077s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.sh
+[3.079s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.dsv
+[3.081s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.sh
+[3.084s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.dsv
+[3.086s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.bash
+[3.088s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.sh
+[3.091s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.zsh
+[3.094s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.dsv
+[3.098s] -- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.dsv
+[3.141s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/packages/ld08_driver
+[3.143s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[3.143s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[3.144s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig.cmake
+[3.145s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig-version.cmake
+[3.149s] -- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.xml
+[3.168s] Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/iclab/autorace/build/ld08_driver

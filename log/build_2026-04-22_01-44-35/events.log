@@ -1,0 +1,180 @@
+[0.000000] (-) TimerEvent: {}
+[0.002475] (camera) JobQueued: {'identifier': 'camera', 'dependencies': OrderedDict()}
+[0.003699] (control) JobQueued: {'identifier': 'control', 'dependencies': OrderedDict()}
+[0.004339] (ld08_driver) JobQueued: {'identifier': 'ld08_driver', 'dependencies': OrderedDict()}
+[0.004964] (camera) JobStarted: {'identifier': 'camera'}
+[0.045909] (control) JobStarted: {'identifier': 'control'}
+[0.085078] (ld08_driver) JobStarted: {'identifier': 'ld08_driver'}
+[0.098247] (-) TimerEvent: {}
+[0.199995] (-) TimerEvent: {}
+[0.301923] (-) TimerEvent: {}
+[0.402702] (-) TimerEvent: {}
+[0.503452] (-) TimerEvent: {}
+[0.604205] (-) TimerEvent: {}
+[0.705013] (-) TimerEvent: {}
+[0.805850] (-) TimerEvent: {}
+[0.906615] (-) TimerEvent: {}
+[1.007416] (-) TimerEvent: {}
+[1.108169] (-) TimerEvent: {}
+[1.209540] (-) TimerEvent: {}
+[1.311764] (-) TimerEvent: {}
+[1.414454] (-) TimerEvent: {}
+[1.515187] (-) TimerEvent: {}
+[1.615882] (-) TimerEvent: {}
+[1.716666] (-) TimerEvent: {}
+[1.817446] (-) TimerEvent: {}
+[1.918200] (-) TimerEvent: {}
+[2.018982] (-) TimerEvent: {}
+[2.119747] (-) TimerEvent: {}
+[2.221195] (-) TimerEvent: {}
+[2.321928] (-) TimerEvent: {}
+[2.427328] (-) TimerEvent: {}
+[2.538499] (-) TimerEvent: {}
+[2.542383] (ld08_driver) JobProgress: {'identifier': 'ld08_driver', 'progress': 'cmake'}
+[2.546430] (ld08_driver) JobProgress: {'identifier': 'ld08_driver', 'progress': 'build'}
+[2.552526] (ld08_driver) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/iclab/autorace/build/ld08_driver', '--', '-j8', '-l8'], 'cwd': '/home/iclab/autorace/build/ld08_driver', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://gate1.tku.edu.tw:3128/'), ('no_proxy', '*.tku.edu.tw'), ('USER', 'iclab'), ('SSH_AGENT_PID', '4809'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/iclab'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', '*.tku.edu.tw'), ('JETSON_L4T', '35.6.4'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('JETSON_MODEL', 'Jetson-AGX'), ('MANAGERPID', '4405'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('https_proxy', 'http://gate1.tku.edu.tw:3128/'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'iclab'), ('JETSON_MODULE', 'NVIDIA Jetson AGX Xavier (16 GB ram)'), ('JETSON_SERIAL_NUMBER', '0424218030977'), ('http_proxy', 'http://gate1.tku.edu.tw:3128/'), ('JOURNAL_STREAM', '8:73220'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Galen'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'iclab'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/home/iclab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/4922,unix/ubuntu:/tmp/.ICE-unix/4922'), ('INVOCATION_ID', '41660d7b5f814b6d9b5f1e99485a2103'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/bcb7e8ca_156a_4c23_81b1_be2b247f4bd5'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra194'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('JETSON_CUDA_ARCH_BIN', '7.2'), ('PWD', '/home/iclab/autorace/build/ld08_driver'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('HTTP_PROXY', 'http://gate1.tku.edu.tw:3128/'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('JETSON_JETPACK', ''), ('JETSON_P_NUMBER', 'p2888-0001'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[2.640296] (-) TimerEvent: {}
+[2.742741] (-) TimerEvent: {}
+[2.843398] (-) TimerEvent: {}
+[2.944151] (-) TimerEvent: {}
+[3.047288] (-) TimerEvent: {}
+[3.058357] (ld08_driver) StdoutLine: {'line': b'[100%] Built target ld08_driver\n'}
+[3.116980] (ld08_driver) CommandEnded: {'returncode': 0}
+[3.122260] (ld08_driver) JobProgress: {'identifier': 'ld08_driver', 'progress': 'install'}
+[3.148114] (-) TimerEvent: {}
+[3.181812] (ld08_driver) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/iclab/autorace/build/ld08_driver'], 'cwd': '/home/iclab/autorace/build/ld08_driver', 'env': OrderedDict([('GJS_DEBUG_TOPICS', 'JS ERROR;JS LOG'), ('LESSOPEN', '| /usr/bin/lesspipe %s'), ('HTTPS_PROXY', 'http://gate1.tku.edu.tw:3128/'), ('no_proxy', '*.tku.edu.tw'), ('USER', 'iclab'), ('SSH_AGENT_PID', '4809'), ('XDG_SESSION_TYPE', 'x11'), ('SHLVL', '1'), ('LD_LIBRARY_PATH', '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib'), ('HOME', '/home/iclab'), ('DESKTOP_SESSION', 'ubuntu'), ('NO_PROXY', '*.tku.edu.tw'), ('JETSON_L4T', '35.6.4'), ('ROS_PYTHON_VERSION', '3'), ('GNOME_SHELL_SESSION_MODE', 'ubuntu'), ('GTK_MODULES', 'gail:atk-bridge'), ('JETSON_MODEL', 'Jetson-AGX'), ('MANAGERPID', '4405'), ('DBUS_SESSION_BUS_ADDRESS', 'unix:path=/run/user/1000/bus'), ('COLORTERM', 'truecolor'), ('IM_CONFIG_PHASE', '1'), ('https_proxy', 'http://gate1.tku.edu.tw:3128/'), ('ROS_DISTRO', 'foxy'), ('LOGNAME', 'iclab'), ('JETSON_MODULE', 'NVIDIA Jetson AGX Xavier (16 GB ram)'), ('JETSON_SERIAL_NUMBER', '0424218030977'), ('http_proxy', 'http://gate1.tku.edu.tw:3128/'), ('JOURNAL_STREAM', '8:73220'), ('_', '/usr/bin/colcon'), ('ROS_VERSION', '2'), ('JETSON_CODENAME', 'Galen'), ('XDG_SESSION_CLASS', 'user'), ('USERNAME', 'iclab'), ('TERM', 'xterm-256color'), ('GNOME_DESKTOP_SESSION_ID', 'this-is-deprecated'), ('ROS_LOCALHOST_ONLY', '0'), ('WINDOWPATH', '2'), ('PATH', '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/home/iclab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin'), ('SESSION_MANAGER', 'local/ubuntu:@/tmp/.ICE-unix/4922,unix/ubuntu:/tmp/.ICE-unix/4922'), ('INVOCATION_ID', '41660d7b5f814b6d9b5f1e99485a2103'), ('XDG_MENU_PREFIX', 'gnome-'), ('GNOME_TERMINAL_SCREEN', '/org/gnome/Terminal/screen/bcb7e8ca_156a_4c23_81b1_be2b247f4bd5'), ('XDG_RUNTIME_DIR', '/run/user/1000'), ('DISPLAY', ':1'), ('LANG', 'en_US.UTF-8'), ('XDG_CURRENT_DESKTOP', 'ubuntu:GNOME'), ('XMODIFIERS', '@im=ibus'), ('XDG_SESSION_DESKTOP', 'ubuntu'), ('XAUTHORITY', '/run/user/1000/gdm/Xauthority'), ('LS_COLORS', 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:'), ('JETSON_SOC', 'tegra194'), ('GNOME_TERMINAL_SERVICE', ':1.84'), ('SSH_AUTH_SOCK', '/run/user/1000/keyring/ssh'), ('AMENT_PREFIX_PATH', '/opt/ros/foxy'), ('SHELL', '/bin/bash'), ('QT_ACCESSIBILITY', '1'), ('GDMSESSION', 'ubuntu'), ('LESSCLOSE', '/usr/bin/lesspipe %s %s'), ('GPG_AGENT_INFO', '/run/user/1000/gnupg/S.gpg-agent:0:1'), ('GJS_DEBUG_OUTPUT', 'stderr'), ('QT_IM_MODULE', 'ibus'), ('JETSON_CUDA_ARCH_BIN', '7.2'), ('PWD', '/home/iclab/autorace/build/ld08_driver'), ('XDG_CONFIG_DIRS', '/etc/xdg/xdg-ubuntu:/etc/xdg'), ('XDG_DATA_DIRS', '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop'), ('PYTHONPATH', '/opt/ros/foxy/lib/python3.8/site-packages'), ('HTTP_PROXY', 'http://gate1.tku.edu.tw:3128/'), ('COLCON', '1'), ('VTE_VERSION', '6003'), ('JETSON_JETPACK', ''), ('JETSON_P_NUMBER', 'p2888-0001'), ('CMAKE_PREFIX_PATH', '/opt/ros/foxy')]), 'shell': False}
+[3.239605] (ld08_driver) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[3.245548] (ld08_driver) StdoutLine: {'line': b'-- Execute custom install script\n'}
+[3.248074] (-) TimerEvent: {}
+[3.250136] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/packages/ld08_driver\n'}
+[3.253972] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.257479] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.259820] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig.cmake\n'}
+[3.261810] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig-version.cmake\n'}
+[3.265901] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.xml\n'}
+[3.271086] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/launch/ld08.launch.py\n'}
+[3.273948] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/lib/ld08_driver/ld08_driver\n'}
+[3.276439] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/package_run_dependencies/ld08_driver\n'}
+[3.279637] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/parent_prefix_path/ld08_driver\n'}
+[3.282071] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.sh\n'}
+[3.284375] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.dsv\n'}
+[3.286629] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.sh\n'}
+[3.288858] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.dsv\n'}
+[3.292206] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.bash\n'}
+[3.296256] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.sh\n'}
+[3.299131] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.zsh\n'}
+[3.302538] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.dsv\n'}
+[3.305349] (ld08_driver) StdoutLine: {'line': b'-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.dsv\n'}
+[3.348354] (-) TimerEvent: {}
+[3.381655] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/packages/ld08_driver\n'}
+[3.384179] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_dependencies-extras.cmake\n'}
+[3.386794] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake\n'}
+[3.389183] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig.cmake\n'}
+[3.391022] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig-version.cmake\n'}
+[3.393343] (ld08_driver) StdoutLine: {'line': b'-- Up-to-date symlink: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.xml\n'}
+[3.403170] (ld08_driver) CommandEnded: {'returncode': 0}
+[3.448917] (-) TimerEvent: {}
+[3.527189] (ld08_driver) JobEnded: {'identifier': 'ld08_driver', 'rc': 0}
+[3.549488] (-) TimerEvent: {}
+[3.652229] (-) TimerEvent: {}
+[3.753199] (-) TimerEvent: {}
+[3.854303] (-) TimerEvent: {}
+[3.955297] (-) TimerEvent: {}
+[4.056257] (-) TimerEvent: {}
+[4.156953] (-) TimerEvent: {}
+[4.257739] (-) TimerEvent: {}
+[4.359606] (-) TimerEvent: {}
+[4.461019] (-) TimerEvent: {}
+[4.563807] (-) TimerEvent: {}
+[4.665771] (-) TimerEvent: {}
+[4.766896] (-) TimerEvent: {}
+[4.868008] (-) TimerEvent: {}
+[4.970310] (-) TimerEvent: {}
+[5.061664] (camera) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/iclab/autorace/build/camera/build', '--no-deps', 'symlink_data'], 'cwd': '/home/iclab/autorace/build/camera', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'HTTPS_PROXY': 'http://gate1.tku.edu.tw:3128/', 'no_proxy': '*.tku.edu.tw', 'USER': 'iclab', 'SSH_AGENT_PID': '4809', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/iclab', 'DESKTOP_SESSION': 'ubuntu', 'NO_PROXY': '*.tku.edu.tw', 'JETSON_L4T': '35.6.4', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'JETSON_MODEL': 'Jetson-AGX', 'MANAGERPID': '4405', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'https_proxy': 'http://gate1.tku.edu.tw:3128/', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'iclab', 'JETSON_MODULE': 'NVIDIA Jetson AGX Xavier (16 GB ram)', 'JETSON_SERIAL_NUMBER': '0424218030977', 'http_proxy': 'http://gate1.tku.edu.tw:3128/', 'JOURNAL_STREAM': '8:73220', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'JETSON_CODENAME': 'Galen', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'iclab', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/home/iclab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/4922,unix/ubuntu:/tmp/.ICE-unix/4922', 'INVOCATION_ID': '41660d7b5f814b6d9b5f1e99485a2103', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/bcb7e8ca_156a_4c23_81b1_be2b247f4bd5', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra194', 'GNOME_TERMINAL_SERVICE': ':1.84', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'JETSON_CUDA_ARCH_BIN': '7.2', 'PWD': '/home/iclab/autorace/build/camera', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'HTTP_PROXY': 'http://gate1.tku.edu.tw:3128/', 'COLCON': '1', 'VTE_VERSION': '6003', 'JETSON_JETPACK': '', 'JETSON_P_NUMBER': 'p2888-0001'}, 'shell': False}
+[5.070359] (-) TimerEvent: {}
+[5.171848] (-) TimerEvent: {}
+[5.212523] (control) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'develop', '--editable', '--build-directory', '/home/iclab/autorace/build/control/build', '--no-deps', 'symlink_data'], 'cwd': '/home/iclab/autorace/build/control', 'env': {'GJS_DEBUG_TOPICS': 'JS ERROR;JS LOG', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'HTTPS_PROXY': 'http://gate1.tku.edu.tw:3128/', 'no_proxy': '*.tku.edu.tw', 'USER': 'iclab', 'SSH_AGENT_PID': '4809', 'XDG_SESSION_TYPE': 'x11', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/foxy/opt/yaml_cpp_vendor/lib:/opt/ros/foxy/opt/rviz_ogre_vendor/lib:/opt/ros/foxy/lib/aarch64-linux-gnu:/opt/ros/foxy/lib', 'HOME': '/home/iclab', 'DESKTOP_SESSION': 'ubuntu', 'NO_PROXY': '*.tku.edu.tw', 'JETSON_L4T': '35.6.4', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'JETSON_MODEL': 'Jetson-AGX', 'MANAGERPID': '4405', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'https_proxy': 'http://gate1.tku.edu.tw:3128/', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'iclab', 'JETSON_MODULE': 'NVIDIA Jetson AGX Xavier (16 GB ram)', 'JETSON_SERIAL_NUMBER': '0424218030977', 'http_proxy': 'http://gate1.tku.edu.tw:3128/', 'JOURNAL_STREAM': '8:73220', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'JETSON_CODENAME': 'Galen', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'iclab', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'ROS_LOCALHOST_ONLY': '0', 'WINDOWPATH': '2', 'PATH': '/opt/ros/foxy/bin:/usr/local/cuda-11.4/bin:/home/iclab/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'SESSION_MANAGER': 'local/ubuntu:@/tmp/.ICE-unix/4922,unix/ubuntu:/tmp/.ICE-unix/4922', 'INVOCATION_ID': '41660d7b5f814b6d9b5f1e99485a2103', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/bcb7e8ca_156a_4c23_81b1_be2b247f4bd5', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':1', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/gdm/Xauthority', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra194', 'GNOME_TERMINAL_SERVICE': ':1.84', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/opt/ros/foxy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'GPG_AGENT_INFO': '/run/user/1000/gnupg/S.gpg-agent:0:1', 'GJS_DEBUG_OUTPUT': 'stderr', 'QT_IM_MODULE': 'ibus', 'JETSON_CUDA_ARCH_BIN': '7.2', 'PWD': '/home/iclab/autorace/build/control', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:/opt/ros/foxy/lib/python3.8/site-packages', 'HTTP_PROXY': 'http://gate1.tku.edu.tw:3128/', 'COLCON': '1', 'VTE_VERSION': '6003', 'JETSON_JETPACK': '', 'JETSON_P_NUMBER': 'p2888-0001'}, 'shell': False}
+[5.272375] (-) TimerEvent: {}
+[5.374400] (-) TimerEvent: {}
+[5.475063] (-) TimerEvent: {}
+[5.575743] (-) TimerEvent: {}
+[5.676587] (-) TimerEvent: {}
+[5.779389] (-) TimerEvent: {}
+[5.880277] (-) TimerEvent: {}
+[5.980910] (-) TimerEvent: {}
+[6.081535] (-) TimerEvent: {}
+[6.183379] (-) TimerEvent: {}
+[6.284063] (-) TimerEvent: {}
+[6.384756] (-) TimerEvent: {}
+[6.485628] (-) TimerEvent: {}
+[6.586320] (-) TimerEvent: {}
+[6.686966] (-) TimerEvent: {}
+[6.787629] (-) TimerEvent: {}
+[6.888445] (-) TimerEvent: {}
+[6.989098] (-) TimerEvent: {}
+[7.096268] (-) TimerEvent: {}
+[7.197053] (-) TimerEvent: {}
+[7.297737] (-) TimerEvent: {}
+[7.398484] (-) TimerEvent: {}
+[7.499142] (-) TimerEvent: {}
+[7.567437] (control) StdoutLine: {'line': b'running develop\n'}
+[7.599345] (-) TimerEvent: {}
+[7.700533] (-) TimerEvent: {}
+[7.758626] (camera) StdoutLine: {'line': b'running develop\n'}
+[7.800729] (-) TimerEvent: {}
+[7.901921] (-) TimerEvent: {}
+[8.002779] (-) TimerEvent: {}
+[8.103466] (-) TimerEvent: {}
+[8.205025] (-) TimerEvent: {}
+[8.305734] (-) TimerEvent: {}
+[8.406469] (-) TimerEvent: {}
+[8.507119] (-) TimerEvent: {}
+[8.607777] (-) TimerEvent: {}
+[8.678945] (control) StdoutLine: {'line': b'running egg_info\n'}
+[8.679971] (control) StdoutLine: {'line': b'writing control.egg-info/PKG-INFO\n'}
+[8.681494] (control) StdoutLine: {'line': b'writing dependency_links to control.egg-info/dependency_links.txt\n'}
+[8.682402] (control) StdoutLine: {'line': b'writing entry points to control.egg-info/entry_points.txt\n'}
+[8.686104] (control) StdoutLine: {'line': b'writing requirements to control.egg-info/requires.txt\n'}
+[8.687249] (control) StdoutLine: {'line': b'writing top-level names to control.egg-info/top_level.txt\n'}
+[8.708062] (-) TimerEvent: {}
+[8.796080] (camera) StdoutLine: {'line': b'running egg_info\n'}
+[8.797970] (camera) StdoutLine: {'line': b'writing camera.egg-info/PKG-INFO\n'}
+[8.799926] (camera) StdoutLine: {'line': b'writing dependency_links to camera.egg-info/dependency_links.txt\n'}
+[8.802059] (camera) StdoutLine: {'line': b'writing entry points to camera.egg-info/entry_points.txt\n'}
+[8.804488] (camera) StdoutLine: {'line': b'writing requirements to camera.egg-info/requires.txt\n'}
+[8.806519] (camera) StdoutLine: {'line': b'writing top-level names to camera.egg-info/top_level.txt\n'}
+[8.808253] (-) TimerEvent: {}
+[8.878678] (control) StdoutLine: {'line': b"reading manifest file 'control.egg-info/SOURCES.txt'\n"}
+[8.882854] (control) StdoutLine: {'line': b"writing manifest file 'control.egg-info/SOURCES.txt'\n"}
+[8.908426] (-) TimerEvent: {}
+[9.012185] (-) TimerEvent: {}
+[9.056275] (camera) StdoutLine: {'line': b"reading manifest file 'camera.egg-info/SOURCES.txt'\n"}
+[9.058264] (camera) StdoutLine: {'line': b"writing manifest file 'camera.egg-info/SOURCES.txt'\n"}
+[9.112396] (-) TimerEvent: {}
+[9.123542] (control) StdoutLine: {'line': b'running build_ext\n'}
+[9.125276] (control) StdoutLine: {'line': b'Creating /home/iclab/autorace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)\n'}
+[9.132816] (control) StdoutLine: {'line': b'Installing controller_node script to /home/iclab/autorace/install/control/lib/control\n'}
+[9.133620] (control) StdoutLine: {'line': b'Installing lidar_node script to /home/iclab/autorace/install/control/lib/control\n'}
+[9.134896] (control) StdoutLine: {'line': b'Installing motor_node script to /home/iclab/autorace/install/control/lib/control\n'}
+[9.136196] (control) StdoutLine: {'line': b'\n'}
+[9.137043] (control) StdoutLine: {'line': b'Installed /home/iclab/autorace/build/control\n'}
+[9.137366] (control) StdoutLine: {'line': b'running symlink_data\n'}
+[9.212575] (-) TimerEvent: {}
+[9.313189] (-) TimerEvent: {}
+[9.323114] (control) CommandEnded: {'returncode': 0}
+[9.415443] (-) TimerEvent: {}
+[9.424847] (camera) StdoutLine: {'line': b'running build_ext\n'}
+[9.428935] (camera) StdoutLine: {'line': b'Creating /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)\n'}
+[9.430874] (camera) StdoutLine: {'line': b'Installing camera_node script to /home/iclab/autorace/install/camera/lib/camera\n'}
+[9.432487] (camera) StdoutLine: {'line': b'Installing lane_follower_node script to /home/iclab/autorace/install/camera/lib/camera\n'}
+[9.434924] (camera) StdoutLine: {'line': b'Installing yolo_node script to /home/iclab/autorace/install/camera/lib/camera\n'}
+[9.435354] (camera) StdoutLine: {'line': b'\n'}
+[9.435726] (camera) StdoutLine: {'line': b'Installed /home/iclab/autorace/build/camera\n'}
+[9.436151] (camera) StdoutLine: {'line': b'running symlink_data\n'}
+[9.458770] (control) JobEnded: {'identifier': 'control', 'rc': 0}
+[9.515697] (-) TimerEvent: {}
+[9.616342] (-) TimerEvent: {}
+[9.699175] (camera) CommandEnded: {'returncode': 0}
+[9.716533] (-) TimerEvent: {}
+[9.792317] (camera) JobEnded: {'identifier': 'camera', 'rc': 0}
+[9.801672] (-) EventReactorShutdown: {}

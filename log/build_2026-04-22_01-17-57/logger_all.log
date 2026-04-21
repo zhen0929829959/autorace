@@ -1,0 +1,276 @@
+[1.245s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[1.246s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0xffffa801f370>>, merge_install=False, metas=['./colcon.meta'], mixin=None, mixin_files=None, mixin_verb=('build',), packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=8, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0xffffa801f370>, verb_name='build', verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0xffffa801faf0>)
+[2.189s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.190s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.190s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.190s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.190s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.190s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.191s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/iclab/autorace'
+[2.191s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.191s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.192s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.192s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.192s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.192s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.192s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.193s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.193s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.375s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[2.375s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[2.375s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[2.376s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[2.376s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[2.376s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[2.377s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[2.377s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[2.378s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ignore', 'ignore_ament_install']
+[2.378s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore'
+[2.378s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ignore_ament_install'
+[2.379s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_pkg']
+[2.379s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_pkg'
+[2.379s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['colcon_meta']
+[2.379s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'colcon_meta'
+[2.379s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['ros']
+[2.379s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'ros'
+[2.380s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['cmake', 'python']
+[2.380s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'cmake'
+[2.380s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python'
+[2.380s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extensions ['python_setup_py']
+[2.380s] Level 1:colcon.colcon_core.package_identification:_identify(docker) by extension 'python_setup_py'
+[2.381s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['ignore', 'ignore_ament_install']
+[2.388s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'ignore'
+[2.388s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'ignore_ament_install'
+[2.389s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['colcon_pkg']
+[2.390s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'colcon_pkg'
+[2.390s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['colcon_meta']
+[2.390s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'colcon_meta'
+[2.390s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['ros']
+[2.390s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'ros'
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['cmake', 'python']
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'cmake'
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'python'
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extensions ['python_setup_py']
+[2.391s] Level 1:colcon.colcon_core.package_identification:_identify(docker/jetson_r35) by extension 'python_setup_py'
+[2.392s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[2.392s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[2.392s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[2.394s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[2.394s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[2.394s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[2.395s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[2.395s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[2.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[2.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[2.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[2.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[2.396s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[2.397s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[2.397s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[2.397s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[2.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[2.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[2.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[2.398s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[2.398s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ignore', 'ignore_ament_install']
+[2.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore'
+[2.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ignore_ament_install'
+[2.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_pkg']
+[2.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_pkg'
+[2.399s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['colcon_meta']
+[2.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'colcon_meta'
+[2.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extensions ['ros']
+[2.400s] Level 1:colcon.colcon_core.package_identification:_identify(src/camera) by extension 'ros'
+[2.410s] DEBUG:colcon.colcon_core.package_identification:Package 'src/camera' with type 'ros.ament_python' and name 'camera'
+[2.411s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ignore', 'ignore_ament_install']
+[2.412s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore'
+[2.412s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ignore_ament_install'
+[2.412s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_pkg']
+[2.412s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_pkg'
+[2.413s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['colcon_meta']
+[2.413s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'colcon_meta'
+[2.413s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extensions ['ros']
+[2.413s] Level 1:colcon.colcon_core.package_identification:_identify(src/control) by extension 'ros'
+[2.415s] DEBUG:colcon.colcon_core.package_identification:Package 'src/control' with type 'ros.ament_python' and name 'control'
+[2.416s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extensions ['ignore', 'ignore_ament_install']
+[2.416s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extension 'ignore'
+[2.416s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extension 'ignore_ament_install'
+[2.416s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extensions ['colcon_pkg']
+[2.425s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extension 'colcon_pkg'
+[2.425s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extensions ['colcon_meta']
+[2.426s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extension 'colcon_meta'
+[2.426s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extensions ['ros']
+[2.426s] Level 1:colcon.colcon_core.package_identification:_identify(src/ld08_driver) by extension 'ros'
+[2.430s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ld08_driver' with type 'ros.ament_cmake' and name 'ld08_driver'
+[2.430s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.430s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.430s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.431s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.512s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.531s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 256 installed packages in /opt/ros/foxy
+[2.539s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.926s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_args' from command line to 'None'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_target' from command line to 'None'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_clean_cache' from command line to 'False'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_clean_first' from command line to 'False'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'cmake_force_configure' from command line to 'False'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'ament_cmake_args' from command line to 'None'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'catkin_cmake_args' from command line to 'None'
+[2.927s] Level 5:colcon.colcon_core.verb:set package 'camera' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.928s] DEBUG:colcon.colcon_core.verb:Building package 'camera' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/iclab/autorace/build/camera', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/iclab/autorace/install/camera', 'merge_install': False, 'path': '/home/iclab/autorace/src/camera', 'symlink_install': True, 'test_result_base': None}
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_args' from command line to 'None'
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_target' from command line to 'None'
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_clean_cache' from command line to 'False'
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_clean_first' from command line to 'False'
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'cmake_force_configure' from command line to 'False'
+[2.930s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'ament_cmake_args' from command line to 'None'
+[2.931s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'catkin_cmake_args' from command line to 'None'
+[2.931s] Level 5:colcon.colcon_core.verb:set package 'control' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.931s] DEBUG:colcon.colcon_core.verb:Building package 'control' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/iclab/autorace/build/control', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/iclab/autorace/install/control', 'merge_install': False, 'path': '/home/iclab/autorace/src/control', 'symlink_install': True, 'test_result_base': None}
+[2.932s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'cmake_args' from command line to 'None'
+[2.932s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'cmake_target' from command line to 'None'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'cmake_clean_cache' from command line to 'False'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'cmake_clean_first' from command line to 'False'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'cmake_force_configure' from command line to 'False'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'ament_cmake_args' from command line to 'None'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'catkin_cmake_args' from command line to 'None'
+[2.933s] Level 5:colcon.colcon_core.verb:set package 'ld08_driver' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.933s] DEBUG:colcon.colcon_core.verb:Building package 'ld08_driver' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/iclab/autorace/build/ld08_driver', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/iclab/autorace/install/ld08_driver', 'merge_install': False, 'path': '/home/iclab/autorace/src/ld08_driver', 'symlink_install': True, 'test_result_base': None}
+[2.934s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.960s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.961s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/iclab/autorace/src/camera' with build type 'ament_python'
+[2.962s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera', 'ament_prefix_path')
+[2.970s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[2.970s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/camera/share/camera/hook/ament_prefix_path.ps1'
+[2.973s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/install/camera/share/camera/hook/ament_prefix_path.dsv'
+[2.975s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/camera/share/camera/hook/ament_prefix_path.sh'
+[2.978s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.978s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.064s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/iclab/autorace/src/control' with build type 'ament_python'
+[3.067s] Level 1:colcon.colcon_core.shell:create_environment_hook('control', 'ament_prefix_path')
+[3.070s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/control/share/control/hook/ament_prefix_path.ps1'
+[3.085s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/install/control/share/control/hook/ament_prefix_path.dsv'
+[3.087s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/control/share/control/hook/ament_prefix_path.sh'
+[3.089s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.090s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.163s] INFO:colcon.colcon_ros.task.ament_cmake.build:Building ROS package in '/home/iclab/autorace/src/ld08_driver' with build type 'ament_cmake'
+[3.166s] INFO:colcon.colcon_cmake.task.cmake.build:Building CMake package in '/home/iclab/autorace/src/ld08_driver'
+[3.170s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.172s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.978s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/iclab/autorace/src/camera'
+[4.982s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[4.984s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.434s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/iclab/autorace/src/control'
+[6.438s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.440s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.501s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/iclab/autorace/build/ld08_driver -- -j8 -l8
+[7.168s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --build /home/iclab/autorace/build/ld08_driver -- -j8 -l8
+[7.242s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/iclab/autorace/build/ld08_driver
+[7.455s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ld08_driver)
+[7.456s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=/opt/ros/foxy /usr/bin/cmake --install /home/iclab/autorace/build/ld08_driver
+[7.474s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver' for CMake module files
+[7.477s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver' for CMake config files
+[7.480s] Level 1:colcon.colcon_core.shell:create_environment_hook('ld08_driver', 'cmake_prefix_path')
+[7.482s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/hook/cmake_prefix_path.ps1'
+[7.486s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/hook/cmake_prefix_path.dsv'
+[7.488s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/hook/cmake_prefix_path.sh'
+[7.493s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/lib'
+[7.494s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/bin'
+[7.495s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/lib/pkgconfig/ld08_driver.pc'
+[7.496s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/lib/python3.8/site-packages'
+[7.497s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/bin'
+[7.498s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.ps1'
+[7.503s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.dsv'
+[7.505s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.sh'
+[7.508s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.bash'
+[7.527s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.zsh'
+[7.542s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/iclab/autorace/install/ld08_driver/share/colcon-core/packages/ld08_driver)
+[7.551s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ld08_driver)
+[7.552s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver' for CMake module files
+[7.554s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver' for CMake config files
+[7.568s] Level 1:colcon.colcon_core.shell:create_environment_hook('ld08_driver', 'cmake_prefix_path')
+[7.574s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/hook/cmake_prefix_path.ps1'
+[7.589s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/hook/cmake_prefix_path.dsv'
+[7.591s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/hook/cmake_prefix_path.sh'
+[7.593s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/lib'
+[7.593s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/bin'
+[7.594s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/lib/pkgconfig/ld08_driver.pc'
+[7.594s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/lib/python3.8/site-packages'
+[7.596s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/ld08_driver/bin'
+[7.601s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.ps1'
+[7.611s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.dsv'
+[7.616s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.sh'
+[7.624s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.bash'
+[7.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.zsh'
+[7.635s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/iclab/autorace/install/ld08_driver/share/colcon-core/packages/ld08_driver)
+[9.331s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/iclab/autorace/build/camera': PYTHONPATH=/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/camera/build --no-deps symlink_data
+[9.700s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/iclab/autorace/build/control': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data
+[11.617s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera', 'pythonpath_develop')
+[11.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/build/camera/share/camera/hook/pythonpath_develop.ps1'
+[11.622s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/iclab/autorace/build/camera' returned '0': PYTHONPATH=/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/camera/build --no-deps symlink_data
+[11.624s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/build/camera/share/camera/hook/pythonpath_develop.dsv'
+[11.626s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/build/camera/share/camera/hook/pythonpath_develop.sh'
+[11.629s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera' for CMake module files
+[11.631s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera' for CMake config files
+[11.637s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera/lib'
+[11.638s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera/bin'
+[11.638s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera/lib/pkgconfig/camera.pc'
+[11.639s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera/lib/python3.8/site-packages'
+[11.640s] Level 1:colcon.colcon_core.shell:create_environment_hook('camera', 'pythonpath')
+[11.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/camera/share/camera/hook/pythonpath.ps1'
+[11.642s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/install/camera/share/camera/hook/pythonpath.dsv'
+[11.645s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/camera/share/camera/hook/pythonpath.sh'
+[11.651s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/camera/bin'
+[11.651s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(camera)
+[11.653s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/camera/share/camera/package.ps1'
+[11.656s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/iclab/autorace/install/camera/share/camera/package.dsv'
+[11.658s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/camera/share/camera/package.sh'
+[11.660s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/camera/share/camera/package.bash'
+[11.662s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/camera/share/camera/package.zsh'
+[11.664s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/iclab/autorace/install/camera/share/colcon-core/packages/camera)
+[11.749s] Level 1:colcon.colcon_core.shell:create_environment_hook('control', 'pythonpath_develop')
+[11.751s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/iclab/autorace/build/control' returned '0': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data
+[11.752s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/build/control/share/control/hook/pythonpath_develop.ps1'
+[11.754s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/build/control/share/control/hook/pythonpath_develop.dsv'
+[11.756s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/build/control/share/control/hook/pythonpath_develop.sh'
+[11.759s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control' for CMake module files
+[11.760s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control' for CMake config files
+[11.762s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control/lib'
+[11.763s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control/bin'
+[11.763s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control/lib/pkgconfig/control.pc'
+[11.764s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control/lib/python3.8/site-packages'
+[11.764s] Level 1:colcon.colcon_core.shell:create_environment_hook('control', 'pythonpath')
+[11.764s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/control/share/control/hook/pythonpath.ps1'
+[11.766s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/iclab/autorace/install/control/share/control/hook/pythonpath.dsv'
+[11.767s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/iclab/autorace/install/control/share/control/hook/pythonpath.sh'
+[11.770s] Level 1:colcon.colcon_core.environment:checking '/home/iclab/autorace/install/control/bin'
+[11.770s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(control)
+[11.771s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/control/share/control/package.ps1'
+[11.774s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/iclab/autorace/install/control/share/control/package.dsv'
+[11.776s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/control/share/control/package.sh'
+[11.778s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/control/share/control/package.bash'
+[11.780s] INFO:colcon.colcon_core.shell:Creating package script '/home/iclab/autorace/install/control/share/control/package.zsh'
+[11.782s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/iclab/autorace/install/control/share/colcon-core/packages/control)
+[11.785s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[11.786s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[11.786s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[11.787s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[11.809s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[11.809s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[11.809s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[11.840s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[11.841s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/iclab/autorace/install/local_setup.ps1'
+[11.844s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/iclab/autorace/install/_local_setup_util_ps1.py'
+[11.850s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/iclab/autorace/install/setup.ps1'
+[11.854s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/iclab/autorace/install/local_setup.sh'
+[11.857s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/iclab/autorace/install/_local_setup_util_sh.py'
+[11.859s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/iclab/autorace/install/setup.sh'
+[11.863s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/iclab/autorace/install/local_setup.bash'
+[11.866s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/iclab/autorace/install/setup.bash'
+[11.870s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/iclab/autorace/install/local_setup.zsh'
+[11.872s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/iclab/autorace/install/setup.zsh'

@@ -33,12 +33,12 @@ class ControllerNode(Node):
         super().__init__('controller_node')
 
         # ========= 狀態 =========
-        # self.state = MissionState.TRAFFICLIGHT
-        # self.follow_mode = 'none'
-        # self.drive_mode = 'controller'
-        self.state = MissionState.TUNNEL
-        self.follow_mode = 'yellow'
+        self.state = MissionState.TRAFFICLIGHT
+        self.follow_mode = 'none'
         self.drive_mode = 'controller'
+        # self.state = MissionState.TUNNEL
+        # self.follow_mode = 'yellow'
+        # self.drive_mode = 'controller'
         # self.state = MissionState.WAIT_ROW
         # self.follow_mode = 'dual'
         # self.drive_mode = 'line_follow'
@@ -70,7 +70,7 @@ class ControllerNode(Node):
 
         self.maze_big = 120
         self.maze_small = 10
-        self.maze_base_speed = 100
+        self.maze_base_speed = 150
 
         self.found=False
         self.road_center=0
@@ -229,7 +229,7 @@ class ControllerNode(Node):
         self.publish_motor_cmd(-150, -150)
         time.sleep(2.4)
         self.publish_motor_cmd(150, -150)   
-        time.sleep(0.9)
+        time.sleep(1.1)
         self.publish_motor_cmd(150, 150)
         time.sleep(1)
 
@@ -268,7 +268,7 @@ class ControllerNode(Node):
         self.publish_motor_cmd(-80, 80)  
         time.sleep(2.1)
         self.publish_motor_cmd(140, 140)
-        time.sleep(3)
+        time.sleep(2.8)
         self.publish_motor_cmd(80, -80)  
         time.sleep(2.1)
 
@@ -279,17 +279,17 @@ class ControllerNode(Node):
                 break
             else:
                 self.get_logger().info('>> 前方清空，直行')
-                self.publish_motor_cmd(140, 140)
+                self.publish_motor_cmd(190, 190)
 
             time.sleep(0.1)
 
         # 第三段：左轉 -> 直走 -> 右轉 -> 直走
         self.publish_motor_cmd(80, -80)   
-        time.sleep(1.7)
+        time.sleep(1.9)
         self.publish_motor_cmd(140, 140)
         time.sleep(2.8)
         self.publish_motor_cmd(-80, 80) 
-        time.sleep(1.9)
+        time.sleep(1.8)
         self.publish_motor_cmd(140, 140)
         time.sleep(1.0)
 
@@ -354,12 +354,12 @@ class ControllerNode(Node):
             if front < self.DIST_THRESHOLD:
                 # 前方有障礙，切到避障找牆模式
                 self.in_wall_follow_mode = False
-                self.publish_motor_cmd(10, 150)
+                self.publish_motor_cmd(10, 160)
                 self.get_logger().info('MAZE: left to avoid')
 
             elif right > self.RIGHT_THRESHOLD:
                 # 右邊沒牆，右轉找牆
-                self.publish_motor_cmd(150, 10)
+                self.publish_motor_cmd(160, 10)
                 self.get_logger().info('MAZE: right to find wall')
 
             elif abs(right - self.IDEAL_WALL_DISTANCE) > self.DEAD_ZONE:
@@ -381,7 +381,7 @@ class ControllerNode(Node):
         else:
             # 避障 / 找牆模式
             if front < self.DIST_THRESHOLD:
-                self.publish_motor_cmd(5, 180)
+                self.publish_motor_cmd(5, 190)
                 self.get_logger().info('MAZE: avoiding...')
 
             elif right < self.RIGHT_THRESHOLD:
@@ -390,7 +390,7 @@ class ControllerNode(Node):
                 self.get_logger().info('MAZE: back to wall follow')
 
             else:
-                self.publish_motor_cmd(150, 10)
+                self.publish_motor_cmd(160, 10)
                 self.get_logger().info('MAZE: searching for wall...')
 
     # =====================================================
@@ -449,6 +449,14 @@ class ControllerNode(Node):
                 self.set_state(
                     MissionState.FOLLOW_YELLOW,
                     follow_mode='yellow',
+                    drive_mode='controller',
+                    reason=f'Detected turn sign class {class_id}'
+                )
+                self.publish_motor_cmd(50, 150)
+                time.sleep(1.9)
+                self.set_state(
+                    MissionState.FOLLOW_YELLOW,
+                    follow_mode='yellow',
                     drive_mode='line_follow',
                     reason=f'Detected turn sign class {class_id}'
                 )
@@ -500,12 +508,12 @@ class ControllerNode(Node):
                     drive_mode='controller',
                     reason=f'in TUNNEL {class_id}'
                 )
-                self.publish_motor_cmd(0, 0) #####
-                time.sleep(0.5)
-                self.publish_motor_cmd(150, 150)
-                time.sleep(1.6)
-                self.publish_motor_cmd(0, 0) #####
-                time.sleep(0.5)
+                # self.publish_motor_cmd(0, 0) #####
+                # time.sleep(0.5)
+                self.publish_motor_cmd(200, 200)
+                time.sleep(1.3)
+                # self.publish_motor_cmd(0, 0) #####
+                # time.sleep(0.5)
             else:
                 self.set_state(
                     MissionState.WAIT_ROW,
@@ -656,6 +664,7 @@ class ControllerNode(Node):
         if self.state == MissionState.TUNNEL:
             if self.found :
                 self.get_logger().warn(f'找到黃線 {self.no_line_count} 次')
+                ###########333###
                 # self.set_state(
                 #     MissionState.FINISH,
                 #     follow_mode='dual',

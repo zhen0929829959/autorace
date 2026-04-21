@@ -29,9 +29,9 @@ class LaneFollowerNode(Node):
 
         # ===== PID 參數 =====
         self.pid_settings = {
-            'dual': {'kp': 1.5, 'ki': 0.00, 'kd': 0.0,'base_speed': 150, 'target_x': 320},
-            'white': {'kp': 1.5, 'ki': 0.0, 'kd': 0.0,'base_speed': 150, 'target_x': 330},
-            'yellow': {'kp': 1.5, 'ki': 0.0, 'kd': 0.0,'base_speed': 150, 'target_x': 310},
+            'dual': {'kp': 1.1, 'ki': 0.00, 'kd': 0.0,'base_speed': 200, 'target_x': 320},
+            'white': {'kp': 1.1, 'ki': 0.0, 'kd': 0.0,'base_speed': 200, 'target_x': 330},
+            'yellow': {'kp': 1.1, 'ki': 0.0, 'kd': 0.0,'base_speed': 200, 'target_x': 310},
             'none': {'kp': 0.0, 'ki': 0.0, 'kd': 0.0,'base_speed': 0, 'target_x': 0}
         }
 
@@ -171,8 +171,8 @@ class LaneFollowerNode(Node):
         error = road_center - setting['target_x']
         correction = self.calculate_pid(error, self.mode)
 
-        left_speed = int(np.clip(setting['base_speed'] + correction, -150, 150))
-        right_speed = int(np.clip(setting['base_speed'] - correction, -150, 150))
+        left_speed = int(np.clip(setting['base_speed'] + correction, -255, 255))
+        right_speed = int(np.clip(setting['base_speed'] - correction, -255, 255))
 
         lane_info['error'] = float(error)
         lane_info['target_x'] = setting['target_x']
@@ -250,7 +250,7 @@ class LaneFollowerNode(Node):
         for cnt in contours:
             area = cv2.contourArea(cnt)
             print("area=", area)
-            if area > 60:  # 過濾小雜訊
+            if area > 40:  # 過濾小雜訊
                 x, y, w, h = cv2.boundingRect(cnt)
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 cv2.putText(frame, "Green", (x, y - 10),
@@ -377,7 +377,7 @@ class LaneFollowerNode(Node):
         if yellow_x is not None:
             center_x_in_roi = yellow_x + 195
         else:
-            center_x_in_roi = 320
+            center_x_in_roi = 340
 
         road_center = x_start + center_x_in_roi
 

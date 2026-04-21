@@ -1,0 +1,19 @@
+[6.403s] Invoking command in '/home/iclab/autorace/build/camera': PYTHONPATH=/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/camera/build --no-deps symlink_data
+[8.487s] running develop
+[9.249s] running egg_info
+[9.251s] writing camera.egg-info/PKG-INFO
+[9.251s] writing dependency_links to camera.egg-info/dependency_links.txt
+[9.253s] writing entry points to camera.egg-info/entry_points.txt
+[9.253s] writing requirements to camera.egg-info/requires.txt
+[9.254s] writing top-level names to camera.egg-info/top_level.txt
+[9.446s] reading manifest file 'camera.egg-info/SOURCES.txt'
+[9.451s] writing manifest file 'camera.egg-info/SOURCES.txt'
+[9.594s] running build_ext
+[9.597s] Creating /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)
+[9.602s] Installing camera_node script to /home/iclab/autorace/install/camera/lib/camera
+[9.603s] Installing lane_follower_node script to /home/iclab/autorace/install/camera/lib/camera
+[9.606s] Installing yolo_node script to /home/iclab/autorace/install/camera/lib/camera
+[9.608s] 
+[9.608s] Installed /home/iclab/autorace/build/camera
+[9.609s] running symlink_data
+[9.736s] Invoked command in '/home/iclab/autorace/build/camera' returned '0': PYTHONPATH=/home/iclab/autorace/build/camera/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/camera/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/camera/build --no-deps symlink_data
