@@ -17,6 +17,7 @@ class MissionState(Enum):
     FOLLOW_YELLOW = 'follow_yellow'
     TRAFFICLIGHT = 'trafficlight'
     WAIT_TURN = 'wait_turn'
+    WAIT_WORK='wait_work'
     WAIT_OBSTACLE = 'wait_obstacle'   # 已看到施工號誌，持續循白線等障礙
     AVOID = 'avoid'
     WAIT_PARK = 'wait_park'           # 已看到 P，切循黃線等停車
@@ -32,9 +33,15 @@ class ControllerNode(Node):
         super().__init__('controller_node')
 
         # ========= 狀態 =========
-        self.state = MissionState.TRAFFICLIGHT
-        self.follow_mode = 'none'
+        # self.state = MissionState.TRAFFICLIGHT
+        # self.follow_mode = 'none'
+        # self.drive_mode = 'controller'
+        self.state = MissionState.TUNNEL
+        self.follow_mode = 'yellow'
         self.drive_mode = 'controller'
+        # self.state = MissionState.WAIT_ROW
+        # self.follow_mode = 'dual'
+        # self.drive_mode = 'line_follow'
 
         # YOLO 防抖
         self.current_sign = None
@@ -51,6 +58,20 @@ class ControllerNode(Node):
         self.left_distance = 9999.0
         self.right_distance = 9999.0
 
+        # ========= 迷宮 / 貼右牆參數 =========
+        self.in_wall_follow_mode = True   # True=貼牆模式, False=避障找牆模式
+
+        self.DIST_THRESHOLD = 290         # 前方障礙門檻260
+        self.RIGHT_THRESHOLD = 300        # 判斷右邊牆不見的門檻
+        self.IDEAL_WALL_DISTANCE = 200    # 理想貼牆距離
+        self.DEAD_ZONE = 20               # 誤差容許範圍
+        self.KP = 1                   # 比例控制增益
+        self.exit_THRESHOLD = 400
+
+        self.maze_big = 120
+        self.maze_small = 10
+        self.maze_base_speed = 100
+
         self.found=False
         self.road_center=0
         self.no_line_count = 0
@@ -60,6 +81,8 @@ class ControllerNode(Node):
         self.avoid_running = False
         self.parking_running = False
         self.parking_distance_threshold = 850
+        self.parking_stop_dist = 210
+        self.line_count=0
 
         # ========= Publisher =========
         self.follow_mode_pub = self.create_publisher(String, '/follow_mode', 10)
@@ -197,7 +220,7 @@ class ControllerNode(Node):
         # 左側有障礙物，向右停車
         self.publish_motor_cmd(150, 150)
         time.sleep(1.6)
-        self.publish_motor_cmd(-150, 150)
+        self.publish_motor_cmd(150, -150)  
         time.sleep(0.9)
         self.publish_motor_cmd(150, 150)
         time.sleep(2.4)
@@ -205,7 +228,7 @@ class ControllerNode(Node):
         time.sleep(2.0)
         self.publish_motor_cmd(-150, -150)
         time.sleep(2.4)
-        self.publish_motor_cmd(-150, 150)
+        self.publish_motor_cmd(150, -150)   
         time.sleep(0.9)
         self.publish_motor_cmd(150, 150)
         time.sleep(1)
@@ -214,7 +237,7 @@ class ControllerNode(Node):
         # 右側有障礙物，向左停車
         self.publish_motor_cmd(150, 150)
         time.sleep(1.7)
-        self.publish_motor_cmd(150, -150)
+        self.publish_motor_cmd(-150, 150)   
         time.sleep(1.1)
         self.publish_motor_cmd(150, 150)
         time.sleep(2.7)
@@ -222,7 +245,7 @@ class ControllerNode(Node):
         time.sleep(2.0)
         self.publish_motor_cmd(-150, -150)
         time.sleep(2.6)
-        self.publish_motor_cmd(150, -150)
+        self.publish_motor_cmd(-150, 150)  
         time.sleep(1.1)
         self.publish_motor_cmd(150, 150)
         time.sleep(1)
@@ -242,13 +265,11 @@ class ControllerNode(Node):
         self.publish_modes()
 
         # 第一段
-        self.publish_motor_cmd(80, -80)
+        self.publish_motor_cmd(-80, 80)  
         time.sleep(2.1)
         self.publish_motor_cmd(140, 140)
-        time.sleep(3.5)
-        self.publish_motor_cmd(-80, 80)
-        time.sleep(2.1)
-        self.publish_motor_cmd(0, 0)
+        time.sleep(3)
+        self.publish_motor_cmd(80, -80)  
         time.sleep(2.1)
 
         # 第二段：直走直到前方再次看到障礙
@@ -263,11 +284,11 @@ class ControllerNode(Node):
             time.sleep(0.1)
 
         # 第三段：左轉 -> 直走 -> 右轉 -> 直走
-        self.publish_motor_cmd(-80, 80)
+        self.publish_motor_cmd(80, -80)   
         time.sleep(1.7)
         self.publish_motor_cmd(140, 140)
-        time.sleep(3)
-        self.publish_motor_cmd(80, -80)
+        time.sleep(2.8)
+        self.publish_motor_cmd(-80, 80) 
         time.sleep(1.9)
         self.publish_motor_cmd(140, 140)
         time.sleep(1.0)
@@ -320,6 +341,57 @@ class ControllerNode(Node):
 
         self.parking_running = False
         self.get_logger().info('Parking finished')
+
+    def maze_open_control(self):
+        front = self.front_distance
+        right = self.right_distance
+
+        self.get_logger().info(
+            f'[MAZE] front={front:.1f}, right={right:.1f}, wall_follow={self.in_wall_follow_mode}'
+        )
+
+        if self.in_wall_follow_mode:
+            if front < self.DIST_THRESHOLD:
+                # 前方有障礙，切到避障找牆模式
+                self.in_wall_follow_mode = False
+                self.publish_motor_cmd(10, 150)
+                self.get_logger().info('MAZE: left to avoid')
+
+            elif right > self.RIGHT_THRESHOLD:
+                # 右邊沒牆，右轉找牆
+                self.publish_motor_cmd(150, 10)
+                self.get_logger().info('MAZE: right to find wall')
+
+            elif abs(right - self.IDEAL_WALL_DISTANCE) > self.DEAD_ZONE:
+                # 距離牆太近或太遠，做比例修正
+                error = right - self.IDEAL_WALL_DISTANCE
+                adjustment = int(self.KP * error)
+                adjustment = max(min(adjustment, 50), -50)
+
+                self.publish_motor_cmd(
+                    self.maze_base_speed + adjustment,
+                    self.maze_base_speed - adjustment
+                )
+                self.get_logger().info(f'MAZE: adjusting {adjustment}')
+
+            else:
+                # 在理想範圍內，直走
+                self.publish_motor_cmd(self.maze_base_speed, self.maze_base_speed)
+                self.get_logger().info('MAZE: go straight')
+        else:
+            # 避障 / 找牆模式
+            if front < self.DIST_THRESHOLD:
+                self.publish_motor_cmd(5, 180)
+                self.get_logger().info('MAZE: avoiding...')
+
+            elif right < self.RIGHT_THRESHOLD:
+                self.in_wall_follow_mode = True     
+                self.publish_motor_cmd(self.maze_base_speed, self.maze_base_speed)
+                self.get_logger().info('MAZE: back to wall follow')
+
+            else:
+                self.publish_motor_cmd(150, 10)
+                self.get_logger().info('MAZE: searching for wall...')
 
     # =====================================================
     # callback
@@ -381,7 +453,14 @@ class ControllerNode(Node):
                     reason=f'Detected turn sign class {class_id}'
                 )
         # 白線/黃線中看到施工號誌或 P
-        elif self.state in [MissionState.FOLLOW_WHITE, MissionState.FOLLOW_YELLOW]:
+        elif self.state in [MissionState.FOLLOW_WHITE, MissionState.FOLLOW_YELLOW, MissionState.FOLLOW_DUAL]:
+            # if class_id == 1:
+            #     self.set_state(
+            #         MissionState.WAIT_WORK,
+            #         follow_mode='dual',
+            #         drive_mode='line_follow',
+            #         reason='Detected construction sign (class 5), keep following white line'
+            #     )
             if class_id == 5:
                 self.set_state(
                     MissionState.WAIT_OBSTACLE,
@@ -397,7 +476,7 @@ class ControllerNode(Node):
                     reason='Detected P sign (class 3), switch to yellow line'
                 )
         elif self.state == MissionState.WAIT_DUAL:
-            if class_id == 3: ######
+            if class_id == 2: 
                 self.set_state(
                     MissionState.WAIT_ROW,
                     follow_mode='dual',
@@ -414,13 +493,19 @@ class ControllerNode(Node):
                 )
                 self.publish_motor_cmd(0, 0)
             elif class_id == 4:
+                self.in_wall_follow_mode = True
                 self.set_state(
                     MissionState.TUNNEL,
-                    follow_mode='dual',
+                    follow_mode='yellow',
                     drive_mode='controller',
                     reason=f'in TUNNEL {class_id}'
                 )
                 self.publish_motor_cmd(0, 0) #####
+                time.sleep(0.5)
+                self.publish_motor_cmd(150, 150)
+                time.sleep(1.6)
+                self.publish_motor_cmd(0, 0) #####
+                time.sleep(0.5)
             else:
                 self.set_state(
                     MissionState.WAIT_ROW,
@@ -449,11 +534,42 @@ class ControllerNode(Node):
                 )
                 threading.Thread(target=self.run_avoid_sequence, daemon=True).start()
 
-        # 看到 P 後，循黃線，等左右出現停車判斷條件
+        # #看有無線!!!!
+        # #看到 P 後，循黃線，等左右出現停車判斷條件
+        # elif self.state == MissionState.WAIT_PARK:
+        #     if not self.parking_running:
+        #         if self.no_line_count > 2:
+        #             self.get_logger().info('黃線連續消失，直接停車結束')
+        #             self.set_state(
+        #                 MissionState.PARKING,
+        #                 follow_mode='yellow',
+        #                 drive_mode='controller',
+        #                 reason='Yellow line lost continuously, stop parking'
+        #             )
+        #             self.publish_motor_cmd(0, 0)
+        #             time.sleep(0.2)
+        #             if self.right_distance < self.parking_distance_threshold:
+        #                 self.set_state(
+        #                     MissionState.PARKING,
+        #                     follow_mode='yellow',
+        #                     drive_mode='controller',
+        #                     reason=f'Right side occupied, start left parking | right={self.right_distance}'
+        #                 )
+        #                 self.run_parking_sequence()
+        #             elif self.left_distance < self.parking_distance_threshold:
+        #                 self.set_state(
+        #                     MissionState.PARKING,
+        #                     follow_mode='yellow',
+        #                     drive_mode='controller',
+        #                     reason=f'Left side occupied, start right parking | left={self.left_distance}'
+        #                 )
+        #                 self.run_parking_sequence()
+
+        # 看有無障      看到 P 後，循黃線，等左右出現停車判斷條件
         elif self.state == MissionState.WAIT_PARK:
             if not self.parking_running:
-                if self.no_line_count > 2:
-                    self.get_logger().info('黃線連續消失，直接停車結束')
+                if self.right_distance < self.parking_stop_dist or self.left_distance < self.parking_stop_dist:
+                    self.get_logger().info('有障礙物，停車')
                     self.set_state(
                         MissionState.PARKING,
                         follow_mode='yellow',
@@ -479,6 +595,17 @@ class ControllerNode(Node):
                         )
                         self.run_parking_sequence()
 
+        elif self.state == MissionState.TUNNEL:
+            self.maze_open_control()
+            # if self.right_distance > self.exit_THRESHOLD and self.front_distance > self.exit_THRESHOLD :
+            #     self.get_logger().warn(f'出去啦')
+            #     self.set_state(
+            #         MissionState.FINISH,
+            #         follow_mode='dual',
+            #         drive_mode='line_follow',
+            #         reason=f'TUNNEL FINISH to follow line'
+            #     )
+
     def lane_callback(self, msg):
         ddd = self.parse_lane_msg(msg.data)
         if ddd is None:
@@ -487,14 +614,14 @@ class ControllerNode(Node):
         self.found = ddd.get('found', False)
         self.road_center = ddd.get('road_center', 0)
         self.detect_green=ddd.get('detect_green', False)
-        if self.state == MissionState.WAIT_PARK:
-            if self.road_center > 350:
-                self.no_line_count += 1
-                self.get_logger().warn(f'黃線消失 {self.no_line_count} 次')
-            else:
-                self.no_line_count = 0
-        else:
-            self.no_line_count = 0
+        # if self.state == MissionState.WAIT_PARK:
+        #     if self.road_center > 350:
+        #         self.no_line_count += 1
+        #         self.get_logger().warn(f'黃線消失 {self.no_line_count} 次')
+        #     else:
+        #         self.no_line_count = 0
+        # else:
+        #     self.no_line_count = 0
         if self.state == MissionState.TRAFFICLIGHT:
             if self.detect_green :
                 self.set_state(
@@ -512,6 +639,30 @@ class ControllerNode(Node):
                 )
                 self.publish_motor_cmd(0, 0)
                 time.sleep(0.2)
+
+        # if self.state == MissionState.TUNNEL:
+        #     if self.found :
+        #         self.line_count += 1
+        #         self.get_logger().warn(f'找到黃線 {self.no_line_count} 次')
+        #         if self.line_count >5:
+        #             self.set_state(
+        #                 MissionState.FINISH,
+        #                 follow_mode='dual',
+        #                 drive_mode='line_follow',
+        #                 reason=f'TUNNEL FINISH to follow line'
+        #             )
+        #     else:
+        #         self.line_count = 0
+        if self.state == MissionState.TUNNEL:
+            if self.found :
+                self.get_logger().warn(f'找到黃線 {self.no_line_count} 次')
+                # self.set_state(
+                #     MissionState.FINISH,
+                #     follow_mode='dual',
+                #     drive_mode='line_follow',
+                #     reason=f'TUNNEL FINISH to follow line'
+                # )
+
         
 
         # if self.state == MissionState.WAIT_PARK:

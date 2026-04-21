@@ -1,0 +1,43 @@
+[3.649s] Invoking command in '/home/iclab/autorace/build/control': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/iclab/autorace/build/control/build
+[4.603s] running develop
+[5.213s] Removing /home/iclab/autorace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)
+[5.315s] Invoked command in '/home/iclab/autorace/build/control' returned '0': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --uninstall --editable --build-directory /home/iclab/autorace/build/control/build
+[5.326s] Invoking command in '/home/iclab/autorace/src/control': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /home/iclab/autorace/build/control/build install --record /home/iclab/autorace/build/control/install.log --single-version-externally-managed install_data --force
+[6.214s] running egg_info
+[6.216s] writing ../../build/control/control.egg-info/PKG-INFO
+[6.217s] writing dependency_links to ../../build/control/control.egg-info/dependency_links.txt
+[6.218s] writing entry points to ../../build/control/control.egg-info/entry_points.txt
+[6.219s] writing requirements to ../../build/control/control.egg-info/requires.txt
+[6.220s] writing top-level names to ../../build/control/control.egg-info/top_level.txt
+[6.338s] reading manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[6.341s] writing manifest file '../../build/control/control.egg-info/SOURCES.txt'
+[6.341s] running build
+[6.342s] running build_py
+[6.342s] copying control/controller_node.py -> /home/iclab/autorace/build/control/build/lib/control
+[6.344s] copying control/motor_node.py -> /home/iclab/autorace/build/control/build/lib/control
+[6.345s] running install
+[6.348s] running install_lib
+[6.353s] creating /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.353s] copying /home/iclab/autorace/build/control/build/lib/control/controller_node.py -> /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.354s] copying /home/iclab/autorace/build/control/build/lib/control/avoid_node.py -> /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.355s] copying /home/iclab/autorace/build/control/build/lib/control/control_node.py -> /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.356s] copying /home/iclab/autorace/build/control/build/lib/control/motor_node.py -> /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.356s] copying /home/iclab/autorace/build/control/build/lib/control/__init__.py -> /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.357s] copying /home/iclab/autorace/build/control/build/lib/control/lidar_node.py -> /home/iclab/autorace/install/control/lib/python3.8/site-packages/control
+[6.358s] byte-compiling /home/iclab/autorace/install/control/lib/python3.8/site-packages/control/controller_node.py to controller_node.cpython-38.pyc
+[6.371s] byte-compiling /home/iclab/autorace/install/control/lib/python3.8/site-packages/control/avoid_node.py to avoid_node.cpython-38.pyc
+[6.383s] byte-compiling /home/iclab/autorace/install/control/lib/python3.8/site-packages/control/control_node.py to control_node.cpython-38.pyc
+[6.384s] byte-compiling /home/iclab/autorace/install/control/lib/python3.8/site-packages/control/motor_node.py to motor_node.cpython-38.pyc
+[6.385s] byte-compiling /home/iclab/autorace/install/control/lib/python3.8/site-packages/control/__init__.py to __init__.cpython-38.pyc
+[6.386s] byte-compiling /home/iclab/autorace/install/control/lib/python3.8/site-packages/control/lidar_node.py to lidar_node.cpython-38.pyc
+[6.391s] running install_data
+[6.391s] copying resource/control -> /home/iclab/autorace/install/control/share/ament_index/resource_index/packages
+[6.392s] copying package.xml -> /home/iclab/autorace/install/control/share/control
+[6.392s] running install_egg_info
+[6.395s] Copying ../../build/control/control.egg-info to /home/iclab/autorace/install/control/lib/python3.8/site-packages/control-0.0.0-py3.8.egg-info
+[6.400s] running install_scripts
+[6.457s] Installing controller_node script to /home/iclab/autorace/install/control/lib/control
+[6.458s] Installing lidar_node script to /home/iclab/autorace/install/control/lib/control
+[6.458s] Installing motor_node script to /home/iclab/autorace/install/control/lib/control
+[6.460s] writing list of installed files to '/home/iclab/autorace/build/control/install.log'
+[6.546s] Invoked command in '/home/iclab/autorace/src/control' returned '0': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/control build --build-base /home/iclab/autorace/build/control/build install --record /home/iclab/autorace/build/control/install.log --single-version-externally-managed install_data --force

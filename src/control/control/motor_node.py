@@ -49,8 +49,8 @@ class MotorNode(Node):
         self.declare_parameter('dxl_left_id', 1)
         self.declare_parameter('dxl_right_id', 2)
         self.declare_parameter('max_speed', 500)
-        self.declare_parameter('invert_left', True)
-        self.declare_parameter('invert_right', True)
+        self.declare_parameter('invert_left', False)
+        self.declare_parameter('invert_right', False)
         self.declare_parameter('stop_on_invalid_cmd', True)
 
         self.device_name = self.get_parameter('device_name').value

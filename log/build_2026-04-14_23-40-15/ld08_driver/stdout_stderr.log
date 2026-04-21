@@ -1,0 +1,24 @@
+[ 16%] [32m[1mLinking CXX executable ld08_driver[0m
+[100%] Built target ld08_driver
+-- Install configuration: ""
+-- Execute custom install script
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/launch/ld08.launch.py
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/lib/ld08_driver/ld08_driver
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/package_run_dependencies/ld08_driver
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/parent_prefix_path/ld08_driver
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.sh
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.dsv
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.sh
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.dsv
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.bash
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.sh
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.zsh
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.dsv
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.dsv
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/packages/ld08_driver
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+CMake Error: failed to create symbolic link '/home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake': file already exists
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig.cmake
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig-version.cmake
+-- Symlinking: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.xml

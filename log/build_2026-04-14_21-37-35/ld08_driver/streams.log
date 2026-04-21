@@ -1,0 +1,75 @@
+[1.964s] Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/iclab/autorace/src/install/control:/home/iclab/autorace/src/install/camera:/home/iclab/autorace/install/control:/home/iclab/autorace/install/camera:/opt/ros/foxy /usr/bin/cmake /home/iclab/autorace/src/ld08_driver -DCMAKE_INSTALL_PREFIX=/home/iclab/autorace/install/ld08_driver
+[2.223s] -- The C compiler identification is GNU 9.4.0
+[2.473s] -- The CXX compiler identification is GNU 9.4.0
+[2.495s] -- Check for working C compiler: /usr/bin/cc
+[2.770s] -- Check for working C compiler: /usr/bin/cc -- works
+[2.773s] -- Detecting C compiler ABI info
+[3.060s] -- Detecting C compiler ABI info - done
+[3.116s] -- Detecting C compile features
+[3.118s] -- Detecting C compile features - done
+[3.132s] -- Check for working CXX compiler: /usr/bin/c++
+[3.454s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[3.459s] -- Detecting CXX compiler ABI info
+[3.802s] -- Detecting CXX compiler ABI info - done
+[3.851s] -- Detecting CXX compile features
+[3.853s] -- Detecting CXX compile features - done
+[3.866s] -- Found ament_cmake: 0.9.12 (/opt/ros/foxy/share/ament_cmake/cmake)
+[3.986s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.8.10", minimum required is "3") 
+[3.987s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[4.816s] -- Found rclcpp: 2.4.3 (/opt/ros/foxy/share/rclcpp/cmake)
+[4.984s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[5.010s] -- Found rosidl_adapter: 1.3.1 (/opt/ros/foxy/share/rosidl_adapter/cmake)
+[5.371s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "1.1.1f")  
+[5.472s] -- Found FastRTPS: /opt/ros/foxy/include  
+[5.757s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[5.971s] -- Found rmw_implementation_cmake: 1.0.4 (/opt/ros/foxy/share/rmw_implementation_cmake/cmake)
+[5.976s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[5.979s] -- Looking for pthread.h
+[6.274s] -- Looking for pthread.h - found
+[6.276s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+[6.599s] -- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Failed
+[6.601s] -- Looking for pthread_create in pthreads
+[6.834s] -- Looking for pthread_create in pthreads - not found
+[6.835s] -- Looking for pthread_create in pthread
+[7.109s] -- Looking for pthread_create in pthread - found
+[7.113s] -- Found Threads: TRUE  
+[7.603s] -- Found sensor_msgs: 2.0.5 (/opt/ros/foxy/share/sensor_msgs/cmake)
+[7.982s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.71.0/BoostConfig.cmake (found version "1.71.0") found components: system 
+[8.313s] -- Configuring done
+[8.354s] -- Generating done
+[8.374s] -- Build files have been written to: /home/iclab/autorace/build/ld08_driver
+[8.403s] Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/iclab/autorace/src/install/control:/home/iclab/autorace/src/install/camera:/home/iclab/autorace/install/control:/home/iclab/autorace/install/camera:/opt/ros/foxy /usr/bin/cmake /home/iclab/autorace/src/ld08_driver -DCMAKE_INSTALL_PREFIX=/home/iclab/autorace/install/ld08_driver
+[8.413s] Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/iclab/autorace/src/install/control:/home/iclab/autorace/src/install/camera:/home/iclab/autorace/install/control:/home/iclab/autorace/install/camera:/opt/ros/foxy /usr/bin/cmake --build /home/iclab/autorace/build/ld08_driver -- -j8 -l8
+[8.557s] [35m[1mScanning dependencies of target ld08_driver[0m
+[8.799s] [ 16%] [32mBuilding CXX object CMakeFiles/ld08_driver.dir/src/cmd_interface_linux.cpp.o[0m
+[8.819s] [ 50%] [32mBuilding CXX object CMakeFiles/ld08_driver.dir/src/lipkg.cpp.o[0m
+[8.819s] [ 50%] [32mBuilding CXX object CMakeFiles/ld08_driver.dir/src/slbf.cpp.o[0m
+[8.821s] [ 66%] [32mBuilding CXX object CMakeFiles/ld08_driver.dir/src/main.cpp.o[0m
+[8.834s] [ 83%] [32mBuilding CXX object CMakeFiles/ld08_driver.dir/src/transform.cpp.o[0m
+[20.095s] [100%] [32m[1mLinking CXX executable ld08_driver[0m
+[20.709s] [100%] Built target ld08_driver
+[20.748s] Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/iclab/autorace/src/install/control:/home/iclab/autorace/src/install/camera:/home/iclab/autorace/install/control:/home/iclab/autorace/install/camera:/opt/ros/foxy /usr/bin/cmake --build /home/iclab/autorace/build/ld08_driver -- -j8 -l8
+[20.797s] Invoking command in '/home/iclab/autorace/build/ld08_driver': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/iclab/autorace/src/install/control:/home/iclab/autorace/src/install/camera:/home/iclab/autorace/install/control:/home/iclab/autorace/install/camera:/opt/ros/foxy /usr/bin/cmake --install /home/iclab/autorace/build/ld08_driver
+[20.822s] -- Install configuration: ""
+[20.823s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/launch
+[20.823s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/launch/ld08.launch.py
+[20.824s] -- Installing: /home/iclab/autorace/install/ld08_driver/lib/ld08_driver/ld08_driver
+[20.832s] -- Set runtime path of "/home/iclab/autorace/install/ld08_driver/lib/ld08_driver/ld08_driver" to ""
+[20.833s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/package_run_dependencies/ld08_driver
+[20.834s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/parent_prefix_path/ld08_driver
+[20.835s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.sh
+[20.835s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/ament_prefix_path.dsv
+[20.836s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.sh
+[20.837s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/environment/path.dsv
+[20.837s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.bash
+[20.838s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.sh
+[20.839s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.zsh
+[20.840s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/local_setup.dsv
+[20.840s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.dsv
+[20.841s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ament_index/resource_index/packages/ld08_driver
+[20.842s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[20.843s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ament_cmake_export_include_directories-extras.cmake
+[20.844s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig.cmake
+[20.844s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/cmake/ld08_driverConfig-version.cmake
+[20.845s] -- Installing: /home/iclab/autorace/install/ld08_driver/share/ld08_driver/package.xml
+[20.856s] Invoked command in '/home/iclab/autorace/build/ld08_driver' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/iclab/autorace/src/install/control:/home/iclab/autorace/src/install/camera:/home/iclab/autorace/install/control:/home/iclab/autorace/install/camera:/opt/ros/foxy /usr/bin/cmake --install /home/iclab/autorace/build/ld08_driver

@@ -19,13 +19,17 @@ class UsbCameraNode(Node):
         # Open USB camera
         # self.cap = cv2.VideoCapture("/dev/video0")
         self.cap = cv2.VideoCapture('/dev/video0', cv2.CAP_V4L2)
+
         if not self.cap.isOpened():
             self.get_logger().error('Cannot open camera')
             return
 
-        # 教學穩定設定
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+        #  Force MJPG format
+        self.cap.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
+
+        # Resolution (must be supported under MJPG)
+        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1920)
+        self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 1080)
         # 關閉自動曝光（V4L2）
         # self.cap.set(cv2.CAP_PROP_AUTO_EXPOSURE, 0.25)
 
@@ -40,13 +44,16 @@ class UsbCameraNode(Node):
             self.get_logger().warn('Failed to read frame')
             return
 
+        # Resize to 640x480
+        frame = cv2.resize(frame, (640, 480))
+
         # OpenCV → ROS2 Image
         msg = self.bridge.cv2_to_imgmsg(frame, encoding='bgr8')
         self.publisher.publish(msg)
 
         # 本地顯示（教學用）
-        cv2.imshow('usb_camera', frame)
-        cv2.waitKey(1)
+        # cv2.imshow('usb_camera', frame)
+        # cv2.waitKey(1)
 
 
 def main():

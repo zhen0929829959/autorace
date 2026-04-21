@@ -29,22 +29,10 @@ class LaneFollowerNode(Node):
 
         # ===== PID 參數 =====
         self.pid_settings = {
-            'dual': {
-                'kp': 3.0, 'ki': 0.00, 'kd': 0.0,
-                'base_speed': 100, 'target_x': 320
-            },
-            'white': {
-                'kp': 3, 'ki': 0.0, 'kd': 0.0,
-                'base_speed': 100, 'target_x': 494
-            },
-            'yellow': {
-                'kp': 3, 'ki': 0.0, 'kd': 0.0,
-                'base_speed': 100, 'target_x': 150
-            },
-            'none': {
-                'kp': 0.0, 'ki': 0.0, 'kd': 0.0,
-                'base_speed': 0, 'target_x': 0
-            }
+            'dual': {'kp': 1.5, 'ki': 0.00, 'kd': 0.0,'base_speed': 150, 'target_x': 320},
+            'white': {'kp': 1.5, 'ki': 0.0, 'kd': 0.0,'base_speed': 150, 'target_x': 330},
+            'yellow': {'kp': 1.5, 'ki': 0.0, 'kd': 0.0,'base_speed': 150, 'target_x': 310},
+            'none': {'kp': 0.0, 'ki': 0.0, 'kd': 0.0,'base_speed': 0, 'target_x': 0}
         }
 
         # ===== PID 狀態 =====
@@ -183,8 +171,8 @@ class LaneFollowerNode(Node):
         error = road_center - setting['target_x']
         correction = self.calculate_pid(error, self.mode)
 
-        left_speed = int(np.clip(setting['base_speed'] - correction, -150, 150))
-        right_speed = int(np.clip(setting['base_speed'] + correction, -150, 150))
+        left_speed = int(np.clip(setting['base_speed'] + correction, -150, 150))
+        right_speed = int(np.clip(setting['base_speed'] - correction, -150, 150))
 
         lane_info['error'] = float(error)
         lane_info['target_x'] = setting['target_x']
@@ -253,15 +241,16 @@ class LaneFollowerNode(Node):
         hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
 
         # 綠色範圍設定 (HSV 空間)
-        lower_green = np.array([50, 24, 255])
-        upper_green = np.array([180, 255, 255])
+        lower_green = np.array([40, 40, 100])
+        upper_green = np.array([90, 255, 255])
+
         mask = cv2.inRange(hsv, lower_green, upper_green)
 
         contours, _ = cv2.findContours(mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
         for cnt in contours:
             area = cv2.contourArea(cnt)
             print("area=", area)
-            if area > 10:  # 過濾小雜訊
+            if area > 60:  # 過濾小雜訊
                 x, y, w, h = cv2.boundingRect(cnt)
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
                 cv2.putText(frame, "Green", (x, y - 10),
@@ -302,10 +291,10 @@ class LaneFollowerNode(Node):
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([0, 34, 80])
-        upper_yellow = np.array([68, 255, 255])
-        lower_white  = np.array([42, 0, 201])
-        upper_white  = np.array([179, 70, 255])
+        lower_yellow = np.array([15, 80, 80])
+        upper_yellow = np.array([40, 255, 255])
+        lower_white  = np.array([0, 0, 236])
+        upper_white  = np.array([179, 37, 255])
 
 
         yellow_mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
@@ -319,9 +308,9 @@ class LaneFollowerNode(Node):
         if yellow_x is not None and white_x is not None:
             center_x_in_roi = (yellow_x + white_x) // 2
         elif yellow_x is not None:
-            center_x_in_roi = yellow_x + 225
+            center_x_in_roi = yellow_x + 220
         elif white_x is not None:
-            center_x_in_roi = white_x - 225
+            center_x_in_roi = white_x - 220
         else:
             center_x_in_roi = 290
 
@@ -344,9 +333,8 @@ class LaneFollowerNode(Node):
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_white  = np.array([42, 0, 201])
-        upper_white  = np.array([179, 70, 255])
-
+        lower_white  = np.array([0, 0, 236])
+        upper_white  = np.array([179, 37, 255])
 
         white_mask = cv2.inRange(hsv, lower_white, upper_white)
         white_x = self.find_line_center_x(white_mask)
@@ -354,9 +342,9 @@ class LaneFollowerNode(Node):
         found = white_x is not None
 
         if white_x is not None:
-            center_x_in_roi = white_x - 55
+            center_x_in_roi = white_x - 195
         else:
-            center_x_in_roi = 250
+            center_x_in_roi = 110
 
         road_center = x_start + center_x_in_roi
 
@@ -377,8 +365,9 @@ class LaneFollowerNode(Node):
         roi = frame[y_start:y_end, x_start:x_end]
         hsv = cv2.cvtColor(roi, cv2.COLOR_BGR2HSV)
 
-        lower_yellow = np.array([0, 34, 80])
-        upper_yellow = np.array([68, 255, 255])
+        lower_yellow = np.array([15, 80, 80])
+        upper_yellow = np.array([40, 255, 255])
+
 
         yellow_mask = cv2.inRange(hsv, lower_yellow, upper_yellow)
         yellow_x = self.find_line_center_x(yellow_mask)
@@ -386,9 +375,9 @@ class LaneFollowerNode(Node):
         found = yellow_x is not None
 
         if yellow_x is not None:
-            center_x_in_roi = yellow_x + 55
+            center_x_in_roi = yellow_x + 195
         else:
-            center_x_in_roi = 250
+            center_x_in_roi = 320
 
         road_center = x_start + center_x_in_roi
 

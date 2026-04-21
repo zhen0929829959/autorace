@@ -1,0 +1,19 @@
+running develop
+running egg_info
+writing camera.egg-info/PKG-INFO
+writing dependency_links to camera.egg-info/dependency_links.txt
+writing entry points to camera.egg-info/entry_points.txt
+writing requirements to camera.egg-info/requires.txt
+writing top-level names to camera.egg-info/top_level.txt
+reading manifest file 'camera.egg-info/SOURCES.txt'
+writing manifest file 'camera.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/iclab/autorace/install/camera/lib/python3.8/site-packages/camera.egg-link (link to .)
+Installing camera_node script to /home/iclab/autorace/install/camera/lib/camera
+Installing lane_follower_node script to /home/iclab/autorace/install/camera/lib/camera
+Installing yolo_node script to /home/iclab/autorace/install/camera/lib/camera
+
+Installed /home/iclab/autorace/build/camera
+running symlink_data
+symbolically linking /home/iclab/autorace/build/camera/resource/camera -> /home/iclab/autorace/install/camera/share/ament_index/resource_index/packages
+symbolically linking /home/iclab/autorace/build/camera/package.xml -> /home/iclab/autorace/install/camera/share/camera

@@ -125,8 +125,8 @@ class YoloNode(Node):
             msg_out.data = json.dumps({"class_id": None})
             self.publisher.publish(msg_out)
 
-        cv2.imshow("YOLO", frame)
-        cv2.waitKey(1)
+        # cv2.imshow("YOLO", frame)
+        # cv2.waitKey(1)
 
 
 def main(args=None):

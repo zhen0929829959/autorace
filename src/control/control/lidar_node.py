@@ -19,9 +19,9 @@ class LidarNode(Node):
         self.port_name = '/dev/ttyUSB0'
 
         # 角度範圍（度）
-        self.front_range = (350, 30)   # 前方跨 0 度
+        self.front_range = (350, 40)   # 前方跨 0 度
         self.left_range = (270, 340)
-        self.right_range = (20, 90)
+        self.right_range = (20, 170)
 
         # 儲存每個角度的距離，單位 mm
         self.scan_data = [(angle, 9999.0) for angle in range(360)]

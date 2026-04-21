@@ -1,0 +1,19 @@
+[7.558s] Invoking command in '/home/iclab/autorace/build/control': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data
+[8.843s] running develop
+[9.546s] running egg_info
+[9.547s] writing control.egg-info/PKG-INFO
+[9.548s] writing dependency_links to control.egg-info/dependency_links.txt
+[9.549s] writing entry points to control.egg-info/entry_points.txt
+[9.549s] writing requirements to control.egg-info/requires.txt
+[9.550s] writing top-level names to control.egg-info/top_level.txt
+[9.738s] reading manifest file 'control.egg-info/SOURCES.txt'
+[9.742s] writing manifest file 'control.egg-info/SOURCES.txt'
+[9.878s] running build_ext
+[9.880s] Creating /home/iclab/autorace/install/control/lib/python3.8/site-packages/control.egg-link (link to .)
+[9.882s] Installing controller_node script to /home/iclab/autorace/install/control/lib/control
+[9.883s] Installing lidar_node script to /home/iclab/autorace/install/control/lib/control
+[9.883s] Installing motor_node script to /home/iclab/autorace/install/control/lib/control
+[9.885s] 
+[9.885s] Installed /home/iclab/autorace/build/control
+[9.886s] running symlink_data
+[10.027s] Invoked command in '/home/iclab/autorace/build/control' returned '0': PYTHONPATH=/home/iclab/autorace/build/control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/iclab/autorace/install/control/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /home/iclab/autorace/build/control/build --no-deps symlink_data
